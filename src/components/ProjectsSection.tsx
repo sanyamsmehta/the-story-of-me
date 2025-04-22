@@ -1,5 +1,5 @@
 
-import { Folder } from "lucide-react";
+import { Folder, Github } from "lucide-react";
 
 interface Project {
   title: string;
@@ -11,32 +11,36 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Project One",
+    title: "api-gateway",
     description:
-      "A brief description of your project. What technologies did you use? What problem did it solve? What was your role?",
-    tags: ["React", "Node.js", "MongoDB"],
-    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      "A unified API Gateway for United Nations OCHA platforms. Standardized APIs, improved maintainability, and code reusability.",
+    tags: ["Node.js", "API", "Microservices", "Express", "PostgreSQL"],
+    link: "https://github.com/sanyamsmehta/api-gateway",
+    imageUrl: "https://raw.githubusercontent.com/sanyamsmehta/api-gateway/main/docs/ocha-api.png",
   },
   {
-    title: "Project Two",
+    title: "lookoud-ai",
     description:
-      "Another project description. Talk about the challenges you faced and how you overcame them.",
-    tags: ["TypeScript", "Express", "PostgreSQL"],
-    imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      "An assistive platform that increases web content accessibility. Placed 1st at DubHacks, 2nd at EduHacks.",
+    tags: ["React", "Flask", "Web Speech API", "Accessibility", "Hackathon"],
+    link: "https://github.com/sanyamsmehta/lookoud-ai",
+    imageUrl: "https://raw.githubusercontent.com/sanyamsmehta/lookoud-ai/main/demo.png",
   },
   {
-    title: "Project Three",
+    title: "starbucks-product-strategy",
     description:
-      "More details about a significant project. What impact did it have? What did you learn?",
-    tags: ["Python", "Django", "AWS"],
-    imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      "A product strategy project for Starbucks, devised a Northstar metric tracking company expansion and efficiency.",
+    tags: ["Strategy", "Product Management", "Data Analysis"],
+    link: "https://github.com/sanyamsmehta/starbucks-product-strategy",
+    imageUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb", // Placeholder
   },
   {
-    title: "Project Four",
+    title: "the-grow-card",
     description:
-      "Describe a project that showcases your unique skills or interests. What made this project special?",
-    tags: ["Vue.js", "Firebase", "Tailwind CSS"],
-    imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      "Smartsheet Product Competition: Designed a solution for young adults’ debt. Detailed metrics and MVP.",
+    tags: ["Product", "FinTech", "Hackathon"],
+    link: "https://github.com/sanyamsmehta/the-grow-card",
+    imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085", // Placeholder
   },
 ];
 
@@ -46,7 +50,10 @@ const ProjectsSection = () => {
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="section-title text-center">My Projects</h2>
         <p className="section-subtitle text-center">
-          A showcase of my recent work and personal projects
+          A showcase of my actual work—see more on{" "}
+          <a href="https://github.com/sanyamsmehta" className="text-portfolio-purple underline hover:text-portfolio-darkPurple" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 mt-12">
@@ -84,14 +91,18 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    className="mt-4 inline-block text-portfolio-purple hover:text-portfolio-darkPurple font-medium"
-                  >
-                    View Project →
-                  </a>
-                )}
+                <div className="flex justify-between items-center mt-4">
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      className="inline-flex items-center text-portfolio-purple hover:text-portfolio-darkPurple font-medium"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="mr-1" size={18} /> View on GitHub
+                    </a>
+                  ) : null}
+                </div>
               </div>
             </div>
           ))}

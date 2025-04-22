@@ -24,7 +24,8 @@ const ResumeSection = () => {
             </p>
             <div className="text-center">
               <a
-                href="#"
+                href="/public/lovable-uploads/7398147a-1758-4d9a-87f7-bc11d011b63e.png"
+                download="SanyamMehta_PM_Resume.png"
                 className="px-6 py-3 bg-portfolio-purple text-white font-medium rounded-md hover:bg-portfolio-darkPurple transition-colors duration-300 inline-flex items-center"
               >
                 <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +51,8 @@ const ResumeSection = () => {
             </p>
             <div className="text-center">
               <a
-                href="#"
+                href="/public/lovable-uploads/7e855a4c-df09-44c0-8e3c-9f34caeef668.png"
+                download="SanyamMehta_SDE_Resume.png"
                 className="px-6 py-3 bg-portfolio-purple text-white font-medium rounded-md hover:bg-portfolio-darkPurple transition-colors duration-300 inline-flex items-center"
               >
                 <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
