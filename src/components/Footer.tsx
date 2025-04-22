@@ -1,4 +1,6 @@
 
+import React from 'react';
+
 const Footer = () => {
   return (
     <footer className="bg-portfolio-dark text-white py-8">
@@ -6,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <a href="#" className="text-xl font-bold">
-              Your Name
+              Sanyam Mehta
             </a>
             <p className="text-gray-400 mt-2">
               Product Manager & Software Engineer
@@ -32,7 +34,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Sanyam Mehta. All rights reserved.</p>
         </div>
       </div>
     </footer>

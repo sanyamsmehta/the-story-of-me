@@ -50,7 +50,7 @@ const Navbar = () => {
     >
       <nav className="max-w-6xl mx-auto flex justify-between items-center">
         <a href="#" className="text-xl font-bold text-portfolio-dark">
-          Portfolio
+          Sanyam Mehta
         </a>
         <ul className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (

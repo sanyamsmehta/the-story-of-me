@@ -1,10 +1,12 @@
 
+import React from 'react';
+
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-portfolio-light to-white pt-20">
       <div className="max-w-6xl mx-auto px-6 py-12 md:py-20 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-portfolio-dark">
-          Hi, I'm <span className="text-portfolio-purple">Your Name</span>
+          Hi, I'm <span className="text-portfolio-purple">Sanyam Mehta</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
           Product Manager & Software Engineer with a passion for building
