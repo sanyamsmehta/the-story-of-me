@@ -97,5 +97,53 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-portfolio-dark;
+  }
+  
+  .section-subtitle {
+    @apply text-xl text-gray-600 mb-10 max-w-2xl mx-auto;
+  }
+  
+  .nav-link {
+    @apply relative cursor-pointer hover:text-portfolio-purple transition-colors duration-300;
+  }
+  
+  .nav-link.active {
+    @apply text-portfolio-purple font-medium;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-portfolio-purple transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .timeline-item {
+    @apply relative pl-10 pb-10 border-l-2 border-gray-200 last:border-l-0 last:pb-0;
+  }
+  
+  .timeline-dot {
+    @apply absolute left-[-9px] w-4 h-4 rounded-full bg-portfolio-purple;
   }
 }
