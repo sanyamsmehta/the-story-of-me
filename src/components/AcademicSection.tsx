@@ -21,13 +21,13 @@ const educations: Education[] = [
 
 const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
   <div className="flex flex-col items-center relative">
-    {/* Logo Circle - optimized logo placement */}
-    <div className="w-24 h-24 rounded-full bg-white border-4 border-blue-500 p-2 flex items-center justify-center z-10">
+    {/* Logo Circle - precise sizing to prevent overlap */}
+    <div className="w-24 h-24 rounded-full bg-white border-4 border-blue-500 p-1 flex items-center justify-center z-10">
       {education.logoUrl && (
         <img
           src={education.logoUrl}
           alt={`${education.school} logo`}
-          className="max-w-full max-h-full object-contain"
+          className="w-20 h-20 object-contain rounded-full"
         />
       )}
     </div>
