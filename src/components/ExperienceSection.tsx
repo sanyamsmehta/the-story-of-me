@@ -8,7 +8,6 @@ interface Experience {
   period: string;
   description: string[];
   logoUrl?: string;
-  extraImages?: string[];
 }
 
 const experiences: Experience[] = [
@@ -54,12 +53,7 @@ const experiences: Experience[] = [
       "Upgraded Spark Engine to 3.x to allow optimized partitioning and AQE improving query performance by 40%.",
       "Received 2 Promotions, mentored 4 recruits, and delivered Knowledge Transfer sessions and 2 Product Demos.",
     ],
-    logoUrl: "/lovable-uploads/84eae8ae-a744-492a-bf70-1b2fd06fdfb4.png",
-    extraImages: [
-      "/lovable-uploads/1dfa7723-6c9c-4257-bd9e-db520cb1aab8.png",
-      "/lovable-uploads/7398147a-1758-4d9a-87f7-bc11d011b63e.png",  // IMAGE YOU ADDED IN YOUR PREVIOUS prompt
-      "/lovable-uploads/7e855a4c-df09-44c0-8e3c-9f34caeef668.png",  // IMAGE YOU JUST ATTACHED NOW
-    ],
+    logoUrl: "/lovable-uploads/f2a6f229-03f2-4133-aaa0-7084fe732f66.png", // Only the LTIMindtree logo
   },
   {
     title: "IT Intern",
@@ -112,79 +106,72 @@ const experiences: Experience[] = [
   },
 ];
 
-// Helper to render company row: logo + company name + location
-const TopRow = ({
-  exp,
-  isMain,
-}: {
+type ExperienceSectionCardProps = {
   exp: Experience;
-  isMain: boolean;
-}) => (
-  <div
-    className={`
-      flex items-center gap-2 md:gap-3
-      ${isMain ? "mb-1" : "mb-2"}
-    `}
-  >
-    {/* logo always on left */}
-    {exp.logoUrl && (
-      <img
-        src={exp.logoUrl}
-        alt={`${exp.company} Logo`}
-        className="w-8 h-8 md:w-12 md:h-12 object-contain rounded border border-gray-200 bg-white shadow"
-        style={{
-          background: "#fff",
-          minWidth: "2.5rem",
-          minHeight: "2.5rem",
-          maxWidth: "3rem",
-          maxHeight: "3rem",
-        }}
-      />
-    )}
-    <div>
-      <span className="text-sm font-bold text-gray-900">{exp.company}</span>
-      <span className="block md:inline md:ml-2 text-xs text-gray-500">
-        {exp.location}
-      </span>
-    </div>
-  </div>
-);
+  isHighlight: boolean;
+};
 
-const highlightedLayout = (exp: Experience, extraClass?: string) => {
-  const isSpecial = exp.title === "Senior Product Engineer";
+const HighlightedTitles = [
+  "Technical Consultant",
+  "Software Development Manager",
+  "Senior Product Engineer",
+];
+
+const ExperienceSectionCard: React.FC<ExperienceSectionCardProps> = ({
+  exp,
+  isHighlight,
+}) => {
+  const isLTI = exp.title === "Senior Product Engineer";
+
   return (
-    <div className={`flex flex-col gap-2 ${extraClass ?? ""}`}>
-      {/* Top row: logo + company + location */}
-      <TopRow exp={exp} isMain={true} />
+    <div className="relative flex flex-col bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 h-full min-h-[220px] md:min-h-[230px]">
 
-      {/* Date/period */}
-      <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap w-fit mb-2">
+      {/* Date absolute top right */}
+      <span className="absolute right-4 top-3 text-xs px-3 py-1 rounded bg-blue-100 text-blue-600 font-semibold whitespace-nowrap z-10">
         {exp.period}
       </span>
 
-      {/* Special: Show all images under the date, one under another */}
-      {isSpecial && Array.isArray(exp.extraImages) && exp.extraImages.length > 0 && (
-        <div className="flex flex-col items-start gap-3 mb-3">
-          {exp.extraImages.map((img, idx) => (
-            <img
-              key={img}
-              src={img}
-              alt={`image-${idx}`}
-              className="w-32 h-20 md:w-40 md:h-24 object-contain rounded-[0.7rem] border border-gray-200 shadow bg-white"
-              style={{
-                background: "#fff",
-                minWidth: "7rem",
-                minHeight: "4rem",
-                maxWidth: "11rem",
-                maxHeight: "5.2rem"
-              }}
-            />
-          ))}
+      {/* Top row: logo + company name + location + (highlighted title if needed) */}
+      <div className="flex items-center gap-3 mb-2 w-full relative z-20">
+        {exp.logoUrl && (
+          <img
+            src={exp.logoUrl}
+            alt={`${exp.company} Logo`}
+            className="w-8 h-8 md:w-12 md:h-12 object-contain rounded border border-gray-200 bg-white shadow min-w-[2.5rem] min-h-[2.5rem] max-w-[3rem] max-h-[3rem]"
+          />
+        )}
+        <div>
+          <span className="text-sm md:text-base font-bold text-gray-900">{exp.company}</span>
+          <span className="block md:inline md:ml-2 text-xs text-gray-500">{exp.location}</span>
+          {isHighlight && (
+            <span className="block md:block mt-1 md:mt-0 md:ml-4 text-sm font-semibold text-blue-700">
+              {exp.title}
+            </span>
+          )}
+        </div>
+      </div>
+
+      {/* Images directly underneath date ONLY for Senior Product Engineer */}
+      {isLTI && (
+        <div className="flex flex-col items-start gap-2 mt-2 mb-2">
+          {/* Display the LTIMindtree logo (again, under date and above bullets) */}
+          <img
+            src="/lovable-uploads/f2a6f229-03f2-4133-aaa0-7084fe732f66.png"
+            alt="LTIMindtree"
+            className="w-36 h-16 md:w-52 md:h-20 object-contain rounded-[0.7rem] border border-gray-200 shadow bg-white"
+            style={{
+              background: "#fff",
+              minWidth: "7rem",
+              minHeight: "4rem",
+              maxWidth: "13rem",
+              maxHeight: "6rem"
+            }}
+          />
         </div>
       )}
 
-      {/* Description/bullet points */}
-      <ul className="list-disc ml-5 mt-1 space-y-1.5 text-gray-600 text-xs leading-normal">
+      {/* Bullets */}
+      <ul className="list-disc ml-5 mt-1 space-y-1.5 text-gray-600 text-xs leading-normal z-10">
         {exp.description.map((point, i) => (
           <li key={i}>{point}</li>
         ))}
@@ -193,33 +180,13 @@ const highlightedLayout = (exp: Experience, extraClass?: string) => {
   );
 };
 
-// For all other experiences: logo, company, location row at top, then date, then logo image (if any), then bullets.
-const normalLayout = (exp: Experience, extraClass?: string) => (
-  <div className={`flex flex-col gap-2 ${extraClass ?? ""}`}>
-    <TopRow exp={exp} isMain={false} />
-
-    <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap w-fit mb-2">
-      {exp.period}
-    </span>
-
-    {/* Just one logo below the date (if exists and not the "special" one handled above) */}
-    {/* Already handled by TopRow: skip here */}
-
-    <ul className="list-disc ml-5 mt-1 space-y-1.5 text-gray-600 text-xs leading-normal">
-      {exp.description.map((point, i) => (
-        <li key={i}>{point}</li>
-      ))}
-    </ul>
-  </div>
-);
-
 const ExperienceSection = () => {
   return (
     <section
       id="experience"
       className="section-padding bg-white border-b border-gray-200"
     >
-      <div className="max-w-5xl mx-auto px-6 md:px-10">
+      <div className="max-w-5xl mx-auto px-4 md:px-10">
         <h2 className="text-3xl font-extrabold mb-10 text-center text-gray-900">
           Work Experience
         </h2>
@@ -228,11 +195,10 @@ const ExperienceSection = () => {
           <ul className="space-y-12 relative">
             {experiences.map((exp, idx) => (
               <li key={idx} className="group">
-                <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 transition group-hover:shadow-lg">
-                  {exp.title === "Senior Product Engineer"
-                    ? highlightedLayout(exp)
-                    : normalLayout(exp)}
-                </div>
+                <ExperienceSectionCard
+                  exp={exp}
+                  isHighlight={HighlightedTitles.includes(exp.title)}
+                />
               </li>
             ))}
           </ul>
