@@ -22,7 +22,8 @@ const experiences: Experience[] = [
       "Audited 50+ APIs to recommend schema standardization, enhancing interoperability, scalability, and reusability.",
       "Prototyped a working country-specific dashboard, improving stakeholder visibility into crisis aggregation by 80%.",
     ],
-    logoUrl: "/lovable-uploads/f181dc71-04bb-4465-aded-fcabedd9f15b.png",
+    // Use the new provided logo:
+    logoUrl: "/lovable-uploads/cf002099-5686-423b-8f1a-5d8828e5e742.png",
   },
   {
     title: "Product Manager",
@@ -97,42 +98,74 @@ const ExperienceSection = () => {
                 </div>
                 {/* Experience Card */}
                 <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 transition group-hover:shadow-lg">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                    <div className="flex-1">
-                      {/* Header with Company at top, role below */}
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <div className="flex flex-col">
-                            <span className="text-sm font-bold text-gray-900">{exp.company}</span>
-                            <span className="text-xs text-gray-500">{exp.location}</span>
-                            <div className="mt-1 text-xs font-bold text-black">{exp.title}</div>
+                  {/* Custom layout for the first experience (idx === 0) */}
+                  {idx === 0 ? (
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                      {/* Left: Company, Location, Designation, Bullet points */}
+                      <div className="flex-1">
+                        <div className="flex flex-col gap-0.5">
+                          <span className="text-sm font-bold text-gray-900">{exp.company}</span>
+                          <span className="text-xs text-gray-500">{exp.location}</span>
+                          {/* Highlighted designation */}
+                          <div
+                            className="mt-1 text-base font-extrabold text-black bg-yellow-100 px-2 py-1 rounded inline-block w-fit"
+                            style={{ letterSpacing: ".02em" }}
+                          >
+                            {exp.title}
                           </div>
-                        </div>
-                        <div className="flex flex-col items-end">
-                          <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap">
-                            {exp.period}
-                          </span>
-                          {/* Show company logo only for first experience */}
-                          {idx === 0 && exp.logoUrl && (
-                            <div className="mt-2 flex items-center justify-center flex-shrink-0">
-                              <img
-                                src={exp.logoUrl}
-                                alt={`${exp.company} Logo`}
-                                className="w-24 h-24 md:w-36 md:h-36 object-contain rounded-[0.7rem] border border-gray-200 shadow-md bg-white"
-                                style={{ minWidth: "5rem", minHeight: "5rem", background: "#fff" }}
-                              />
-                            </div>
-                          )}
+                          {/* Bullet points immediately below the designation */}
+                          <ul className="list-disc ml-5 mt-2 space-y-1.5 text-gray-600 text-xs leading-normal">
+                            {exp.description.map((point, i) => (
+                              <li key={i}>{point}</li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
-                      
-                      <ul className="list-disc ml-5 mt-3 space-y-1.5 text-gray-600 text-xs leading-normal">
-                        {exp.description.map((point, i) => (
-                          <li key={i}>{point}</li>
-                        ))}
-                      </ul>
+                      {/* Right: Date at top right, logo directly below date */}
+                      <div className="flex flex-col items-end min-w-[10rem] md:min-w-[12rem]">
+                        <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap mb-2 self-end">
+                          {exp.period}
+                        </span>
+                        {!!exp.logoUrl && (
+                          <div className="flex justify-end w-full">
+                            <img
+                              src={exp.logoUrl}
+                              alt={`${exp.company} Logo`}
+                              className="w-32 h-32 md:w-40 md:h-40 object-contain rounded-[0.7rem] border border-gray-200 shadow bg-white mt-2"
+                              style={{
+                                background: "#fff",
+                                minWidth: "7rem",
+                                minHeight: "7rem",
+                                maxWidth: "10rem",
+                                maxHeight: "10rem"
+                              }}
+                            />
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    // Regular layout for all other cards
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                      <div className="flex-1">
+                        <div className="flex flex-col">
+                          <span className="text-sm font-bold text-gray-900">{exp.company}</span>
+                          <span className="text-xs text-gray-500">{exp.location}</span>
+                          <div className="mt-1 text-xs font-bold text-black">{exp.title}</div>
+                          <ul className="list-disc ml-5 mt-2 space-y-1.5 text-gray-600 text-xs leading-normal">
+                            {exp.description.map((point, i) => (
+                              <li key={i}>{point}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="flex flex-col items-end">
+                        <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap mb-2 self-end">
+                          {exp.period}
+                        </span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </li>
             ))}
