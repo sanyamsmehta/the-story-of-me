@@ -30,29 +30,18 @@ const AboutHeroSection = () => (
         </div>
         {/* Social Icons & Phone */}
         <div className="flex gap-4 mb-2">
-          {/* LinkedIn Icon */}
+          {/* Phone Icon */}
           <a
-            href={linkedIn}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
+            href={phoneNumber}
+            aria-label="Phone"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#0A66C2]/80 p-1.5 rounded-full shadow-md border-2 border-[#0A66C2]/60 group-hover:bg-[#0A66C2]/90 transition flex items-center justify-center">
-              <Linkedin size={22} color="white" className="opacity-90" />
+            <div className="bg-[#2c5f73]/20 p-1.5 rounded-full shadow-md border-2 border-[#3c7f99]/30 group-hover:bg-[#3c7f99]/40 transition flex items-center justify-center">
+              <Phone size={22} color="#5ca5c5" className="group-hover:text-white" />
             </div>
           </a>
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="group hover:scale-110 transition-all duration-200"
-          >
-            <div className="bg-[#333] p-1.5 rounded-full shadow-md border-2 border-[#333] group-hover:bg-[#333]/90 transition flex items-center justify-center">
-              <Github size={22} color="white" />
-            </div>
-          </a>
+          
+          {/* Email Icon */}
           <a
             href={mail}
             target="_blank"
@@ -64,13 +53,30 @@ const AboutHeroSection = () => (
               <Mail size={22} color="#acacac" className="group-hover:text-white" />
             </div>
           </a>
+          
+          {/* LinkedIn Icon */}
           <a
-            href={phoneNumber}
-            aria-label="Phone"
+            href={linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#2c5f73]/20 p-1.5 rounded-full shadow-md border-2 border-[#3c7f99]/30 group-hover:bg-[#3c7f99]/40 transition flex items-center justify-center">
-              <Phone size={22} color="#5ca5c5" className="group-hover:text-white" />
+            <div className="bg-[#0A66C2]/60 p-1.5 rounded-full shadow-md border-2 border-[#0A66C2]/40 group-hover:bg-[#0A66C2]/70 transition flex items-center justify-center">
+              <Linkedin size={22} color="white" className="opacity-80" />
+            </div>
+          </a>
+          
+          {/* GitHub Icon */}
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="group hover:scale-110 transition-all duration-200"
+          >
+            <div className="bg-[#333] p-1.5 rounded-full shadow-md border-2 border-[#333] group-hover:bg-[#333]/90 transition flex items-center justify-center">
+              <Github size={22} color="white" />
             </div>
           </a>
         </div>
