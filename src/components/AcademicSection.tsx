@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface Education {
@@ -40,9 +41,9 @@ const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
     
     {/* Content Box - keep existing styling */}
     <div className="mt-4 bg-white rounded-lg shadow-lg p-4 w-64">
-      <h3 className="font-bold text-lg text-gray-900">{education.school}</h3>
-      <p className="text-blue-600 font-semibold">{education.degree}</p>
-      <p className="text-sm text-gray-500">{education.location}</p>
+      <h3 className="font-bold text-base text-gray-900 truncate">{education.school}</h3>
+      <p className="text-blue-600 font-semibold truncate">{education.degree}</p>
+      <p className="text-sm text-gray-500 truncate">{education.location}</p>
       <p className="text-sm font-medium text-gray-700 mt-1">{education.period}</p>
     </div>
   </div>
