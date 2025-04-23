@@ -7,12 +7,12 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { title: "About Me", href: "#about" },
-  { title: "Academic Experience", href: "#academic" },
-  { title: "Work Experience", href: "#experience" },
+  { title: "Work", href: "#experience" },
+  { title: "Academics", href: "#academic" },
   { title: "Skills", href: "#skills" },
   { title: "Projects", href: "#projects" },
-  { title: "Contact Me", href: "#contact" },
+  { title: "Contact", href: "#contact" },
+  { title: "Resume", href: "#resume" },
 ];
 
 const Navbar = () => {
@@ -52,8 +52,7 @@ const Navbar = () => {
           : "bg-transparent py-7"
       }`}
     >
-      <nav className="max-w-6xl mx-auto flex justify-between items-center">
-        <span className="text-2xl font-bold tracking-tight select-none text-white">Sanyam Mehta</span>
+      <nav className="max-w-6xl mx-auto flex justify-end items-center">
         <ul className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
             <li key={item.title}>
