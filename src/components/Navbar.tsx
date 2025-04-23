@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 
 interface NavItem {
@@ -57,11 +58,12 @@ const Navbar = () => {
             <li key={item.title}>
               <a
                 href={item.href}
-                className={`nav-link uppercase tracking-wide font-medium text-base transition relative
+                className={`nav-link tracking-wide font-medium text-base transition relative
                   ${activeSection === item.href.substring(1)
                     ? "text-white after:scale-x-100"
                     : "text-gray-400 hover:text-white"}`
                 }
+                style={{ textTransform: "none" }}
               >
                 {item.title}
                 <span className={`absolute left-0 -bottom-1 h-0.5 bg-white transition-all duration-300 ${activeSection === item.href.substring(1) ? "w-full" : "w-0 group-hover:w-full"}`}></span>
