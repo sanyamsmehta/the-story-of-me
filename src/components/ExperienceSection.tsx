@@ -7,6 +7,7 @@ interface Experience {
   period: string;
   description: string[];
   logoUrl?: string;
+  extraImages?: string[];
 }
 
 const experiences: Experience[] = [
@@ -53,6 +54,9 @@ const experiences: Experience[] = [
       "Received 2 Promotions, mentored 4 recruits, and delivered Knowledge Transfer sessions and 2 Product Demos.",
     ],
     logoUrl: "/lovable-uploads/84eae8ae-a744-492a-bf70-1b2fd06fdfb4.png",
+    extraImages: [
+      "/lovable-uploads/1dfa7723-6c9c-4257-bd9e-db520cb1aab8.png",
+    ],
   },
   {
     title: "IT Intern",
@@ -105,7 +109,7 @@ const experiences: Experience[] = [
   },
 ];
 
-const highlightedLayout = (exp: Experience, extraClass?: string) => (
+const highlightedLayout = (exp: any, extraClass?: string) => (
   <div className={`flex flex-col md:flex-row md:items-start md:justify-between gap-4 ${extraClass ?? ""}`}>
     <div className="flex-1 flex flex-col">
       <div className="flex flex-col gap-0.5">
@@ -118,7 +122,7 @@ const highlightedLayout = (exp: Experience, extraClass?: string) => (
           {exp.title}
         </div>
         <ul className="list-disc ml-5 mt-2 space-y-1.5 text-gray-600 text-xs leading-normal">
-          {exp.description.map((point, i) => (
+          {exp.description.map((point: string, i: number) => (
             <li key={i}>{point}</li>
           ))}
         </ul>
@@ -128,7 +132,40 @@ const highlightedLayout = (exp: Experience, extraClass?: string) => (
       <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap mb-2 self-end">
         {exp.period}
       </span>
-      {!!exp.logoUrl && (
+      {exp.title === "Senior Product Engineer" && exp.logoUrl && (
+        <div className="flex flex-col justify-end w-full">
+          <img
+            src={exp.logoUrl}
+            alt={`${exp.company} Logo`}
+            className="w-32 h-20 md:w-40 md:h-24 object-contain rounded-[0.7rem] border border-gray-200 shadow bg-white mt-2"
+            style={{
+              background: "#fff",
+              minWidth: "7rem",
+              minHeight: "4rem",
+              maxWidth: "11rem",
+              maxHeight: "5.2rem"
+            }}
+          />
+          {Array.isArray(exp.extraImages) && exp.extraImages.length > 0 && (
+            exp.extraImages.map((img: string, idx: number) => (
+              <img
+                key={img}
+                src={img}
+                alt="Spectra by Fosfor"
+                className="w-32 h-20 md:w-40 md:h-24 object-contain rounded-[0.7rem] border border-gray-200 shadow bg-white mt-3"
+                style={{
+                  background: "#fff",
+                  minWidth: "7rem",
+                  minHeight: "4rem",
+                  maxWidth: "11rem",
+                  maxHeight: "5.2rem"
+                }}
+              />
+            ))
+          )}
+        </div>
+      )}
+      {exp.title !== "Senior Product Engineer" && !!exp.logoUrl && (
         <div className="flex justify-end w-full">
           <img
             src={exp.logoUrl}
