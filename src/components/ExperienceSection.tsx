@@ -141,7 +141,7 @@ const ExperienceSectionCard: React.FC<ExperienceSectionCardProps> = ({
           <img
             src={exp.logoUrl}
             alt={`${exp.company} Logo`}
-            className="w-8 h-8 md:w-12 md:h-12 object-contain rounded border border-gray-200 bg-white shadow min-w-[2.5rem] min-h-[2.5rem] max-w-[3rem] max-h-[3rem]"
+            className="w-12 h-12 md:w-16 md:h-16 object-contain rounded border border-gray-200 bg-white shadow min-w-[3rem] min-h-[3rem] max-w-[4rem] max-h-[4rem]"
           />
         )}
         <div className="flex flex-col">
