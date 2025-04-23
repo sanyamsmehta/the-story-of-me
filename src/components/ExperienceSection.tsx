@@ -22,20 +22,22 @@ const experiences: Experience[] = [
       "Audited 50+ APIs to recommend schema standardization, enhancing interoperability, scalability, and reusability.",
       "Prototyped a working country-specific dashboard, improving stakeholder visibility into crisis aggregation by 80%.",
     ],
-    // Use the new provided logo:
     logoUrl: "/lovable-uploads/cf002099-5686-423b-8f1a-5d8828e5e742.png",
   },
   {
-    title: "Product Manager",
+    title: "Software Development Manager",
     company: "Epic Games",
     location: "Seattle, WA",
-    period: "Dec 2019 - Jul 2023",
+    period: "September 2024 – Present",
     description: [
-      "Led the development of cloud services...",
-      "Grew Pixel Streaming adoption by 150%...",
-      "Successfully pitched streaming SDK...",
-      "Managed a team of 5 engineers...",
+      "Accelerated UEFN, Fortnite, and Unreal Engine usability scores by 40%, optimizing IA of over 50 interfaces.",
+      "Translated requirements to a PRD scoping, prioritizing, and scheduling activities targeting a 40% NPS increase.",
+      "Led team to solution content, taxonomy, and integration for 2.5 K+ articles to reduce navigation time by 30%.",
+      "Segmented and interviewed 100+ users to re-engineer end-user workflow, boosting product-market fit.",
+      "Developed a tool to automate article classification, decreasing tagging effort by 60%, rendering a 95% accuracy.",
+      "A/B tested 14 displays to finalize a unified user interface for all 3 offerings, projecting a drop-off rate by 75%.",
     ],
+    logoUrl: "/lovable-uploads/052a86b8-3422-451c-a682-303185dc4fd9.png",
   },
   {
     title: "Chief Technical Advisor",
@@ -75,6 +77,56 @@ const experiences: Experience[] = [
   },
 ];
 
+const highlightedLayout = (
+  exp: Experience,
+  extraClass?: string
+) => (
+  <div className={`flex flex-col md:flex-row md:items-start md:justify-between gap-4 ${extraClass ?? ""}`}>
+    {/* Left: Company, Location, Designation, Bullet points */}
+    <div className="flex-1">
+      <div className="flex flex-col gap-0.5">
+        <span className="text-sm font-bold text-gray-900">{exp.company}</span>
+        <span className="text-xs text-gray-500">{exp.location}</span>
+        {/* Highlighted designation */}
+        <div
+          className="mt-1 text-base font-extrabold text-black bg-yellow-100 px-2 py-1 rounded inline-block w-fit"
+          style={{ letterSpacing: ".02em" }}
+        >
+          {exp.title}
+        </div>
+        {/* Bullet points IMMEDIATELY below the designation */}
+        <ul className="list-disc ml-5 mt-2 space-y-1.5 text-gray-600 text-xs leading-normal">
+          {exp.description.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    {/* Right: Date at top right, logo directly below date */}
+    <div className="flex flex-col items-end min-w-[10rem] md:min-w-[12rem]">
+      <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap mb-2 self-end">
+        {exp.period}
+      </span>
+      {!!exp.logoUrl && (
+        <div className="flex justify-end w-full">
+          <img
+            src={exp.logoUrl}
+            alt={`${exp.company} Logo`}
+            className="w-32 h-32 md:w-40 md:h-40 object-contain rounded-[0.7rem] border border-gray-200 shadow bg-white mt-2"
+            style={{
+              background: "#fff",
+              minWidth: "7rem",
+              minHeight: "7rem",
+              maxWidth: "10rem",
+              maxHeight: "10rem"
+            }}
+          />
+        </div>
+      )}
+    </div>
+  </div>
+);
+
 const ExperienceSection = () => {
   return (
     <section
@@ -98,74 +150,30 @@ const ExperienceSection = () => {
                 </div>
                 {/* Experience Card */}
                 <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 transition group-hover:shadow-lg">
-                  {/* Custom layout for the first experience (idx === 0) */}
-                  {idx === 0 ? (
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                      {/* Left: Company, Location, Designation, Bullet points */}
-                      <div className="flex-1">
-                        <div className="flex flex-col gap-0.5">
-                          <span className="text-sm font-bold text-gray-900">{exp.company}</span>
-                          <span className="text-xs text-gray-500">{exp.location}</span>
-                          {/* Highlighted designation */}
-                          <div
-                            className="mt-1 text-base font-extrabold text-black bg-yellow-100 px-2 py-1 rounded inline-block w-fit"
-                            style={{ letterSpacing: ".02em" }}
-                          >
-                            {exp.title}
+                  {/* Highlighted layout for first two experiences, regular layout for others */}
+                  {idx <= 1
+                    ? highlightedLayout(exp)
+                    : (
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div className="flex-1">
+                          <div className="flex flex-col">
+                            <span className="text-sm font-bold text-gray-900">{exp.company}</span>
+                            <span className="text-xs text-gray-500">{exp.location}</span>
+                            <div className="mt-1 text-xs font-bold text-black">{exp.title}</div>
+                            <ul className="list-disc ml-5 mt-2 space-y-1.5 text-gray-600 text-xs leading-normal">
+                              {exp.description.map((point, i) => (
+                                <li key={i}>{point}</li>
+                              ))}
+                            </ul>
                           </div>
-                          {/* Bullet points immediately below the designation */}
-                          <ul className="list-disc ml-5 mt-2 space-y-1.5 text-gray-600 text-xs leading-normal">
-                            {exp.description.map((point, i) => (
-                              <li key={i}>{point}</li>
-                            ))}
-                          </ul>
+                        </div>
+                        <div className="flex flex-col items-end">
+                          <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap mb-2 self-end">
+                            {exp.period}
+                          </span>
                         </div>
                       </div>
-                      {/* Right: Date at top right, logo directly below date */}
-                      <div className="flex flex-col items-end min-w-[10rem] md:min-w-[12rem]">
-                        <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap mb-2 self-end">
-                          {exp.period}
-                        </span>
-                        {!!exp.logoUrl && (
-                          <div className="flex justify-end w-full">
-                            <img
-                              src={exp.logoUrl}
-                              alt={`${exp.company} Logo`}
-                              className="w-32 h-32 md:w-40 md:h-40 object-contain rounded-[0.7rem] border border-gray-200 shadow bg-white mt-2"
-                              style={{
-                                background: "#fff",
-                                minWidth: "7rem",
-                                minHeight: "7rem",
-                                maxWidth: "10rem",
-                                maxHeight: "10rem"
-                              }}
-                            />
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  ) : (
-                    // Regular layout for all other cards
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex flex-col">
-                          <span className="text-sm font-bold text-gray-900">{exp.company}</span>
-                          <span className="text-xs text-gray-500">{exp.location}</span>
-                          <div className="mt-1 text-xs font-bold text-black">{exp.title}</div>
-                          <ul className="list-disc ml-5 mt-2 space-y-1.5 text-gray-600 text-xs leading-normal">
-                            {exp.description.map((point, i) => (
-                              <li key={i}>{point}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="flex flex-col items-end">
-                        <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap mb-2 self-end">
-                          {exp.period}
-                        </span>
-                      </div>
-                    </div>
-                  )}
+                    )}
                 </div>
               </li>
             ))}
