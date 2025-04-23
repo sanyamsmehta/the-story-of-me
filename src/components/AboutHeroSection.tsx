@@ -15,7 +15,7 @@ const iconContainer =
 const AboutHeroSection = () => (
   <div
     id="about"
-    className="section-padding bg-[#101010] flex items-center justify-center min-h-[600px] border-b border-muted"
+    className="section-padding bg-[#101010] flex items-center justify-center min-h-[75vh] border-b border-muted"
   >
     <div className="max-w-6xl w-full mx-auto px-6 flex flex-col md:flex-row gap-14 items-center animate-fade-in">
       <div className="flex flex-col items-center w-full md:w-2/5">
