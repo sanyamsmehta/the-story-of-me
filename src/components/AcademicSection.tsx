@@ -1,48 +1,63 @@
 
 import React from "react";
 
-const educations = [
+interface Education {
+  school: string;
+  location: string;
+  period: string;
+  degree: string;
+  logoUrl?: string;
+}
+
+const educations: Education[] = [
   {
-    degree: "Master of Science in Information Management",
-    university: "University of Washington, Seattle",
-    logo: "/lovable-uploads/36d20501-5346-4ee4-baa8-980fcfeda272.png", // UW logo
-    period: "I study Master's in Information Management at the University of Washington from September 2023 to Present",
-  },
-  {
-    degree: "Bachelor of Engineering in Computer Engineering",
-    university: "University of Mumbai",
-    logo: "/lovable-uploads/13713359-f3a2-4b04-934f-5358e45a7acc.png", // Mumbai University logo
-    period: "August 2018 – May 2021",
-  },
-  {
-    degree: "Bachelor of Engineering in Computer Engineering",
-    university: "American University of Sharjah",
-    logo: "/lovable-uploads/60c1a7eb-c31a-4dfb-99eb-44ea201be4ed.png", // AUS logo
-    period: "August 2016 – July 2018",
+    school: "Bombay Scottish School",
+    location: "Mumbai, India",
+    period: "2004 - 2016",
+    degree: "High School",
+    logoUrl: "/lovable-uploads/76ef3769-536c-4027-92ab-5fe630269d8a.png",
   },
 ];
 
+const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
+  <div className="flex flex-col items-center relative">
+    {/* Logo Circle */}
+    <div className="w-24 h-24 rounded-full bg-white border-4 border-blue-500 p-2 flex items-center justify-center z-10">
+      {education.logoUrl && (
+        <img
+          src={education.logoUrl}
+          alt={`${education.school} logo`}
+          className="w-full h-full object-contain"
+        />
+      )}
+    </div>
+    
+    {/* Content Box */}
+    <div className="mt-4 bg-white rounded-lg shadow-lg p-4 w-64">
+      <h3 className="font-bold text-lg text-gray-900">{education.school}</h3>
+      <p className="text-blue-600 font-semibold">{education.degree}</p>
+      <p className="text-sm text-gray-500">{education.location}</p>
+      <p className="text-sm font-medium text-gray-700 mt-1">{education.period}</p>
+    </div>
+  </div>
+);
+
 const AcademicSection = () => (
-  <section id="academic" className="section-padding bg-[#181818] border-b border-muted">
-    <div className="max-w-4xl mx-auto px-6">
-      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-white text-center">Academic Experience</h2>
-      <div className="flex flex-col gap-8">
-        {educations.map((edu, idx) => (
-          <div key={idx} className="flex flex-col md:flex-row items-center gap-6 md:gap-10 p-6 rounded-xl bg-[#1f1f1f] glass-morphism shadow-md">
-            <div className="h-16 w-16 flex items-center justify-center bg-white rounded p-1">
-              <img
-                src={edu.logo}
-                alt={`${edu.university} logo`}
-                className="h-full w-full object-contain"
-              />
-            </div>
-            <div className="flex-1 text-center md:text-left">
-              <div className="text-xl font-semibold text-white mb-1">{edu.degree}</div>
-              <div className="text-lg text-gray-300 font-medium">{edu.university}</div>
-              <div className="text-sm text-gray-400">{edu.period}</div>
-            </div>
-          </div>
-        ))}
+  <section id="academic" className="section-padding bg-gradient-to-b from-gray-50 to-white border-t border-gray-100">
+    <div className="max-w-6xl mx-auto px-6">
+      <h2 className="text-3xl font-bold text-center mb-16 text-gray-900">Academic Journey</h2>
+      
+      {/* Timeline Container */}
+      <div className="relative">
+        {/* Horizontal Line */}
+        <div className="absolute top-12 left-0 right-0 h-1 bg-blue-500" />
+        
+        {/* Timeline Nodes */}
+        <div className="flex justify-start gap-24 relative">
+          {educations.map((education, idx) => (
+            <TimelineNode key={idx} education={education} />
+          ))}
+        </div>
       </div>
     </div>
   </section>
