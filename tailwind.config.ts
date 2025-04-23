@@ -20,58 +20,52 @@ export default {
     },
     extend: {
       colors: {
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: '#FFFFFF', // white background
-        foreground: '#2A2A2A', // dark text
+        border: "#E0F2FE",
+        input: "#E0F2FE",
+        ring: "#134e6f",
+        background: "#FAFBFC",
+        foreground: "#10213E",
         primary: {
-          DEFAULT: '#6A98C9', // soothing blue
-          foreground: '#FFFFFF'
+          DEFAULT: "#134e6f",
+          foreground: "#FAFBFC"
         },
         secondary: {
-          DEFAULT: '#F0F7FF', // very light blue
-          foreground: '#2A2A2A'
+          DEFAULT: "#E9F5FB", // very light sky blue
+          foreground: "#10213E"
         },
         destructive: {
           DEFAULT: '#dc2626',
           foreground: '#FFFFFF'
         },
         muted: {
-          DEFAULT: '#F5F8FC',
-          foreground: '#6B7280'
+          DEFAULT: "#F6FAFC",
+          foreground: "#5B6C8A"
         },
         accent: {
-          DEFAULT: '#E5EDF8',
-          foreground: '#2A2A2A'
+          DEFAULT: "#E9F5FB",
+          foreground: "#134e6f"
         },
         popover: {
-          DEFAULT: '#FFFFFF',
-          foreground: '#2A2A2A'
+          DEFAULT: "#FFFFFF",
+          foreground: "#134e6f"
         },
         card: {
-          DEFAULT: '#FFFFFF',
-          foreground: '#2A2A2A'
+          DEFAULT: "#FFFFFF",
+          foreground: "#134e6f"
         },
-        portfolio: {
-          purple: '#6A98C9', // replaced with soothing blue
-          darkPurple: '#4A6D9A',
-          lightPurple: '#B5CDE6',
-          dark: '#2A2A2A',
-          light: '#F0F7FF',
-        },
-        sidebar: {
-          DEFAULT: '#FFFFFF',
-          foreground: '#2A2A2A',
-          primary: '#6A98C9',
-          'primary-foreground': '#FFFFFF',
-          accent: '#6A98C9',
-          'accent-foreground': '#FFFFFF',
-          border: '#E5EDF8',
-          ring: '#6A98C9'
-        },
-        highlight: "#6A98C9",
-        action: "#6A98C9",
+        highlight: "#459EC9", // Soothing blue
+        action: "#134e6f",
+        blue: {
+          50: "#E3EEFC",
+          100: "#C2E0FB",
+          200: "#9ED3F7",
+          300: "#70B9E4",
+          400: "#459EC9",
+          500: "#2071A7",
+          600: "#134e6f",
+          700: "#17395C",
+          900: "#10213E"
+        }
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -80,20 +74,12 @@ export default {
       },
       keyframes: {
         'accordion-down': {
-          from: {
-            height: '0'
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)'
-          }
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' }
         },
         'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)'
-          },
-          to: {
-            height: '0'
-          }
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' }
         }
       },
       animation: {

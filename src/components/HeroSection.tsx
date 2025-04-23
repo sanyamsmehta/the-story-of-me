@@ -2,43 +2,48 @@
 import React from "react";
 import { Linkedin, Github, Mail } from "lucide-react";
 
-const brandLogos = [
-  {
-    name: "United Nations OCHA",
-    src: "/placeholder.svg", // Replace with uploaded logo path
-    alt: "United Nations OCHA Logo",
-  },
-  {
-    name: "Epic Games",
-    src: "/placeholder.svg", // Replace with uploaded logo path
-    alt: "Epic Games Logo",
-  },
-  {
-    name: "Black Box Ltd",
-    src: "/placeholder.svg", // Replace with uploaded logo path
-    alt: "Black Box Ltd Logo",
-  },
-  {
-    name: "LTI Mindtree",
-    src: "/placeholder.svg", // Replace with uploaded logo path
-    alt: "LTI Mindtree Logo",
-  },
-];
+// Change the photo to your real path if you upload yours
+const profilePhoto =
+  "/public/lovable-uploads/7398147a-1758-4d9a-87f7-bc11d011b63e.png";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-secondary pt-20">
-      <div className="max-w-3xl mx-auto px-6 py-12 md:py-20 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-portfolio-dark">
-          Hi, I'm <span className="text-highlight text-portfolio-purple">Sanyam Mehta</span>
+    <section className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-gray-50 to-[#DAEEFB] pt-24 pb-6">
+      <div className="w-full max-w-xl mx-auto px-6 py-10 text-center bg-white/95 rounded-2xl shadow-lg border border-blue-50">
+        {/* View CV button */}
+        <div className="flex justify-center mb-4">
+          <a
+            href="#resume"
+            className="px-6 py-2 bg-blue-600 text-white font-medium rounded-full shadow-sm hover:bg-blue-700 transition-colors duration-200 text-base"
+          >
+            View CV
+          </a>
+        </div>
+
+        {/* Profile Photo */}
+        <div className="flex justify-center mb-8">
+          <img
+            src={profilePhoto}
+            alt="Sanyam Mehta"
+            className="w-28 h-28 rounded-full object-cover border-4 border-blue-100 shadow-sm"
+            style={{ background: "#e3eefc" }}
+          />
+        </div>
+
+        {/* Name and Roles */}
+        <h1 className="text-3xl md:text-5xl font-bold mb-2 text-blue-900">
+          Hi, I'm{" "}
+          <span className="text-blue-600">Sanyam Mehta</span>
         </h1>
-        <p className="text-xl md:text-2xl text-gray-600 mb-6 max-w-2xl mx-auto">
-          Product Management | Software Engineering
+        <p className="text-lg md:text-xl text-gray-700 mb-7">
+          Product Management&nbsp;|&nbsp;Software Engineering
         </p>
-        <div className="flex justify-center gap-6 mb-8">
+
+        {/* Social Links */}
+        <div className="flex justify-center gap-8 mb-0">
           <a
             href="https://www.linkedin.com/in/sanyammehta/"
-            className="text-portfolio-purple hover:text-portfolio-darkPurple transition-colors"
+            className="text-blue-700 hover:text-blue-900 transition-colors"
             aria-label="LinkedIn"
             target="_blank" rel="noopener noreferrer"
           >
@@ -46,7 +51,7 @@ const HeroSection = () => {
           </a>
           <a
             href="https://github.com/sanyammehta"
-            className="text-portfolio-purple hover:text-portfolio-darkPurple transition-colors"
+            className="text-blue-700 hover:text-blue-900 transition-colors"
             aria-label="GitHub"
             target="_blank" rel="noopener noreferrer"
           >
@@ -54,40 +59,11 @@ const HeroSection = () => {
           </a>
           <a
             href="mailto:sanyam.mehta93@gmail.com"
-            className="text-portfolio-purple hover:text-portfolio-darkPurple transition-colors"
+            className="text-blue-700 hover:text-blue-900 transition-colors"
             aria-label="Email"
             target="_blank" rel="noopener noreferrer"
           >
             <Mail size={32} />
-          </a>
-        </div>
-        <div className="flex flex-wrap justify-center gap-8 items-center mt-8">
-          {brandLogos.map((logo) => (
-            <div
-              key={logo.name}
-              className="bg-secondary rounded-xl p-4 flex items-center justify-center shadow-sm min-w-[120px] min-h-[60px] transition-transform hover:scale-105 border border-gray-100"
-              title={logo.name}
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="h-10 object-contain grayscale hover:grayscale-0 transition-all"
-              />
-            </div>
-          ))}
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 justify-center mt-10">
-          <a
-            href="#projects"
-            className="px-6 py-3 bg-action text-white font-medium rounded-md hover:bg-portfolio-darkPurple transition-colors duration-300"
-          >
-            View My Work
-          </a>
-          <a
-            href="#contact"
-            className="px-6 py-3 border border-action text-action font-medium rounded-md hover:bg-action/10 transition-colors duration-300"
-          >
-            Get In Touch
           </a>
         </div>
       </div>

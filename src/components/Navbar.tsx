@@ -6,12 +6,14 @@ interface NavItem {
   href: string;
 }
 
+// Visible on all viewports, no mobile menu/drawer
 const navItems: NavItem[] = [
   { title: "About", href: "#about" },
   { title: "Experience", href: "#experience" },
   { title: "Projects", href: "#projects" },
   { title: "Interests", href: "#interests" },
   { title: "Resume", href: "#resume" },
+  { title: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -20,10 +22,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Add background when scrolled
       setScrolled(window.scrollY > 50);
-      
-      // Determine active section based on scroll position
+
       const sections = document.querySelectorAll("section[id]");
       const scrollPosition = window.scrollY + 80;
 
@@ -32,7 +32,10 @@ const Navbar = () => {
         const sectionHeight = (section as HTMLElement).offsetHeight;
         const sectionId = section.getAttribute("id") || "";
 
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
           setActiveSection(sectionId);
         }
       });
@@ -45,32 +48,31 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md py-4" : "py-6"
+        scrolled
+          ? "bg-white/95 shadow-md py-3 border-b border-blue-50"
+          : "bg-transparent py-5"
       }`}
     >
       <nav className="max-w-6xl mx-auto flex justify-between items-center">
-        <a href="#" className="text-xl font-bold text-portfolio-dark">
+        <a href="#" className="text-xl font-bold text-blue-900">
           Sanyam Mehta
         </a>
-        <ul className="hidden md:flex items-center space-x-8">
+        <ul className="flex items-center space-x-8">
           {navItems.map((item) => (
             <li key={item.title}>
               <a
                 href={item.href}
-                className={`nav-link ${activeSection === item.href.substring(1) ? "active" : ""}`}
+                className={`text-base font-medium transition-colors hover:text-blue-700 ${
+                  activeSection === item.href.substring(1)
+                    ? "text-blue-700 underline underline-offset-4"
+                    : "text-blue-900"
+                }`}
               >
                 {item.title}
               </a>
             </li>
           ))}
         </ul>
-        <button className="md:hidden" aria-label="Menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M3 6H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
       </nav>
     </header>
   );
