@@ -22,11 +22,7 @@ const LifeSection = () => (
 
 const LightThemeWrapper = ({ children }: { children: React.ReactNode }) => (
   <div
-    className="transition-colors duration-300"
-    style={{
-      backgroundColor: "#FFFFFF",
-      color: "#000000"
-    }}
+    className="transition-colors duration-300 bg-pure-white text-pure-black"
   >
     {children}
   </div>
@@ -51,7 +47,9 @@ const Index = () => {
 
   return (
     <Layout>
-      <AboutHeroSection />
+      <section className="dark-section">
+        <AboutHeroSection />
+      </section>
       <LightThemeWrapper>
         <ExperienceSection />
         <SkillsSection />

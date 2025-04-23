@@ -13,7 +13,7 @@ const iconContainer =
   "bg-[#191919] p-2 rounded-full shadow-md border-2 border-[#404040] hover:bg-[#282828] transition flex items-center justify-center";
 
 const AboutHeroSection = () => (
-  <section
+  <div
     id="about"
     className="section-padding bg-[#101010] flex items-center justify-center min-h-[600px] border-b border-muted"
   >
@@ -85,7 +85,7 @@ const AboutHeroSection = () => (
         </div>
       </div>
     </div>
-  </section>
+  </div>
 );
 
 export default AboutHeroSection;

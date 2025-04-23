@@ -103,3 +103,9 @@
   filter: none !important;
   box-shadow: none;
 }
+
+/* Ensure dark sections maintain their dark background */
+.dark-section {
+  background: #101010 !important;
+  color: #FFFFFF;
+}
