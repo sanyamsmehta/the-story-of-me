@@ -49,7 +49,7 @@ const experiences: Experience[] = [
       "Automated document verification to reduce manual efforts by 90% and approval cycles from days to minutes.",
       "Created a centralized view to access 36 K+ documentation, tests, and reports, reducing lookup time by 45%.",
     ],
-    logoUrl: "/lovable-uploads/f181dc71-04bb-4465-aded-fcabedd9f15b.png",
+    logoUrl: "/lovable-uploads/c00ee5fe-70fc-4af8-9f87-73d639c2253e.png",
   },
   {
     title: "Chief Technical Advisor",
