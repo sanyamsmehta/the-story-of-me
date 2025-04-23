@@ -13,9 +13,7 @@ const AboutHeroSection = () => (
     className="section-padding bg-[#101010] flex items-center justify-center min-h-[600px] border-b border-muted"
   >
     <div className="max-w-6xl w-full mx-auto px-6 flex flex-col md:flex-row gap-14 items-center animate-fade-in">
-      {/* Left: Photo, Name, Tag, Socials */}
       <div className="flex flex-col items-center w-full md:w-2/5">
-        {/* Profile Picture */}
         <div className="rounded-full overflow-hidden border-4 border-white/10 shadow-lg mb-5 mt-5 w-48 h-48 bg-muted flex items-center justify-center mx-auto">
           <img
             src={profilePhoto}
@@ -23,25 +21,21 @@ const AboutHeroSection = () => (
             className="object-cover w-full h-full"
           />
         </div>
-        {/* Name and Title */}
         <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-1 text-center">Sanyam Mehta</h1>
         <div className="text-md md:text-lg text-gray-400 mb-5 text-center">
           Product Management <span className="mx-1 text-gray-500">|</span> Software Engineering
         </div>
-        {/* Social Icons & Phone */}
         <div className="flex gap-4 mb-2">
-          {/* Phone Icon */}
           <a
             href={phoneNumber}
             aria-label="Phone"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#2c4047]/30 p-1.5 rounded-full shadow-md border-2 border-[#3c5f69]/30 group-hover:bg-[#3c5f69]/40 transition flex items-center justify-center">
-              <Phone size={22} color="#6b8e9f" className="group-hover:text-white" />
+            <div className="bg-[#333]/20 p-1.5 rounded-full shadow-md border-2 border-[#444]/30 group-hover:bg-[#444]/40 transition flex items-center justify-center">
+              <Phone size={22} color="#666" className="group-hover:text-white" />
             </div>
           </a>
           
-          {/* Email Icon */}
           <a
             href={mail}
             target="_blank"
@@ -49,12 +43,11 @@ const AboutHeroSection = () => (
             aria-label="Email"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#d54b3d]/20 p-1.5 rounded-full shadow-md border-2 border-[#d54b3d]/30 group-hover:bg-[#d54b3d]/40 transition flex items-center justify-center">
-              <Mail size={22} color="#c45b5b" className="group-hover:text-white" />
+            <div className="bg-[#4a4a4a]/20 p-1.5 rounded-full shadow-md border-2 border-[#6a6a6a]/30 group-hover:bg-[#6a6a6a]/40 transition flex items-center justify-center">
+              <Mail size={22} color="#acacac" className="group-hover:text-white" />
             </div>
           </a>
           
-          {/* LinkedIn Icon */}
           <a
             href={linkedIn}
             target="_blank"
@@ -67,7 +60,6 @@ const AboutHeroSection = () => (
             </div>
           </a>
           
-          {/* GitHub Icon */}
           <a
             href={github}
             target="_blank"
@@ -82,7 +74,6 @@ const AboutHeroSection = () => (
         </div>
       </div>
 
-      {/* Right: About Text */}
       <div className="w-full md:w-3/5 flex flex-col justify-center px-2">
         <div className="text-[#ececec] text-[1.05rem] font-bold mb-4 font-sans">About Me</div>
         <div
