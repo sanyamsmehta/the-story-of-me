@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface Experience {
@@ -45,7 +44,6 @@ const experiences: Experience[] = [
     location: "Mumbai, India",
     period: "June 2021 – July 2023",
     description: [
-      "(Java, Spring Boot, REST API, Docker, Kubernetes, DBT, Snowflake, Spark, Slate, JMeter, JUnit, Grafana, ETL, NoSQL)",
       "Spearheaded SDLCs for 5 features leading to a 14% increase in client base with a 100% on-time delivery rate.",
       "Conducted performance benchmarking tests saving environment procurement costs by 15% per deployment.",
       "Led 5 client releases in one month collaborating with cross-functional teams (QA, DevOps, Developers, and PMs).",
@@ -54,7 +52,7 @@ const experiences: Experience[] = [
       "Upgraded Spark Engine to 3.x to allow optimized partitioning and AQE improving query performance by 40%.",
       "Received 2 Promotions, mentored 4 recruits, and delivered Knowledge Transfer sessions and 2 Product Demos.",
     ],
-    logoUrl: "/lovable-uploads/182f291f-631e-4a8a-a223-9b7a4e53a084.png",
+    logoUrl: "/lovable-uploads/84eae8ae-a744-492a-bf70-1b2fd06fdfb4.png",
   },
   {
     title: "IT Intern",
