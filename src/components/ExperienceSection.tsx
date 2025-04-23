@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface Experience {
@@ -6,10 +7,23 @@ interface Experience {
   location: string;
   period: string;
   description: string[];
+  logoUrl?: string;
 }
 
 const experiences: Experience[] = [
-  // Use placeholder content for now; user will provide details
+  {
+    title: "Technical Consultant",
+    company: "United Nations – OCHA",
+    location: "Geneva, Switzerland (Remote)",
+    period: "Sep 2024 – Present",
+    description: [
+      "Led a team of 3 to POC a unified API gateway consolidating 12+ platforms, cutting integration complexity by 70%.",
+      "Road-mapped a phased microservice and content repository transition, lowering maintenance overhead by 50%.",
+      "Audited 50+ APIs to recommend schema standardization, enhancing interoperability, scalability, and reusability.",
+      "Prototyped a working country-specific dashboard, improving stakeholder visibility into crisis aggregation by 80%."
+    ],
+    logoUrl: "/lovable-uploads/f181dc71-04bb-4465-aded-fcabedd9f15b.png"
+  },
   {
     title: "Product Manager",
     company: "Epic Games",
@@ -83,24 +97,37 @@ const ExperienceSection = () => {
                   <span className="hidden md:block w-px bg-gray-200 flex-1" />
                 </div>
                 {/* Experience Card */}
-                <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-6 md:p-8 transition group-hover:shadow-lg">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-2">
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-bold text-gray-900">{exp.title}</h3>
-                      <div className="text-gray-600 text-base md:text-lg font-medium">
-                        {exp.company}
-                        {exp.location && <span className="text-gray-400 font-normal ml-2">· {exp.location}</span>}
+                <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-6 md:p-8 transition group-hover:shadow-lg flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div className="flex-1">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-2">
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900">{exp.title}</h3>
+                        <div className="text-gray-600 text-base md:text-lg font-medium">
+                          {exp.company}
+                          {exp.location && <span className="text-gray-400 font-normal ml-2">· {exp.location}</span>}
+                        </div>
                       </div>
+                      <span className="text-xs md:text-sm bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold">
+                        {exp.period}
+                      </span>
                     </div>
-                    <span className="text-xs md:text-sm bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold">
-                      {exp.period}
-                    </span>
+                    <ul className="list-disc ml-5 mt-2 space-y-2 text-gray-700 text-base leading-relaxed">
+                      {exp.description.map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="list-disc ml-5 mt-2 space-y-2 text-gray-700 text-base leading-relaxed">
-                    {exp.description.map((point, i) => (
-                      <li key={i}>{point}</li>
-                    ))}
-                  </ul>
+                  {/* Show company logo only for first experience */}
+                  {idx === 0 && exp.logoUrl && (
+                    <div className="mt-4 md:mt-0 md:ml-6 flex-shrink-0 flex items-center justify-center">
+                      <img
+                        src={exp.logoUrl}
+                        alt="United Nations Logo"
+                        className="w-20 h-20 object-contain rounded-[0.65rem] border border-gray-200 shadow-sm bg-white"
+                        style={{ minWidth: 72, minHeight: 72, background: "#fff" }}
+                      />
+                    </div>
+                  )}
                 </div>
               </li>
             ))}
