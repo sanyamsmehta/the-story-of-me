@@ -57,7 +57,8 @@ const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
         <img
           src={education.logoUrl}
           alt={`${education.school} logo`}
-          className="w-8 h-8 object-contain rounded-full scale-125 transition-transform duration-300"
+          className={`w-8 h-8 object-contain rounded-full transition-transform duration-300 
+            ${education.school === 'Bombay Scottish School' ? 'scale-150' : 'scale-125'}`}
         />
       )}
     </div>
@@ -109,3 +110,4 @@ const AcademicSection = () => (
 );
 
 export default AcademicSection;
+
