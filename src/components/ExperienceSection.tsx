@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface Experience {
@@ -89,40 +90,44 @@ const ExperienceSection = () => {
           <div className="absolute left-6 top-0 h-full w-0.5 bg-gray-200 hidden md:block" />
           <ul className="space-y-12 relative">
             {experiences.map((exp, idx) => (
-              <li key={idx} className="md:flex md:items-center group">
+              <li key={idx} className="md:flex md:items-start group">
                 {/* Timeline dot */}
                 <div className="flex flex-col items-center mr-8 md:mr-0 md:w-12">
                   <div className="hidden md:block w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white mb-2 z-10" />
                   <span className="hidden md:block w-px bg-gray-200 flex-1" />
                 </div>
                 {/* Experience Card */}
-                <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 transition group-hover:shadow-lg flex flex-col md:flex-row md:items-stretch md:justify-between gap-4">
-                  <div className="flex-1 flex flex-col justify-between">
-                    {/* Top Row: Company/Location left, Date right */}
-                    <div className="flex justify-between items-start gap-2">
+                <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 transition group-hover:shadow-lg flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                  <div className="flex-1">
+                    {/* Header with Company at top, role below */}
+                    <div className="flex justify-between items-start">
                       <div>
-                        <span className="text-sm md:text-base font-bold text-gray-900 block">{exp.company}</span>
-                        <span className="text-xs md:text-sm text-gray-500 block">{exp.location}</span>
-                        <div className="mt-2 text-xs md:text-sm font-medium text-blue-900/80">{exp.title}</div>
+                        <div className="flex flex-col">
+                          <span className="text-sm font-bold text-gray-900">{exp.company}</span>
+                          <span className="text-xs text-gray-500">{exp.location}</span>
+                          <div className="mt-1 text-xs text-blue-900/80 font-medium">{exp.title}</div>
+                        </div>
                       </div>
-                      <span className="text-xs md:text-sm bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold ml-4 whitespace-nowrap mt-1 self-start min-w-fit">
+                      <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap self-start min-w-fit">
                         {exp.period}
                       </span>
                     </div>
-                    <ul className="list-disc ml-5 mt-2 space-y-2 text-gray-600 text-xs md:text-sm leading-normal">
+                    
+                    <ul className="list-disc ml-5 mt-3 space-y-1.5 text-gray-600 text-xs leading-normal">
                       {exp.description.map((point, i) => (
                         <li key={i}>{point}</li>
                       ))}
                     </ul>
                   </div>
+                  
                   {/* Show company logo only for first experience */}
                   {idx === 0 && exp.logoUrl && (
-                    <div className="flex items-center justify-center md:items-start md:justify-end flex-shrink-0 pl-2 md:pl-6">
+                    <div className="flex items-center justify-center md:items-start flex-shrink-0 pl-2 md:pl-4">
                       <img
                         src={exp.logoUrl}
-                        alt="United Nations Logo"
-                        className="w-32 h-32 object-contain rounded-[0.7rem] border border-gray-200 shadow-md bg-white"
-                        style={{ minWidth: 100, minHeight: 100, background: "#fff" }}
+                        alt={`${exp.company} Logo`}
+                        className="w-24 h-24 md:w-36 md:h-36 object-contain rounded-[0.7rem] border border-gray-200 shadow-md bg-white"
+                        style={{ minWidth: "5rem", minHeight: "5rem", background: "#fff" }}
                       />
                     </div>
                   )}
