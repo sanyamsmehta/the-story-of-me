@@ -105,12 +105,25 @@ const ExperienceSection = () => {
                         <div className="flex flex-col">
                           <span className="text-sm font-bold text-gray-900">{exp.company}</span>
                           <span className="text-xs text-gray-500">{exp.location}</span>
-                          <div className="mt-1 text-xs text-blue-900/80 font-medium">{exp.title}</div>
+                          <div className="mt-1 text-xs font-bold text-black">{exp.title}</div>
                         </div>
                       </div>
-                      <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap self-start min-w-fit">
-                        {exp.period}
-                      </span>
+                      <div className="flex flex-col items-end">
+                        <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap self-start min-w-fit">
+                          {exp.period}
+                        </span>
+                        {/* Show company logo only for first experience */}
+                        {idx === 0 && exp.logoUrl && (
+                          <div className="mt-2 flex items-center justify-center flex-shrink-0">
+                            <img
+                              src={exp.logoUrl}
+                              alt={`${exp.company} Logo`}
+                              className="w-24 h-24 md:w-36 md:h-36 object-contain rounded-[0.7rem] border border-gray-200 shadow-md bg-white"
+                              style={{ minWidth: "5rem", minHeight: "5rem", background: "#fff" }}
+                            />
+                          </div>
+                        )}
+                      </div>
                     </div>
                     
                     <ul className="list-disc ml-5 mt-3 space-y-1.5 text-gray-600 text-xs leading-normal">
@@ -119,18 +132,6 @@ const ExperienceSection = () => {
                       ))}
                     </ul>
                   </div>
-                  
-                  {/* Show company logo only for first experience */}
-                  {idx === 0 && exp.logoUrl && (
-                    <div className="flex items-center justify-center md:items-start flex-shrink-0 pl-2 md:pl-4">
-                      <img
-                        src={exp.logoUrl}
-                        alt={`${exp.company} Logo`}
-                        className="w-24 h-24 md:w-36 md:h-36 object-contain rounded-[0.7rem] border border-gray-200 shadow-md bg-white"
-                        style={{ minWidth: "5rem", minHeight: "5rem", background: "#fff" }}
-                      />
-                    </div>
-                  )}
                 </div>
               </li>
             ))}
