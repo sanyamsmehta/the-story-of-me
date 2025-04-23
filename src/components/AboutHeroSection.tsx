@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Linkedin, Github, Mail, Phone } from "lucide-react";
 
@@ -8,6 +7,9 @@ const github = "https://github.com/sanyamsmehta";
 const mail = "mailto:sanyam.mehta93@gmail.com";
 const phoneNumber = "#contact";
 
+const iconContainer =
+  "bg-[#191919] p-2 rounded-full shadow-md border-2 border-[#404040] hover:bg-[#282828] transition flex items-center justify-center";
+
 const AboutHeroSection = () => (
   <section
     id="about"
@@ -15,7 +17,7 @@ const AboutHeroSection = () => (
   >
     <div className="max-w-6xl w-full mx-auto px-6 flex flex-col md:flex-row gap-14 items-center animate-fade-in">
       <div className="flex flex-col items-center w-full md:w-2/5">
-        <div className="rounded-full overflow-hidden border-4 border-white/10 shadow-lg mb-5 mt-5 w-64 h-64 bg-muted flex items-center justify-center mx-auto">
+        <div className="rounded-full overflow-hidden border-4 border-white/10 shadow-lg mb-5 mt-5 w-80 h-80 bg-muted flex items-center justify-center mx-auto">
           <img
             src={profilePhoto}
             alt="Sanyam Mehta"
@@ -32,11 +34,10 @@ const AboutHeroSection = () => (
             aria-label="Phone"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#4a4a4a]/30 p-1.5 rounded-full shadow-md border-2 border-[#6a6a6a]/30 group-hover:bg-[#6a6a6a]/40 transition flex items-center justify-center">
-              <Phone size={22} color="#acacac" className="group-hover:text-white" />
+            <div className={iconContainer}>
+              <Phone size={26} color="#fff" />
             </div>
           </a>
-          
           <a
             href={mail}
             target="_blank"
@@ -44,11 +45,10 @@ const AboutHeroSection = () => (
             aria-label="Email"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#4a4a4a]/20 p-1.5 rounded-full shadow-md border-2 border-[#6a6a6a]/30 group-hover:bg-[#6a6a6a]/40 transition flex items-center justify-center">
-              <Mail size={22} color="#acacac" className="group-hover:text-white" />
+            <div className={iconContainer}>
+              <Mail size={26} color="#fff" />
             </div>
           </a>
-          
           <a
             href={linkedIn}
             target="_blank"
@@ -56,11 +56,10 @@ const AboutHeroSection = () => (
             aria-label="LinkedIn"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#0A66C2]/40 p-1.5 rounded-full shadow-md border-2 border-[#0A66C2]/30 group-hover:bg-[#0A66C2]/50 transition flex items-center justify-center">
-              <Linkedin size={22} color="white" className="opacity-60" />
+            <div className={iconContainer}>
+              <Linkedin size={26} color="#fff" />
             </div>
           </a>
-          
           <a
             href={github}
             target="_blank"
@@ -68,8 +67,8 @@ const AboutHeroSection = () => (
             aria-label="GitHub"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#333] p-1.5 rounded-full shadow-md border-2 border-[#333] group-hover:bg-[#333]/90 transition flex items-center justify-center">
-              <Github size={22} color="white" />
+            <div className={iconContainer}>
+              <Github size={26} color="#fff" />
             </div>
           </a>
         </div>
