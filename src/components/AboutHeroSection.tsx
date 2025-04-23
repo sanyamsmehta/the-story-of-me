@@ -36,8 +36,8 @@ const AboutHeroSection = () => (
             aria-label="Phone"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#2c5f73]/20 p-1.5 rounded-full shadow-md border-2 border-[#3c7f99]/30 group-hover:bg-[#3c7f99]/40 transition flex items-center justify-center">
-              <Phone size={22} color="#5ca5c5" className="group-hover:text-white" />
+            <div className="bg-[#2c4047]/30 p-1.5 rounded-full shadow-md border-2 border-[#3c5f69]/30 group-hover:bg-[#3c5f69]/40 transition flex items-center justify-center">
+              <Phone size={22} color="#6b8e9f" className="group-hover:text-white" />
             </div>
           </a>
           
@@ -49,8 +49,8 @@ const AboutHeroSection = () => (
             aria-label="Email"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#4a4a4a]/20 p-1.5 rounded-full shadow-md border-2 border-[#6a6a6a]/30 group-hover:bg-[#6a6a6a]/40 transition flex items-center justify-center">
-              <Mail size={22} color="#acacac" className="group-hover:text-white" />
+            <div className="bg-[#d54b3d]/20 p-1.5 rounded-full shadow-md border-2 border-[#d54b3d]/30 group-hover:bg-[#d54b3d]/40 transition flex items-center justify-center">
+              <Mail size={22} color="#c45b5b" className="group-hover:text-white" />
             </div>
           </a>
           
