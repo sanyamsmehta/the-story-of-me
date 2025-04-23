@@ -68,17 +68,6 @@ const experiences: Experience[] = [
     logoUrl: "/lovable-uploads/f2a6f229-03f2-4133-aaa0-7084fe732f66.png",
   },
   {
-    title: "UI/UX Intern",
-    company: "AGC Networks",
-    location: "Mumbai, India",
-    period: "June 2019 – August 2019",
-    description: [
-      "Translated gathered requirements into wireframe prototypes, speeding feature understanding by over 50%.",
-      "Developed responsive and reusable UI across cross-platform applications, facilitating over 30% code reuse.",
-    ],
-    logoUrl: "/lovable-uploads/6cc716f1-f74f-4a06-b0c5-ef8a5472cec4.png",
-  },
-  {
     title: "Alumni Mentor",
     company: "University of Mumbai",
     location: "Mumbai, India",
@@ -88,6 +77,17 @@ const experiences: Experience[] = [
       "Continue to mentor and train over 200 students annually through resume and profile reviews, mock technical and behavioural interviews, and conducting technical seminars and orientations.",
     ],
     logoUrl: "/lovable-uploads/2dabfeda-55db-4a08-91bc-0f6cba2b8d28.png",
+  },
+  {
+    title: "UI/UX Intern",
+    company: "AGC Networks",
+    location: "Mumbai, India",
+    period: "June 2019 – August 2019",
+    description: [
+      "Translated gathered requirements into wireframe prototypes, speeding feature understanding by over 50%.",
+      "Developed responsive and reusable UI across cross-platform applications, facilitating over 30% code reuse.",
+    ],
+    logoUrl: "/lovable-uploads/6cc716f1-f74f-4a06-b0c5-ef8a5472cec4.png",
   },
 ];
 
