@@ -2,7 +2,7 @@
 import React from "react";
 import { Linkedin, Github, Mail } from "lucide-react";
 
-const profilePhoto = "/public/lovable-uploads/519eccf9-6060-4d25-990e-9edbc620d088.png";
+const profilePhoto = "/lovable-uploads/519eccf9-6060-4d25-990e-9edbc620d088.png";
 const linkedIn = "https://www.linkedin.com/in/sanyammehta/";
 const github = "https://github.com/sanyammehta";
 const mail = "mailto:sanyam.mehta93@gmail.com";
@@ -10,7 +10,15 @@ const mail = "mailto:sanyam.mehta93@gmail.com";
 const AboutHeroSection = () => (
   <section id="about" className="section-padding bg-[#101010] flex items-center justify-center min-h-[600px] border-b border-muted">
     <div className="max-w-6xl w-full mx-auto px-6 flex flex-col md:flex-row gap-12 items-center animate-fade-in">
-      {/* Left: Photo, Name, Tag, Socials */}
+      {/* Left: About Text */}
+      <div className="w-full md:w-3/5 flex flex-col justify-center px-2">
+        <div className="text-[#ececec] text-2xl font-semibold mb-6">About Me</div>
+        <div className="text-lg text-gray-200 leading-relaxed text-balance">
+          Technically grounded Product Manager and Software Engineer with a focus on building user-first, scalable solutions. With experience at organizations like Epic Games and the United Nations, I've led end-to-end product development — from defining roadmaps and running user research to architecting backend systems and optimizing interfaces. My background in engineering enables me to work seamlessly with developers, while my product mindset ensures we're always solving the right problems. Currently pursuing a Master's in Information Management at the University of Washington, I bring clarity, curiosity, and execution to every stage of the product lifecycle.
+        </div>
+      </div>
+
+      {/* Right: Photo, Name, Tag, Socials */}
       <div className="flex flex-col items-center md:items-start w-full md:w-2/5">
         {/* Profile Picture */}
         <div className="rounded-full overflow-hidden border-4 border-white/10 shadow-lg mb-6 w-48 h-48 bg-muted">
@@ -44,13 +52,6 @@ const AboutHeroSection = () => (
               <Mail size={27} color="#202124" className="group-hover:text-white" />
             </div>
           </a>
-        </div>
-      </div>
-      {/* Right: About Text */}
-      <div className="w-full md:w-3/5 flex flex-col justify-center px-2">
-        <div className="text-[#ececec] text-2xl font-semibold mb-6">About Me</div>
-        <div className="text-lg text-gray-200 leading-relaxed text-balance">
-          Technically grounded Product Manager and Software Engineer with a focus on building user-first, scalable solutions. With experience at organizations like Epic Games and the United Nations, I’ve led end-to-end product development — from defining roadmaps and running user research to architecting backend systems and optimizing interfaces. My background in engineering enables me to work seamlessly with developers, while my product mindset ensures we're always solving the right problems. Currently pursuing a Master's in Information Management at the University of Washington, I bring clarity, curiosity, and execution to every stage of the product lifecycle.
         </div>
       </div>
     </div>
