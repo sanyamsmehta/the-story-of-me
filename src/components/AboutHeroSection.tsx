@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Linkedin, Github, Mail, Phone } from "lucide-react";
 
@@ -60,8 +59,8 @@ const AboutHeroSection = () => (
             aria-label="Email"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#EA4335] p-1.5 rounded-full shadow-md border-2 border-[#EA4335] group-hover:bg-[#EA4335]/90 transition flex items-center justify-center">
-              <Mail size={22} color="white" />
+            <div className="bg-gray-400/10 p-1.5 rounded-full shadow-md border-2 border-gray-400 group-hover:bg-black group-hover:text-white transition flex items-center justify-center">
+              <Mail size={22} color="#202124" className="group-hover:text-white" />
             </div>
           </a>
           {/* Phone icon, scrolls to contact section */}
@@ -70,8 +69,8 @@ const AboutHeroSection = () => (
             aria-label="Phone"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#0FA0CE] p-1.5 rounded-full shadow-md border-2 border-[#0FA0CE] group-hover:bg-[#0FA0CE]/90 transition flex items-center justify-center">
-              <Phone size={22} color="white" />
+            <div className="bg-[#0FA0CE]/10 p-1.5 rounded-full shadow-md border-2 border-[#0FA0CE] group-hover:bg-[#0FA0CE] group-hover:text-white transition flex items-center justify-center">
+              <Phone size={22} color="#0FA0CE" className="group-hover:text-white" />
             </div>
           </a>
         </div>
