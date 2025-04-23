@@ -128,7 +128,7 @@ const ExperienceSectionCard: React.FC<ExperienceSectionCardProps> = ({
           <img
             src={exp.logoUrl}
             alt={`${exp.company} Logo`}
-            className="w-16 h-16 md:w-20 md:h-20 object-contain rounded border border-gray-200 bg-white shadow min-w-[4rem] min-h-[4rem] max-w-[5rem] max-h-[5rem] mr-4" // Increased margin-right to 4 (mr-4)
+            className="w-16 h-16 md:w-20 md:h-20 object-contain rounded border border-gray-200 bg-white shadow min-w-[4rem] min-h-[4rem] max-w-[5rem] max-h-[5rem] mr-6" // Increased margin-right to 6 (mr-6)
           />
         )}
         <div className="flex flex-col">
@@ -179,3 +179,4 @@ const ExperienceSection = () => {
 };
 
 export default ExperienceSection;
+
