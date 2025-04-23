@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface Experience {
@@ -37,6 +38,23 @@ const experiences: Experience[] = [
       "A/B tested 14 displays to finalize a unified user interface for all 3 offerings, projecting a drop-off rate by 75%.",
     ],
     logoUrl: "/lovable-uploads/e70f4ea8-a42d-4fe9-bd27-d851d960b299.png",
+  },
+  {
+    title: "Senior Product Engineer",
+    company: "Larsen and Toubro Infotech",
+    location: "Mumbai, India",
+    period: "June 2021 – July 2023",
+    description: [
+      "(Java, Spring Boot, REST API, Docker, Kubernetes, DBT, Snowflake, Spark, Slate, JMeter, JUnit, Grafana, ETL, NoSQL)",
+      "Spearheaded SDLCs for 5 features leading to a 14% increase in client base with a 100% on-time delivery rate.",
+      "Conducted performance benchmarking tests saving environment procurement costs by 15% per deployment.",
+      "Led 5 client releases in one month collaborating with cross-functional teams (QA, DevOps, Developers, and PMs).",
+      "Enhanced security of 18 Microservices by over 20% by implementing the Kubernetes Pod Security Policies.",
+      "Built ETL pipelines and workflows certifying Product Snowflake Compliant enabling 100K+ marketplace users.",
+      "Upgraded Spark Engine to 3.x to allow optimized partitioning and AQE improving query performance by 40%.",
+      "Received 2 Promotions, mentored 4 recruits, and delivered Knowledge Transfer sessions and 2 Product Demos.",
+    ],
+    logoUrl: "/lovable-uploads/182f291f-631e-4a8a-a223-9b7a4e53a084.png",
   },
   {
     title: "IT Intern",
