@@ -14,7 +14,7 @@ const educations: Education[] = [
     school: "Bombay Scottish School",
     location: "Mumbai, India",
     period: "2004 - 2016",
-    degree: "High School",
+    degree: "",
     logoUrl: "/lovable-uploads/76ef3769-536c-4027-92ab-5fe630269d8a.png",
   },
 ];

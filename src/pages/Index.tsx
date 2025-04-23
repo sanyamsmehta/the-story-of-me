@@ -52,8 +52,8 @@ const Index = () => {
       </section>
       <LightThemeWrapper>
         <ExperienceSection />
-        <SkillsSection />
         <AcademicSection />
+        <SkillsSection />
         <ProjectsSection />
         <LifeSection />
         <ContactSection />
