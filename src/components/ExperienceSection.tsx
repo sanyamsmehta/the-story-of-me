@@ -68,6 +68,17 @@ const experiences: Experience[] = [
     logoUrl: "/lovable-uploads/f2a6f229-03f2-4133-aaa0-7084fe732f66.png",
   },
   {
+    title: "UI/UX Intern",
+    company: "AGC Networks",
+    location: "Mumbai, India",
+    period: "June 2019 – August 2019",
+    description: [
+      "Translated gathered requirements into wireframe prototypes, speeding feature understanding by over 50%.",
+      "Developed responsive and reusable UI across cross-platform applications, facilitating over 30% code reuse.",
+    ],
+    logoUrl: "/lovable-uploads/6cc716f1-f74f-4a06-b0c5-ef8a5472cec4.png",
+  },
+  {
     title: "Alumni Mentor",
     company: "University of Mumbai",
     location: "Mumbai, India",
