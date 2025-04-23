@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface Education {
@@ -21,18 +20,18 @@ const educations: Education[] = [
 
 const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
   <div className="flex flex-col items-center relative">
-    {/* Logo Circle */}
-    <div className="w-24 h-24 rounded-full bg-white border-4 border-blue-500 p-2 flex items-center justify-center z-10">
+    {/* Logo Circle - adjusted padding and image sizing */}
+    <div className="w-24 h-24 rounded-full bg-white border-4 border-blue-500 p-3 flex items-center justify-center z-10">
       {education.logoUrl && (
         <img
           src={education.logoUrl}
           alt={`${education.school} logo`}
-          className="w-full h-full object-contain"
+          className="w-16 h-16 object-contain"
         />
       )}
     </div>
     
-    {/* Content Box */}
+    {/* Content Box - keep existing styling */}
     <div className="mt-4 bg-white rounded-lg shadow-lg p-4 w-64">
       <h3 className="font-bold text-lg text-gray-900">{education.school}</h3>
       <p className="text-blue-600 font-semibold">{education.degree}</p>
