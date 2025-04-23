@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -53,11 +54,11 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				portfolio: {
-					purple: '#9b87f5',
-					darkPurple: '#7E69AB',
-					lightPurple: '#E5DEFF',
-					dark: '#1A1F2C',
-					light: '#F1F0FB',
+					purple: '#314466', // replaced with a deep blue as main accent
+					darkPurple: '#212B36', // replaced with near-black
+					lightPurple: '#22314A', // replaced with dark muted blue
+					dark: '#161B22', // very dark blueish
+					light: '#22293A', // card background for dark
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -68,7 +69,9 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				highlight: "#2D3A48",
+				action: "#41A4FF",
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
