@@ -13,8 +13,8 @@ const AboutHeroSection = () => (
       {/* Left: About Text */}
       <div className="w-full md:w-3/5 flex flex-col justify-center px-2">
         <div className="text-[#ececec] text-2xl font-semibold mb-6">About Me</div>
-        <div className="text-lg text-gray-200 leading-relaxed text-balance">
-          Technically grounded Product Manager and Software Engineer with a focus on building user-first, scalable solutions. With experience at organizations like Epic Games and the United Nations, I've led end-to-end product development — from defining roadmaps and running user research to architecting backend systems and optimizing interfaces. My background in engineering enables me to work seamlessly with developers, while my product mindset ensures we're always solving the right problems. Currently pursuing a Master's in Information Management at the University of Washington, I bring clarity, curiosity, and execution to every stage of the product lifecycle.
+        <div className="text-base text-gray-300 leading-relaxed text-balance">
+          Technically grounded Product Manager and Software Engineer with a focus on building user-first, scalable solutions. With experience at organizations like Epic Games and the United Nations, I've led end-to-end product development — from defining roadmaps and running market research to solutioning backend architectures, APIs, databases, and deploying and scaling infrastructure. My background in engineering enables me to work seamlessly with developers, while my product mindset ensures we're always solving the right problems. I currently pursue a Master's in Information Management at the University of Washington, I bring clarity, curiosity, and execution to every stage of the product lifecycle.
         </div>
       </div>
 
