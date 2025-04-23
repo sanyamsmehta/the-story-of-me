@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface Experience {
@@ -40,6 +39,19 @@ const experiences: Experience[] = [
     logoUrl: "/lovable-uploads/e70f4ea8-a42d-4fe9-bd27-d851d960b299.png",
   },
   {
+    title: "IT Intern",
+    company: "Black Box Ltd.",
+    location: "Dallas, Texas",
+    period: "June 2024 – September 2024",
+    description: [
+      "Owned concept-to-launch of a Compliance System Software to track legal, quality, and safety metrics of 4000+ hardware products, enabling entry into 30+ global markets and saving $250K annually.",
+      "Refactored 4 modules to follow Clean Architecture, pacing data retrieval by 100% and user engagement by 30%.",
+      "Automated document verification to reduce manual efforts by 90% and approval cycles from days to minutes.",
+      "Created a centralized view to access 36 K+ documentation, tests, and reports, reducing lookup time by 45%.",
+    ],
+    logoUrl: "/lovable-uploads/c00ee5fe-70fc-4af8-9f87-73d639c2253e.png",
+  },
+  {
     title: "Senior Product Engineer",
     company: "Larsen and Toubro Infotech",
     location: "Mumbai, India",
@@ -53,20 +65,7 @@ const experiences: Experience[] = [
       "Upgraded Spark Engine to 3.x to allow optimized partitioning and AQE improving query performance by 40%.",
       "Received 2 Promotions, mentored 4 recruits, and delivered Knowledge Transfer sessions and 2 Product Demos.",
     ],
-    logoUrl: "/lovable-uploads/f2a6f229-03f2-4133-aaa0-7084fe732f66.png", // Only the LTIMindtree logo
-  },
-  {
-    title: "IT Intern",
-    company: "Black Box Ltd.",
-    location: "Dallas, Texas",
-    period: "June 2024 – September 2024",
-    description: [
-      "Owned concept-to-launch of a Compliance System Software to track legal, quality, and safety metrics of 4000+ hardware products, enabling entry into 30+ global markets and saving $250K annually.",
-      "Refactored 4 modules to follow Clean Architecture, pacing data retrieval by 100% and user engagement by 30%.",
-      "Automated document verification to reduce manual efforts by 90% and approval cycles from days to minutes.",
-      "Created a centralized view to access 36 K+ documentation, tests, and reports, reducing lookup time by 45%.",
-    ],
-    logoUrl: "/lovable-uploads/c00ee5fe-70fc-4af8-9f87-73d639c2253e.png",
+    logoUrl: "/lovable-uploads/f2a6f229-03f2-4133-aaa0-7084fe732f66.png",
   },
   {
     title: "Chief Technical Advisor",
@@ -117,12 +116,24 @@ const HighlightedTitles = [
   "Senior Product Engineer",
 ];
 
+const Highlighter: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <span
+    className="inline-block px-2 rounded-md"
+    style={{
+      background: "#FEF7CD",
+      boxShadow: "0 1px 3px 0 #fffbe9",
+      color: "#835600",
+      fontWeight: 700,
+    }}
+  >
+    {children}
+  </span>
+);
+
 const ExperienceSectionCard: React.FC<ExperienceSectionCardProps> = ({
   exp,
   isHighlight,
 }) => {
-  const isLTI = exp.title === "Senior Product Engineer";
-
   return (
     <div className="relative flex flex-col bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 h-full min-h-[220px] md:min-h-[230px]">
 
@@ -132,7 +143,7 @@ const ExperienceSectionCard: React.FC<ExperienceSectionCardProps> = ({
       </span>
 
       {/* Top row: logo + company name + location + (highlighted title if needed) */}
-      <div className="flex items-center gap-3 mb-2 w-full relative z-20">
+      <div className="flex items-center gap-2 md:gap-3 mb-2 w-full relative z-20">
         {exp.logoUrl && (
           <img
             src={exp.logoUrl}
@@ -140,35 +151,16 @@ const ExperienceSectionCard: React.FC<ExperienceSectionCardProps> = ({
             className="w-8 h-8 md:w-12 md:h-12 object-contain rounded border border-gray-200 bg-white shadow min-w-[2.5rem] min-h-[2.5rem] max-w-[3rem] max-h-[3rem]"
           />
         )}
-        <div>
+        <div className="flex flex-col sm:flex-row sm:items-center">
           <span className="text-sm md:text-base font-bold text-gray-900">{exp.company}</span>
           <span className="block md:inline md:ml-2 text-xs text-gray-500">{exp.location}</span>
           {isHighlight && (
-            <span className="block md:block mt-1 md:mt-0 md:ml-4 text-sm font-semibold text-blue-700">
-              {exp.title}
+            <span className="block md:block mt-1 md:mt-0 md:ml-4">
+              <Highlighter>{exp.title}</Highlighter>
             </span>
           )}
         </div>
       </div>
-
-      {/* Images directly underneath date ONLY for Senior Product Engineer */}
-      {isLTI && (
-        <div className="flex flex-col items-start gap-2 mt-2 mb-2">
-          {/* Display the LTIMindtree logo (again, under date and above bullets) */}
-          <img
-            src="/lovable-uploads/f2a6f229-03f2-4133-aaa0-7084fe732f66.png"
-            alt="LTIMindtree"
-            className="w-36 h-16 md:w-52 md:h-20 object-contain rounded-[0.7rem] border border-gray-200 shadow bg-white"
-            style={{
-              background: "#fff",
-              minWidth: "7rem",
-              minHeight: "4rem",
-              maxWidth: "13rem",
-              maxHeight: "6rem"
-            }}
-          />
-        </div>
-      )}
 
       {/* Bullets */}
       <ul className="list-disc ml-5 mt-1 space-y-1.5 text-gray-600 text-xs leading-normal z-10">
