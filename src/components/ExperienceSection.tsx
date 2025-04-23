@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface Experience {
@@ -50,7 +49,7 @@ const experiences: Experience[] = [
       "Automated document verification to reduce manual efforts by 90% and approval cycles from days to minutes.",
       "Created a centralized view to access 36 K+ documentation, tests, and reports, reducing lookup time by 45%.",
     ],
-    logoUrl: "/lovable-uploads/aada0bf7-9c95-4a4a-9545-060b8d7ea537.png",
+    logoUrl: "/lovable-uploads/f181dc71-04bb-4465-aded-fcabedd9f15b.png",
   },
   {
     title: "Chief Technical Advisor",
@@ -90,22 +89,18 @@ const experiences: Experience[] = [
   },
 ];
 
-// Highlighted layout for the top three entries
 const highlightedLayout = (exp: Experience, extraClass?: string) => (
   <div className={`flex flex-col md:flex-row md:items-start md:justify-between gap-4 ${extraClass ?? ""}`}>
-    {/* Left: Text content */}
     <div className="flex-1 flex flex-col">
       <div className="flex flex-col gap-0.5">
         <span className="text-sm font-bold text-gray-900">{exp.company}</span>
         <span className="text-xs text-gray-500">{exp.location}</span>
-        {/* Highlighted designation */}
         <div
           className="mt-1 text-base font-extrabold text-black bg-yellow-100 px-2 py-1 rounded inline-block w-fit"
           style={{ letterSpacing: ".02em" }}
         >
           {exp.title}
         </div>
-        {/* Bullet points IMMEDIATELY below the designation */}
         <ul className="list-disc ml-5 mt-2 space-y-1.5 text-gray-600 text-xs leading-normal">
           {exp.description.map((point, i) => (
             <li key={i}>{point}</li>
@@ -113,7 +108,6 @@ const highlightedLayout = (exp: Experience, extraClass?: string) => (
         </ul>
       </div>
     </div>
-    {/* Right: Date at top right, logo directly below date */}
     <div className="flex flex-col items-end min-w-[9rem] md:min-w-[9rem]">
       <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap mb-2 self-end">
         {exp.period}
@@ -149,19 +143,15 @@ const ExperienceSection = () => {
           Work Experience
         </h2>
         <div className="relative">
-          {/* Timeline vertical line */}
           <div className="absolute left-6 top-0 h-full w-0.5 bg-gray-200 hidden md:block" />
           <ul className="space-y-12 relative">
             {experiences.map((exp, idx) => (
               <li key={idx} className="md:flex md:items-start group">
-                {/* Timeline dot */}
                 <div className="flex flex-col items-center mr-8 md:mr-0 md:w-12">
                   <div className="hidden md:block w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white mb-2 z-10" />
                   <span className="hidden md:block w-px bg-gray-200 flex-1" />
                 </div>
-                {/* Experience Card */}
                 <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 transition group-hover:shadow-lg">
-                  {/* Highlighted layout for first three experiences, regular layout for others */}
                   {idx <= 2
                     ? highlightedLayout(exp)
                     : (
