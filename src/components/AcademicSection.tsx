@@ -6,6 +6,8 @@ interface Education {
   location: string;
   period: string;
   degree: string;
+  major?: string;
+  minor?: string;
   logoUrl?: string;
 }
 
@@ -21,14 +23,16 @@ const educations: Education[] = [
     school: "American University of Sharjah",
     location: "Sharjah, UAE",
     period: "2016 - 2018",
-    degree: "Bachelor's of Technology in Computer Engineering (Minor: Actuarial Math)",
+    degree: "Bachelor of Technology",
+    major: "Computer Engineering",
+    minor: "Applied and Computational Math",
     logoUrl: "/lovable-uploads/0205e76a-e7a6-49e5-9b89-54ef27d134c9.png",
   },
 ];
 
 const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
   <div className="flex flex-col items-center relative">
-    {/* Logo Circle - precise sizing to prevent overlap */}
+    {/* Logo Circle */}
     <div className="w-24 h-24 rounded-full bg-white border-4 border-blue-500 p-1 flex items-center justify-center z-10">
       {education.logoUrl && (
         <img
@@ -39,12 +43,18 @@ const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
       )}
     </div>
     
-    {/* Content Box - keep existing styling */}
-    <div className="mt-4 bg-white rounded-lg shadow-lg p-4 w-64">
-      <h3 className="font-bold text-base text-gray-900 truncate">{education.school}</h3>
-      <p className="text-blue-600 font-semibold truncate">{education.degree}</p>
-      <p className="text-sm text-gray-500 truncate">{education.location}</p>
-      <p className="text-sm font-medium text-gray-700 mt-1">{education.period}</p>
+    {/* Content Box - updated styling for better text visibility */}
+    <div className="mt-4 bg-white rounded-lg shadow-lg p-4 w-72">
+      <h3 className="text-sm font-bold text-gray-900 truncate">{education.school}</h3>
+      {education.degree && (
+        <p className="text-xs text-blue-600 font-semibold truncate">
+          {education.degree}
+          {education.major && <span className="block">Major: {education.major}</span>}
+          {education.minor && <span className="block">Minor: {education.minor}</span>}
+        </p>
+      )}
+      <p className="text-xs text-gray-500">{education.location}</p>
+      <p className="text-xs font-medium text-gray-700 mt-1">{education.period}</p>
     </div>
   </div>
 );
