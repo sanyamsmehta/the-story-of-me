@@ -9,6 +9,7 @@ interface Education {
   major?: string;
   minor?: string;
   specializations?: string[];
+  concentration?: string;
   logoUrl?: string;
 }
 
@@ -18,6 +19,7 @@ const educations: Education[] = [
     location: "Mumbai, India",
     period: "2004 - 2016",
     degree: "",
+    concentration: "Science",
     logoUrl: "/lovable-uploads/76ef3769-536c-4027-92ab-5fe630269d8a.png",
   },
   {
@@ -60,19 +62,26 @@ const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
       )}
     </div>
     
-    <div className="mt-2 bg-white rounded-lg shadow-lg p-2 w-44 text-center">
+    <div className="mt-2 bg-white rounded-lg shadow-lg p-2 w-44 text-center min-h-[120px] flex flex-col">
       <h3 className="text-[10px] font-bold text-gray-900 truncate">{education.school}</h3>
-      {education.degree && (
-        <p className="text-[10px] text-blue-600 font-semibold mb-1">
-          {education.degree} {education.major}
-          {education.minor && <span className="block text-[8px] text-blue-500">Minor: {education.minor}</span>}
-          {education.specializations && (
-            <span className="block text-[8px] text-blue-500">
-              Specializations: {education.specializations.join(", ")}
-            </span>
-          )}
-        </p>
-      )}
+      <div className="flex-grow">
+        {education.degree && (
+          <p className="text-[10px] text-blue-600 font-semibold mb-1">
+            {education.degree} {education.major}
+            {education.minor && <span className="block text-[8px] text-blue-500">Minor: {education.minor}</span>}
+            {education.specializations && (
+              <span className="block text-[8px] text-blue-500">
+                Specializations: {education.specializations.join(", ")}
+              </span>
+            )}
+          </p>
+        )}
+        {education.concentration && (
+          <p className="text-[10px] text-blue-600 font-semibold mb-1">
+            Concentration: {education.concentration}
+          </p>
+        )}
+      </div>
       <div className="border-t border-gray-100 pt-1 mt-1">
         <p className="text-[9px] text-gray-500">{education.location}</p>
         <p className="text-[9px] font-medium text-gray-700">{education.period}</p>
