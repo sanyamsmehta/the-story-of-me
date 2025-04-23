@@ -21,7 +21,7 @@ const educations: Education[] = [
     school: "American University of Sharjah",
     location: "Sharjah, UAE",
     period: "2016 - 2018",
-    degree: "",
+    degree: "Bachelor's of Technology in Computer Engineering (Minor: Actuarial Math)",
     logoUrl: "/lovable-uploads/0205e76a-e7a6-49e5-9b89-54ef27d134c9.png",
   },
 ];
