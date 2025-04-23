@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface Experience {
@@ -104,6 +103,17 @@ const experiences: Experience[] = [
       "Deployed cloud infrastructure on AWS, focusing on security and cost optimization",
     ],
   },
+  {
+    title: "Alumni Mentor",
+    company: "University of Mumbai",
+    location: "Mumbai, India",
+    period: "June 2021 – Present",
+    description: [
+      "Developed a strategic road map collaborating with UoM Training and Placement cell, industry partners, and students to bridge gaps and increase placement statistics by 30% annually.",
+      "Continue to mentor and train over 200 students annually through resume and profile reviews, mock technical and behavioural interviews, and conducting technical seminars and orientations.",
+    ],
+    logoUrl: "/lovable-uploads/2dabfeda-55db-4a08-91bc-0f6cba2b8d28.png",
+  },
 ];
 
 const Highlighter: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -135,19 +145,20 @@ const ExperienceSectionCard: React.FC<ExperienceSectionCardProps> = ({
         {exp.period}
       </span>
 
-      {/* Top row: logo + company name + location + (highlighted title if needed) */}
+      {/* Top row: logo + company name + location + (designation below company) */}
       <div className="flex items-center gap-2 md:gap-3 mb-2 w-full relative z-20">
         {exp.logoUrl && (
           <img
             src={exp.logoUrl}
             alt={`${exp.company} Logo`}
-            className="w-12 h-12 md:w-16 md:h-16 object-contain rounded border border-gray-200 bg-white shadow min-w-[3rem] min-h-[3rem] max-w-[4rem] max-h-[4rem]"
+            className="w-16 h-16 md:w-20 md:h-20 object-contain rounded border border-gray-200 bg-white shadow min-w-[4rem] min-h-[4rem] max-w-[5rem] max-h-[5rem]"
           />
         )}
         <div className="flex flex-col">
           <span className="text-sm md:text-base font-bold text-gray-900">{exp.company}</span>
           <span className="block md:inline text-xs text-gray-500">{exp.location}</span>
-          <span className="block mt-1 text-xs text-blue-600">
+          {/* Designation, font reduced & color set to same as date */}
+          <span className="block mt-1 text-[0.82rem] md:text-sm font-semibold" style={{ color: "#2563eb" }}>
             <Highlighter>{exp.title}</Highlighter>
           </span>
         </div>
