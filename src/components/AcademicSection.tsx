@@ -57,7 +57,7 @@ const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
         <img
           src={education.logoUrl}
           alt={`${education.school} logo`}
-          className="w-8 h-8 object-contain rounded-full transition-transform duration-300 hover:scale-125"
+          className="w-8 h-8 object-contain rounded-full scale-125 transition-transform duration-300"
         />
       )}
     </div>
