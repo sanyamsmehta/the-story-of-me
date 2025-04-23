@@ -1,8 +1,7 @@
 
 import { useEffect } from "react";
 import Layout from "../components/Layout";
-import HeroSection from "../components/HeroSection";
-import AboutSection from "../components/AboutSection";
+import AboutHeroSection from "../components/AboutHeroSection";
 import AcademicSection from "../components/AcademicSection";
 import ExperienceSection from "../components/ExperienceSection";
 import SkillsSection from "../components/SkillsSection";
@@ -11,19 +10,16 @@ import ContactSection from "../components/ContactSection";
 
 const Index = () => {
   useEffect(() => {
-    // Enable smooth scrolling
+    // Enable smooth scrolling for navbar links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
         const href = this.getAttribute('href');
         if (!href) return;
-        
         const targetElement = document.querySelector(href);
         if (!targetElement) return;
-        
         window.scrollTo({
-          top: targetElement.offsetTop - 80, // Offset for navbar
+          top: targetElement.offsetTop - 80,
           behavior: 'smooth'
         });
       });
@@ -32,8 +28,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <HeroSection />
-      <AboutSection />
+      <AboutHeroSection />
       <AcademicSection />
       <ExperienceSection />
       <SkillsSection />
