@@ -3,38 +3,38 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-portfolio-dark text-white py-8">
+    <footer className="py-8 bg-muted">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-center border-t border-border pt-8">
           <div className="mb-4 md:mb-0">
-            <a href="#" className="text-xl font-bold text-action">
-              Sanyam Mehta
-            </a>
-            <p className="text-muted-foreground mt-2">
-              Product Management | Backend-Engineering | DevOps
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              &copy; {new Date().getFullYear()} Sanyam Mehta. All rights reserved.
             </p>
           </div>
-          <div className="flex space-x-6">
-            <a href="#" className="text-muted-foreground hover:text-action transition-colors text-2xl">
-              <span className="sr-only">LinkedIn</span>
-              <i className="ri-linkedin-fill"></i>
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-action transition-colors text-2xl">
-              <span className="sr-only">GitHub</span>
-              <i className="ri-github-fill"></i>
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-action transition-colors text-2xl">
-              <span className="sr-only">Twitter</span>
-              <i className="ri-twitter-fill"></i>
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-action transition-colors text-2xl">
-              <span className="sr-only">Email</span>
-              <i className="ri-mail-fill"></i>
-            </a>
+          <div>
+            <ul className="flex space-x-6">
+              <li>
+                <a href="#about" className="text-sm text-gray-600 dark:text-gray-400 hover:text-foreground transition-colors">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#academic" className="text-sm text-gray-600 dark:text-gray-400 hover:text-foreground transition-colors">
+                  Academic
+                </a>
+              </li>
+              <li>
+                <a href="#experience" className="text-sm text-gray-600 dark:text-gray-400 hover:text-foreground transition-colors">
+                  Experience
+                </a>
+              </li>
+              <li>
+                <a href="#projects" className="text-sm text-gray-600 dark:text-gray-400 hover:text-foreground transition-colors">
+                  Projects
+                </a>
+              </li>
+            </ul>
           </div>
-        </div>
-        <div className="border-t border-muted mt-8 pt-8 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Sanyam Mehta. All rights reserved.</p>
         </div>
       </div>
     </footer>

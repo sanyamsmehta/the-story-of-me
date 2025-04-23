@@ -3,10 +3,10 @@ import { useEffect } from "react";
 import Layout from "../components/Layout";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
+import AcademicSection from "../components/AcademicSection";
 import ExperienceSection from "../components/ExperienceSection";
+import SkillsSection from "../components/SkillsSection";
 import ProjectsSection from "../components/ProjectsSection";
-import InterestsSection from "../components/InterestsSection";
-import ResumeSection from "../components/ResumeSection";
 import ContactSection from "../components/ContactSection";
 
 const Index = () => {
@@ -34,10 +34,10 @@ const Index = () => {
     <Layout>
       <HeroSection />
       <AboutSection />
+      <AcademicSection />
       <ExperienceSection />
+      <SkillsSection />
       <ProjectsSection />
-      <InterestsSection />
-      <ResumeSection />
       <ContactSection />
     </Layout>
   );

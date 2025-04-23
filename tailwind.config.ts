@@ -20,58 +20,39 @@ export default {
     },
     extend: {
       colors: {
-        border: "#E0F2FE",
-        input: "#E0F2FE",
-        ring: "#134e6f",
-        background: "#FAFBFC",
-        foreground: "#10213E",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#134e6f",
-          foreground: "#FAFBFC"
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))"
         },
         secondary: {
-          DEFAULT: "#E9F5FB", // very light sky blue
-          foreground: "#10213E"
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))"
         },
         destructive: {
-          DEFAULT: '#dc2626',
-          foreground: '#FFFFFF'
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))"
         },
         muted: {
-          DEFAULT: "#F6FAFC",
-          foreground: "#5B6C8A"
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))"
         },
         accent: {
-          DEFAULT: "#E9F5FB",
-          foreground: "#134e6f"
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))"
         },
         popover: {
-          DEFAULT: "#FFFFFF",
-          foreground: "#134e6f"
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))"
         },
         card: {
-          DEFAULT: "#FFFFFF",
-          foreground: "#134e6f"
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))"
         },
-        highlight: "#459EC9", // Soothing blue
-        action: "#134e6f",
-        blue: {
-          50: "#E3EEFC",
-          100: "#C2E0FB",
-          200: "#9ED3F7",
-          300: "#70B9E4",
-          400: "#459EC9",
-          500: "#2071A7",
-          600: "#134e6f",
-          700: "#17395C",
-          900: "#10213E"
-        },
-        // Add portfolio-related colors
-        'portfolio-purple': "#134e6f", // Using the same color as action (blue)
-        'portfolio-darkPurple': "#17395C", // A darker blue
-        'portfolio-lightPurple': "#E3EEFC", // Light blue
-        'portfolio-dark': "#10213E", // Very dark blue
-        'portfolio-light': "#F6FAFC" // Very light blue
       },
       borderRadius: {
         lg: 'var(--radius)',

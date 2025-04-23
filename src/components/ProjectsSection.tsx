@@ -1,50 +1,104 @@
 
 import React from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Github } from "lucide-react";
-import ProjectCarousel from "./ProjectCarousel";
+import { Github, ExternalLink } from "lucide-react";
 
-const GITHUB_USERNAME = "sanyamsmehta";
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  github?: string;
+  liveDemo?: string;
+  image?: string;
+}
 
-const fetchGithubProjects = async () => {
-  // Only public, non-fork repos, sorted by updated
-  const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`);
-  const repos = await res.json();
-  // Remove forks and sort pinned to the top if desired
-  return repos.filter((repo: any) => !repo.fork);
-};
+const projects: Project[] = [
+  {
+    title: "Pixel Streaming Cloud Infrastructure",
+    description: "Led the development of cloud services for Unreal Engine's Pixel Streaming, enabling browser-based 3D experiences without downloads.",
+    technologies: ["AWS", "Docker", "WebRTC", "Node.js", "Redis"],
+    github: "https://github.com/EpicGames/PixelStreamingInfrastructure"
+  },
+  {
+    title: "Humanitarian Data Collection System",
+    description: "Built resilient data collection systems for humanitarian operations in conflict zones, supporting 3M+ beneficiaries.",
+    technologies: ["React", "Node.js", "MongoDB", "Progressive Web Apps"],
+    liveDemo: "https://datacollect.unfpa.org"
+  },
+  {
+    title: "Real-time Monitoring Dashboard",
+    description: "Created analytical dashboards to monitor humanitarian assistance for stakeholders across 15+ organizations.",
+    technologies: ["React", "D3.js", "Express", "PostgreSQL", "Socket.io"],
+    github: "https://github.com/sanyamsmehta/monitoring-dashboard"
+  },
+  {
+    title: "School ERP System",
+    description: "Developed a comprehensive ERP system for schools that manages attendance, grades, and administrative tasks.",
+    technologies: ["PHP", "MySQL", "jQuery", "Bootstrap"],
+    github: "https://github.com/sanyamsmehta/school-erp"
+  }
+];
 
 const ProjectsSection = () => {
-  const { data: projects, isLoading, error } = useQuery({
-    queryKey: ["github-projects"],
-    queryFn: fetchGithubProjects,
-  });
-
   return (
-    <section id="projects" className="section-padding bg-white">
+    <section id="projects" className="section-padding bg-muted">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="section-title text-center">Projects</h2>
         <p className="section-subtitle text-center">
-          A collection of real work – see more on{" "}
-          <a
-            href="https://github.com/sanyamsmehta"
-            className="text-portfolio-purple underline hover:text-portfolio-darkPurple"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
+          Highlights from my professional and personal projects
         </p>
-        <div className="mt-10">
-          {isLoading ? (
-            <div className="text-center py-20 text-xl text-gray-500">Loading projects...</div>
-          ) : error ? (
-            <div className="text-center py-20 text-red-500">Failed to fetch projects from GitHub.</div>
-          ) : projects?.length ? (
-            <ProjectCarousel projects={projects.slice(0, 15)} />
-          ) : (
-            <div className="text-center py-20 text-gray-500">No projects found.</div>
-          )}
+
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <div 
+              key={index} 
+              className="bg-card rounded-lg overflow-hidden shadow-lg card-hover border border-border"
+            >
+              {project.image && (
+                <div className="h-48 bg-muted">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-foreground">{project.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.map((tech, i) => (
+                    <span key={i} className="px-3 py-1 bg-muted text-foreground text-xs font-medium rounded-full">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-4">
+                  {project.github && (
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-foreground hover:text-gray-600 transition-colors"
+                    >
+                      <Github size={18} />
+                      <span>Code</span>
+                    </a>
+                  )}
+                  {project.liveDemo && (
+                    <a 
+                      href={project.liveDemo} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-foreground hover:text-gray-600 transition-colors"
+                    >
+                      <ExternalLink size={18} />
+                      <span>Live Demo</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -52,4 +106,3 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
-
