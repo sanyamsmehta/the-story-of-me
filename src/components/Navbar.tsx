@@ -68,7 +68,7 @@ const Navbar = () => {
       <nav className="max-w-6xl mx-auto flex justify-between items-center">
         {/* Left part: show name after About section */}
         <div
-          className={`transition-opacity duration-500 font-extrabold text-lg md:text-2xl text-white ${
+          className={`transition-opacity duration-500 font-extrabold text-base md:text-xl text-white ${
             showName ? "opacity-100" : "opacity-0"
           }`}
           style={{
