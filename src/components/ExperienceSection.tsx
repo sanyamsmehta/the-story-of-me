@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface Experience {
@@ -15,14 +14,14 @@ const experiences: Experience[] = [
     title: "Technical Consultant",
     company: "United Nations – OCHA",
     location: "Geneva, Switzerland (Remote)",
-    period: "Sep 2024 – Present",
+    period: "September 2024 – Present",
     description: [
       "Led a team of 3 to POC a unified API gateway consolidating 12+ platforms, cutting integration complexity by 70%.",
       "Road-mapped a phased microservice and content repository transition, lowering maintenance overhead by 50%.",
       "Audited 50+ APIs to recommend schema standardization, enhancing interoperability, scalability, and reusability.",
-      "Prototyped a working country-specific dashboard, improving stakeholder visibility into crisis aggregation by 80%."
+      "Prototyped a working country-specific dashboard, improving stakeholder visibility into crisis aggregation by 80%.",
     ],
-    logoUrl: "/lovable-uploads/f181dc71-04bb-4465-aded-fcabedd9f15b.png"
+    logoUrl: "/lovable-uploads/f181dc71-04bb-4465-aded-fcabedd9f15b.png",
   },
   {
     title: "Product Manager",
@@ -33,8 +32,8 @@ const experiences: Experience[] = [
       "Led the development of cloud services...",
       "Grew Pixel Streaming adoption by 150%...",
       "Successfully pitched streaming SDK...",
-      "Managed a team of 5 engineers..."
-    ]
+      "Managed a team of 5 engineers...",
+    ],
   },
   {
     title: "Chief Technical Advisor",
@@ -45,8 +44,8 @@ const experiences: Experience[] = [
       "Led the development of global protocols...",
       "Worked with governments and partners...",
       "Created internal APIs for interoperability...",
-      "Advised senior management..."
-    ]
+      "Advised senior management...",
+    ],
   },
   {
     title: "Technical Lead",
@@ -57,8 +56,8 @@ const experiences: Experience[] = [
       "Architected and implemented data systems for humanitarian operations in Syria and Yemen, supporting 3M+ beneficiaries",
       "Developed real-time monitoring solutions using Node.js and MongoDB that improved service delivery response times by 40%",
       "Created resilient data collection solutions for low-connectivity environments, enabling operations in remote areas",
-      "Trained 30+ humanitarian workers on digital data collection methodologies"
-    ]
+      "Trained 30+ humanitarian workers on digital data collection methodologies",
+    ],
   },
   {
     title: "Software Engineer",
@@ -69,9 +68,9 @@ const experiences: Experience[] = [
       "Built and maintained full-stack applications for monitoring $500M+ in humanitarian assistance programs",
       "Implemented projects using Node.js, MongoDB, and React, focusing on offline-first capabilities",
       "Created ETL processes to integrate data from 10+ partner organizations' systems",
-      "Deployed cloud infrastructure on AWS, focusing on security and cost optimization"
-    ]
-  }
+      "Deployed cloud infrastructure on AWS, focusing on security and cost optimization",
+    ],
+  },
 ];
 
 const ExperienceSection = () => {
@@ -97,21 +96,20 @@ const ExperienceSection = () => {
                   <span className="hidden md:block w-px bg-gray-200 flex-1" />
                 </div>
                 {/* Experience Card */}
-                <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-6 md:p-8 transition group-hover:shadow-lg flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div className="flex-1">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-2">
+                <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 transition group-hover:shadow-lg flex flex-col md:flex-row md:items-stretch md:justify-between gap-4">
+                  <div className="flex-1 flex flex-col justify-between">
+                    {/* Top Row: Company/Location left, Date right */}
+                    <div className="flex justify-between items-start gap-2">
                       <div>
-                        <h3 className="text-xl md:text-2xl font-bold text-gray-900">{exp.title}</h3>
-                        <div className="text-gray-600 text-base md:text-lg font-medium">
-                          {exp.company}
-                          {exp.location && <span className="text-gray-400 font-normal ml-2">· {exp.location}</span>}
-                        </div>
+                        <span className="text-sm md:text-base font-bold text-gray-900 block">{exp.company}</span>
+                        <span className="text-xs md:text-sm text-gray-500 block">{exp.location}</span>
+                        <div className="mt-2 text-xs md:text-sm font-medium text-blue-900/80">{exp.title}</div>
                       </div>
-                      <span className="text-xs md:text-sm bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold">
+                      <span className="text-xs md:text-sm bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold ml-4 whitespace-nowrap mt-1 self-start min-w-fit">
                         {exp.period}
                       </span>
                     </div>
-                    <ul className="list-disc ml-5 mt-2 space-y-2 text-gray-700 text-base leading-relaxed">
+                    <ul className="list-disc ml-5 mt-2 space-y-2 text-gray-600 text-xs md:text-sm leading-normal">
                       {exp.description.map((point, i) => (
                         <li key={i}>{point}</li>
                       ))}
@@ -119,12 +117,12 @@ const ExperienceSection = () => {
                   </div>
                   {/* Show company logo only for first experience */}
                   {idx === 0 && exp.logoUrl && (
-                    <div className="mt-4 md:mt-0 md:ml-6 flex-shrink-0 flex items-center justify-center">
+                    <div className="flex items-center justify-center md:items-start md:justify-end flex-shrink-0 pl-2 md:pl-6">
                       <img
                         src={exp.logoUrl}
                         alt="United Nations Logo"
-                        className="w-20 h-20 object-contain rounded-[0.65rem] border border-gray-200 shadow-sm bg-white"
-                        style={{ minWidth: 72, minHeight: 72, background: "#fff" }}
+                        className="w-32 h-32 object-contain rounded-[0.7rem] border border-gray-200 shadow-md bg-white"
+                        style={{ minWidth: 100, minHeight: 100, background: "#fff" }}
                       />
                     </div>
                   )}
