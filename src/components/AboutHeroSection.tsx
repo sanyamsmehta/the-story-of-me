@@ -2,7 +2,7 @@
 import React from "react";
 import { Linkedin, Github, Mail } from "lucide-react";
 
-const profilePhoto = "/lovable-uploads/519eccf9-6060-4d25-990e-9edbc620d088.png";
+const profilePhoto = "/lovable-uploads/c3aee9cb-ac30-4fbb-b34c-58690975633a.png";
 const linkedIn = "https://www.linkedin.com/in/sanyammehta/";
 const github = "https://github.com/sanyammehta";
 const mail = "mailto:sanyam.mehta93@gmail.com";
@@ -26,7 +26,6 @@ const AboutHeroSection = () => (
             src={profilePhoto}
             alt="Sanyam Mehta"
             className="object-cover w-full h-full"
-            style={{ background: "#222" }}
           />
         </div>
         {/* Name and Title */}

@@ -5,19 +5,19 @@ const educations = [
   {
     degree: "Master of Science in Information Management",
     university: "University of Washington, Seattle",
-    logo: "/lovable-uploads/7398147a-1758-4d9a-87f7-bc11d011b63e.png", // UW logo
+    logo: "/lovable-uploads/36d20501-5346-4ee4-baa8-980fcfeda272.png", // UW logo
     period: "I study Master's in Information Management at the University of Washington from September 2023 to Present",
   },
   {
     degree: "Bachelor of Engineering in Computer Engineering",
     university: "University of Mumbai",
-    logo: "/lovable-uploads/7e855a4c-df09-44c0-8e3c-9f34caeef668.png",
+    logo: "/lovable-uploads/13713359-f3a2-4b04-934f-5358e45a7acc.png", // Mumbai University logo
     period: "August 2018 – May 2021",
   },
   {
     degree: "Bachelor of Engineering in Computer Engineering",
     university: "American University of Sharjah",
-    logo: "/lovable-uploads/519eccf9-6060-4d25-990e-9edbc620d088.png",
+    logo: "/lovable-uploads/60c1a7eb-c31a-4dfb-99eb-44ea201be4ed.png", // AUS logo
     period: "August 2016 – July 2018",
   },
 ];
