@@ -29,11 +29,13 @@ const AcademicSection = () => (
       <div className="flex flex-col gap-8">
         {educations.map((edu, idx) => (
           <div key={idx} className="flex flex-col md:flex-row items-center gap-6 md:gap-10 p-6 rounded-xl bg-[#1f1f1f] glass-morphism shadow-md">
-            <img
-              src={edu.logo}
-              alt={`${edu.university} logo`}
-              className="h-16 w-16 object-contain rounded bg-white/10 border border-white/10 p-2"
-            />
+            <div className="h-16 w-16 flex items-center justify-center bg-white rounded p-1">
+              <img
+                src={edu.logo}
+                alt={`${edu.university} logo`}
+                className="h-full w-full object-contain"
+              />
+            </div>
             <div className="flex-1 text-center md:text-left">
               <div className="text-xl font-semibold text-white mb-1">{edu.degree}</div>
               <div className="text-lg text-gray-300 font-medium">{edu.university}</div>
