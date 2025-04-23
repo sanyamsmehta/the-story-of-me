@@ -147,7 +147,7 @@ const ExperienceSectionCard: React.FC<ExperienceSectionCardProps> = ({
         <div className="flex flex-col">
           <span className="text-sm md:text-base font-bold text-gray-900">{exp.company}</span>
           <span className="block md:inline text-xs text-gray-500">{exp.location}</span>
-          <span className="block mt-1">
+          <span className="block mt-1 text-xs text-blue-600">
             <Highlighter>{exp.title}</Highlighter>
           </span>
         </div>
