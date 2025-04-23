@@ -79,7 +79,6 @@ const ExperienceSection = () => {
     <section
       id="experience"
       className="section-padding bg-white border-b border-gray-200"
-      style={{ backgroundColor: "#fff" }}
     >
       <div className="max-w-5xl mx-auto px-6 md:px-10">
         <h2 className="text-3xl font-extrabold mb-10 text-center text-gray-900">
@@ -97,40 +96,42 @@ const ExperienceSection = () => {
                   <span className="hidden md:block w-px bg-gray-200 flex-1" />
                 </div>
                 {/* Experience Card */}
-                <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 transition group-hover:shadow-lg flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                  <div className="flex-1">
-                    {/* Header with Company at top, role below */}
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <div className="flex flex-col">
-                          <span className="text-sm font-bold text-gray-900">{exp.company}</span>
-                          <span className="text-xs text-gray-500">{exp.location}</span>
-                          <div className="mt-1 text-xs font-bold text-black">{exp.title}</div>
+                <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 transition group-hover:shadow-lg">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                    <div className="flex-1">
+                      {/* Header with Company at top, role below */}
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <div className="flex flex-col">
+                            <span className="text-sm font-bold text-gray-900">{exp.company}</span>
+                            <span className="text-xs text-gray-500">{exp.location}</span>
+                            <div className="mt-1 text-xs font-bold text-black">{exp.title}</div>
+                          </div>
+                        </div>
+                        <div className="flex flex-col items-end">
+                          <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap">
+                            {exp.period}
+                          </span>
+                          {/* Show company logo only for first experience */}
+                          {idx === 0 && exp.logoUrl && (
+                            <div className="mt-2 flex items-center justify-center flex-shrink-0">
+                              <img
+                                src={exp.logoUrl}
+                                alt={`${exp.company} Logo`}
+                                className="w-24 h-24 md:w-36 md:h-36 object-contain rounded-[0.7rem] border border-gray-200 shadow-md bg-white"
+                                style={{ minWidth: "5rem", minHeight: "5rem", background: "#fff" }}
+                              />
+                            </div>
+                          )}
                         </div>
                       </div>
-                      <div className="flex flex-col items-end">
-                        <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap self-start min-w-fit">
-                          {exp.period}
-                        </span>
-                        {/* Show company logo only for first experience */}
-                        {idx === 0 && exp.logoUrl && (
-                          <div className="mt-2 flex items-center justify-center flex-shrink-0">
-                            <img
-                              src={exp.logoUrl}
-                              alt={`${exp.company} Logo`}
-                              className="w-24 h-24 md:w-36 md:h-36 object-contain rounded-[0.7rem] border border-gray-200 shadow-md bg-white"
-                              style={{ minWidth: "5rem", minHeight: "5rem", background: "#fff" }}
-                            />
-                          </div>
-                        )}
-                      </div>
+                      
+                      <ul className="list-disc ml-5 mt-3 space-y-1.5 text-gray-600 text-xs leading-normal">
+                        {exp.description.map((point, i) => (
+                          <li key={i}>{point}</li>
+                        ))}
+                      </ul>
                     </div>
-                    
-                    <ul className="list-disc ml-5 mt-3 space-y-1.5 text-gray-600 text-xs leading-normal">
-                      {exp.description.map((point, i) => (
-                        <li key={i}>{point}</li>
-                      ))}
-                    </ul>
                   </div>
                 </div>
               </li>
