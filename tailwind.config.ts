@@ -23,55 +23,55 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: '#10182B', // deep dark blue for bg
-        foreground: '#F4F7FA', // almost white text
+        background: '#FFFFFF', // white background
+        foreground: '#2A2A2A', // dark text
         primary: {
-          DEFAULT: '#1796d2', // blue highlight
-          foreground: '#F4F7FA'
+          DEFAULT: '#6A98C9', // soothing blue
+          foreground: '#FFFFFF'
         },
         secondary: {
-          DEFAULT: '#25304b',
-          foreground: '#F4F7FA'
+          DEFAULT: '#F0F7FF', // very light blue
+          foreground: '#2A2A2A'
         },
         destructive: {
           DEFAULT: '#dc2626',
-          foreground: '#F4F7FA'
+          foreground: '#FFFFFF'
         },
         muted: {
-          DEFAULT: '#1B2235',
-          foreground: '#B4C0D0'
+          DEFAULT: '#F5F8FC',
+          foreground: '#6B7280'
         },
         accent: {
-          DEFAULT: '#233E57',
-          foreground: '#F4F7FA'
+          DEFAULT: '#E5EDF8',
+          foreground: '#2A2A2A'
         },
         popover: {
-          DEFAULT: '#182238',
-          foreground: '#F4F7FA'
+          DEFAULT: '#FFFFFF',
+          foreground: '#2A2A2A'
         },
         card: {
-          DEFAULT: '#182238',
-          foreground: '#F4F7FA'
+          DEFAULT: '#FFFFFF',
+          foreground: '#2A2A2A'
         },
         portfolio: {
-          purple: '#1796d2', // replaced purple with blue highlight
-          darkPurple: '#10182B',
-          lightPurple: '#233E57',
-          dark: '#10182B',
-          light: '#182238',
+          purple: '#6A98C9', // replaced with soothing blue
+          darkPurple: '#4A6D9A',
+          lightPurple: '#B5CDE6',
+          dark: '#2A2A2A',
+          light: '#F0F7FF',
         },
         sidebar: {
-          DEFAULT: '#161B22',
-          foreground: '#F4F7FA',
-          primary: '#1796d2',
-          'primary-foreground': '#F4F7FA',
-          accent: '#1796d2',
-          'accent-foreground': '#F4F7FA',
-          border: '#1B2235',
-          ring: '#1796d2'
+          DEFAULT: '#FFFFFF',
+          foreground: '#2A2A2A',
+          primary: '#6A98C9',
+          'primary-foreground': '#FFFFFF',
+          accent: '#6A98C9',
+          'accent-foreground': '#FFFFFF',
+          border: '#E5EDF8',
+          ring: '#6A98C9'
         },
-        highlight: "#1796d2",
-        action: "#1796d2",
+        highlight: "#6A98C9",
+        action: "#6A98C9",
       },
       borderRadius: {
         lg: 'var(--radius)',

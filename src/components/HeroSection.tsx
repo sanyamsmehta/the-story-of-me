@@ -27,18 +27,18 @@ const brandLogos = [
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#10182B] to-[#182238] pt-20">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-secondary pt-20">
       <div className="max-w-3xl mx-auto px-6 py-12 md:py-20 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-[#F4F7FA]">
-          Hi, I'm <span className="text-highlight text-[#1796d2]">Sanyam Mehta</span>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-portfolio-dark">
+          Hi, I'm <span className="text-highlight text-portfolio-purple">Sanyam Mehta</span>
         </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-2xl mx-auto">
+        <p className="text-xl md:text-2xl text-gray-600 mb-6 max-w-2xl mx-auto">
           Product Management | Software Engineering
         </p>
         <div className="flex justify-center gap-6 mb-8">
           <a
             href="https://www.linkedin.com/in/sanyammehta/"
-            className="text-[#1796d2] hover:text-white transition-colors"
+            className="text-portfolio-purple hover:text-portfolio-darkPurple transition-colors"
             aria-label="LinkedIn"
             target="_blank" rel="noopener noreferrer"
           >
@@ -46,7 +46,7 @@ const HeroSection = () => {
           </a>
           <a
             href="https://github.com/sanyammehta"
-            className="text-[#1796d2] hover:text-white transition-colors"
+            className="text-portfolio-purple hover:text-portfolio-darkPurple transition-colors"
             aria-label="GitHub"
             target="_blank" rel="noopener noreferrer"
           >
@@ -54,7 +54,7 @@ const HeroSection = () => {
           </a>
           <a
             href="mailto:sanyam.mehta93@gmail.com"
-            className="text-[#1796d2] hover:text-white transition-colors"
+            className="text-portfolio-purple hover:text-portfolio-darkPurple transition-colors"
             aria-label="Email"
             target="_blank" rel="noopener noreferrer"
           >
@@ -65,7 +65,7 @@ const HeroSection = () => {
           {brandLogos.map((logo) => (
             <div
               key={logo.name}
-              className="bg-[#233E57] rounded-xl p-4 flex items-center justify-center shadow-xl min-w-[120px] min-h-[60px] transition-transform hover:scale-105"
+              className="bg-secondary rounded-xl p-4 flex items-center justify-center shadow-sm min-w-[120px] min-h-[60px] transition-transform hover:scale-105 border border-gray-100"
               title={logo.name}
             >
               <img
@@ -79,13 +79,13 @@ const HeroSection = () => {
         <div className="flex flex-col md:flex-row gap-4 justify-center mt-10">
           <a
             href="#projects"
-            className="px-6 py-3 bg-action text-white font-medium rounded-md hover:bg-[#1474a4] transition-colors duration-300"
+            className="px-6 py-3 bg-action text-white font-medium rounded-md hover:bg-portfolio-darkPurple transition-colors duration-300"
           >
             View My Work
           </a>
           <a
             href="#contact"
-            className="px-6 py-3 border border-action text-action font-medium rounded-md hover:bg-action/20 transition-colors duration-300"
+            className="px-6 py-3 border border-action text-action font-medium rounded-md hover:bg-action/10 transition-colors duration-300"
           >
             Get In Touch
           </a>
