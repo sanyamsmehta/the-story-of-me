@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface Experience {
@@ -105,17 +106,6 @@ const experiences: Experience[] = [
   },
 ];
 
-type ExperienceSectionCardProps = {
-  exp: Experience;
-  isHighlight: boolean;
-};
-
-const HighlightedTitles = [
-  "Technical Consultant",
-  "Software Development Manager",
-  "Senior Product Engineer",
-];
-
 const Highlighter: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <span
     className="inline-block px-2 rounded-md"
@@ -130,9 +120,12 @@ const Highlighter: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   </span>
 );
 
+type ExperienceSectionCardProps = {
+  exp: Experience;
+};
+
 const ExperienceSectionCard: React.FC<ExperienceSectionCardProps> = ({
   exp,
-  isHighlight,
 }) => {
   return (
     <div className="relative flex flex-col bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 h-full min-h-[220px] md:min-h-[230px]">
@@ -151,14 +144,12 @@ const ExperienceSectionCard: React.FC<ExperienceSectionCardProps> = ({
             className="w-8 h-8 md:w-12 md:h-12 object-contain rounded border border-gray-200 bg-white shadow min-w-[2.5rem] min-h-[2.5rem] max-w-[3rem] max-h-[3rem]"
           />
         )}
-        <div className="flex flex-col sm:flex-row sm:items-center">
+        <div className="flex flex-col">
           <span className="text-sm md:text-base font-bold text-gray-900">{exp.company}</span>
-          <span className="block md:inline md:ml-2 text-xs text-gray-500">{exp.location}</span>
-          {isHighlight && (
-            <span className="block md:block mt-1 md:mt-0 md:ml-4">
-              <Highlighter>{exp.title}</Highlighter>
-            </span>
-          )}
+          <span className="block md:inline text-xs text-gray-500">{exp.location}</span>
+          <span className="block mt-1">
+            <Highlighter>{exp.title}</Highlighter>
+          </span>
         </div>
       </div>
 
@@ -189,7 +180,6 @@ const ExperienceSection = () => {
               <li key={idx} className="group">
                 <ExperienceSectionCard
                   exp={exp}
-                  isHighlight={HighlightedTitles.includes(exp.title)}
                 />
               </li>
             ))}
