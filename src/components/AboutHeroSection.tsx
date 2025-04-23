@@ -59,18 +59,17 @@ const AboutHeroSection = () => (
             aria-label="Email"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-gray-400/10 p-1.5 rounded-full shadow-md border-2 border-gray-400 group-hover:bg-black group-hover:text-white transition flex items-center justify-center">
-              <Mail size={22} color="#202124" className="group-hover:text-white" />
+            <div className="bg-[#4a4a4a]/20 p-1.5 rounded-full shadow-md border-2 border-[#6a6a6a]/30 group-hover:bg-[#6a6a6a]/40 transition flex items-center justify-center">
+              <Mail size={22} color="#acacac" className="group-hover:text-white" />
             </div>
           </a>
-          {/* Phone icon, scrolls to contact section */}
           <a
             href={phoneNumber}
             aria-label="Phone"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#0FA0CE]/10 p-1.5 rounded-full shadow-md border-2 border-[#0FA0CE] group-hover:bg-[#0FA0CE] group-hover:text-white transition flex items-center justify-center">
-              <Phone size={22} color="#0FA0CE" className="group-hover:text-white" />
+            <div className="bg-[#2c5f73]/20 p-1.5 rounded-full shadow-md border-2 border-[#3c7f99]/30 group-hover:bg-[#3c7f99]/40 transition flex items-center justify-center">
+              <Phone size={22} color="#5ca5c5" className="group-hover:text-white" />
             </div>
           </a>
         </div>
