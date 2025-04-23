@@ -81,7 +81,11 @@ const AboutHeroSection = () => (
           className="text-[0.88rem] md:text-[0.965rem] leading-[1.75] text-[#d8dee9] font-[400]"
           style={{ fontFamily: "'Inter', 'Segoe UI', Arial, sans-serif" }}
         >
-          Technically grounded Product Manager and Software Engineer with a focus on building user-first, scalable solutions. With experience at organizations like Epic Games and the United Nations, I've led end-to-end product development — from defining roadmaps and running market research to solutioning backend architectures, APIs, databases, and deploying and scaling infrastructure. My background in engineering enables me to work seamlessly with developers, while my product mindset ensures we're always solving the right problems. Pursue a Master's in Information Management at the University of Washington, I bring clarity, curiosity, and execution to every stage of the product lifecycle.
+          Software Engineer turned Product Manager focusing on building user-first, scalable solutions. With experience at organizations like Epic Games and the United Nations, I've led end-to-end product developments - from defining roadmaps and running market research to solutioning backend architectures, APIs, databases, and deploying and scaling infrastructure. 
+          <br /><br />
+          My background in engineering enables me to work seamlessly with developers, while my product mindset ensures we're always solving the right problems. 
+          <br /><br />
+          Pursuing a Master's in Information Management at the University of Washington, I bring clarity, curiosity, and execution to every stage of the product lifecycle.
         </div>
       </div>
     </div>
