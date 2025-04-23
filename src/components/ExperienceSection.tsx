@@ -36,7 +36,7 @@ const experiences: Experience[] = [
       "Developed a tool to automate article classification, decreasing tagging effort by 60%, rendering a 95% accuracy.",
       "A/B tested 14 displays to finalize a unified user interface for all 3 offerings, projecting a drop-off rate by 75%.",
     ],
-    logoUrl: "/lovable-uploads/aada0bf7-9c95-4a4a-9545-060b8d7ea537.png",
+    logoUrl: "/lovable-uploads/e70f4ea8-a42d-4fe9-bd27-d851d960b299.png",
   },
   {
     title: "IT Intern",
