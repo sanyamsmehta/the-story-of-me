@@ -60,7 +60,7 @@ const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
       )}
     </div>
     
-    <div className="mt-2 bg-white rounded-lg shadow-lg p-2 w-48">
+    <div className="mt-2 bg-white rounded-lg shadow-lg p-2 w-48 text-center">
       <h3 className="text-[10px] font-bold text-gray-900 truncate">{education.school}</h3>
       {education.degree && (
         <p className="text-[10px] text-blue-600 font-semibold">
@@ -82,12 +82,12 @@ const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
 const AcademicSection = () => (
   <section id="academic" className="section-padding bg-gradient-to-b from-gray-50 to-white border-t border-gray-100">
     <div className="max-w-6xl mx-auto px-4">
-      <h2 className="text-2xl font-bold text-center mb-10 text-gray-900">Academic Journey</h2>
+      <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">Academic Journey</h2>
       
       <div className="relative">
         <div className="absolute top-7 left-0 right-0 h-0.5 bg-blue-500" />
         
-        <div className="flex justify-between gap-6 relative">
+        <div className="flex justify-between gap-4 relative">
           {educations.map((education, idx) => (
             <TimelineNode key={idx} education={education} />
           ))}
