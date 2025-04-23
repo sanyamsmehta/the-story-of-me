@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface Education {
@@ -23,7 +22,7 @@ const educations: Education[] = [
     school: "American University of Sharjah",
     location: "Sharjah, UAE",
     period: "2016 - 2018",
-    degree: "Bachelor of Technology",
+    degree: "B.Tech",
     major: "Computer Engineering",
     minor: "Applied and Computational Math",
     logoUrl: "/lovable-uploads/0205e76a-e7a6-49e5-9b89-54ef27d134c9.png",
@@ -47,10 +46,9 @@ const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
     <div className="mt-4 bg-white rounded-lg shadow-lg p-4 w-72">
       <h3 className="text-sm font-bold text-gray-900 truncate">{education.school}</h3>
       {education.degree && (
-        <p className="text-xs text-blue-600 font-semibold truncate">
-          {education.degree}
-          {education.major && <span className="block">Major: {education.major}</span>}
-          {education.minor && <span className="block">Minor: {education.minor}</span>}
+        <p className="text-xs text-blue-600 font-semibold">
+          {education.degree} - {education.major}
+          {education.minor && <span className="block text-xs text-blue-500">Minor: {education.minor}</span>}
         </p>
       )}
       <p className="text-xs text-gray-500">{education.location}</p>
