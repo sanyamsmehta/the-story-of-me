@@ -19,6 +19,14 @@ const educations: Education[] = [
     logoUrl: "/lovable-uploads/76ef3769-536c-4027-92ab-5fe630269d8a.png",
   },
   {
+    school: "University of Mumbai",
+    location: "Mumbai, India",
+    period: "2018 - 2021",
+    degree: "B.E.",
+    major: "Computer Engineering",
+    logoUrl: "",
+  },
+  {
     school: "American University of Sharjah",
     location: "Sharjah, UAE",
     period: "2016 - 2018",
