@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { FileText } from "lucide-react";
 
-// Nav items in new order: Home, Work, Academics, Skills, Projects, Life, Contact, Resume
+// Nav items in new order: Home, About, Work, Academics, Skills, Projects, Life, Contact, Resume
 interface NavItem {
   title: string;
   href: string;
@@ -11,6 +11,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { title: "Home", href: "#about" },
+  { title: "About", href: "#about" },
   { title: "Work", href: "#experience" },
   { title: "Academics", href: "#academic" },
   { title: "Skills", href: "#skills" },
