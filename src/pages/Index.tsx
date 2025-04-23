@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Layout from "../components/Layout";
 import AboutHeroSection from "../components/AboutHeroSection";
@@ -10,7 +11,10 @@ import ContactSection from "../components/ContactSection";
 const LifeSection = () => (
   <section
     id="life"
-    className="section-padding bg-white text-gray-900 border-b border-gray-300"
+    className="section-padding border-b border-gray-300"
+    style={{
+      backgroundColor: "#FFFFFF",
+    }}
   >
     <div className="max-w-6xl mx-auto px-6 py-6">
       <h2 className="text-2xl md:text-3xl font-extrabold mb-3 text-black">Life</h2>
@@ -20,7 +24,13 @@ const LifeSection = () => (
 );
 
 const LightThemeWrapper = ({ children }: { children: React.ReactNode }) => (
-  <div className="bg-white text-black transition-colors duration-300">
+  <div 
+    className="transition-colors duration-300" 
+    style={{ 
+      backgroundColor: "#FFFFFF",
+      color: "#000000"
+    }}
+  >
     {children}
   </div>
 );
