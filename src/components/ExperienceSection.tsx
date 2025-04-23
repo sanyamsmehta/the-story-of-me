@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface Experience {
@@ -77,7 +76,7 @@ const experiences: Experience[] = [
       "Developed a strategic road map collaborating with UoM Training and Placement cell, industry partners, and students to bridge gaps and increase placement statistics by 30% annually.",
       "Continue to mentor and train over 200 students annually through resume and profile reviews, mock technical and behavioural interviews, and conducting technical seminars and orientations.",
     ],
-    logoUrl: "/lovable-uploads/2dabfeda-55db-4a08-91bc-0f6cba2b8d28.png",
+    logoUrl: "/lovable-uploads/dcc2c917-be58-4200-9f21-bcc735ea6ca6.png",
   },
   {
     title: "UI/UX Intern",
@@ -116,7 +115,6 @@ const ExperienceSectionCard: React.FC<ExperienceSectionCardProps> = ({
 }) => {
   return (
     <div className="relative flex flex-col bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 h-full min-h-[220px] md:min-h-[230px]">
-
       {/* Date absolute top right */}
       <span className="absolute right-4 top-3 text-xs px-3 py-1 rounded bg-blue-100 text-blue-600 font-semibold whitespace-nowrap z-10">
         {exp.period}
@@ -125,16 +123,17 @@ const ExperienceSectionCard: React.FC<ExperienceSectionCardProps> = ({
       {/* Top row: logo + company name + location + (designation below company) */}
       <div className="flex items-center gap-2 md:gap-3 mb-2 w-full relative z-20">
         {exp.logoUrl && (
-          <img
-            src={exp.logoUrl}
-            alt={`${exp.company} Logo`}
-            className="w-16 h-16 md:w-20 md:h-20 object-contain rounded border border-gray-200 bg-white shadow min-w-[4rem] min-h-[4rem] max-w-[5rem] max-h-[5rem] mr-6" // Increased margin-right to 6 (mr-6)
-          />
+          <div className="flex justify-center items-center w-20 h-20">
+            <img
+              src={exp.logoUrl}
+              alt={`${exp.company} Logo`}
+              className="w-16 h-16 md:w-20 md:h-20 object-contain rounded border border-gray-200 bg-white shadow"
+            />
+          </div>
         )}
         <div className="flex flex-col">
           <span className="text-sm md:text-base font-bold text-gray-900">{exp.company}</span>
           <span className="block md:inline text-xs text-gray-500">{exp.location}</span>
-          {/* Designation, font reduced & color set to same as date */}
           <span className="block mt-1 text-[0.82rem] md:text-sm font-semibold" style={{ color: "#2563eb" }}>
             <Highlighter>{exp.title}</Highlighter>
           </span>
@@ -179,4 +178,3 @@ const ExperienceSection = () => {
 };
 
 export default ExperienceSection;
-
