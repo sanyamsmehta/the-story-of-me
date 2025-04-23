@@ -1,36 +1,45 @@
 
 import { useState, useEffect } from "react";
 
+// Nav items in new order: Resume, Work, Academics, Skills, Projects, Life, Contact
 interface NavItem {
   title: string;
   href: string;
 }
 
 const navItems: NavItem[] = [
+  { title: "Resume", href: "#resume" },
   { title: "Work", href: "#experience" },
   { title: "Academics", href: "#academic" },
   { title: "Skills", href: "#skills" },
   { title: "Projects", href: "#projects" },
+  { title: "Life", href: "#life" },
   { title: "Contact", href: "#contact" },
-  { title: "Resume", href: "#resume" },
 ];
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("");
   const [scrolled, setScrolled] = useState(false);
+  const [showName, setShowName] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
+      // Trigger name after About section is out of view (~about section height)
+      const aboutSection = document.getElementById("about");
+      if (aboutSection) {
+        const bottom = aboutSection.offsetTop + aboutSection.offsetHeight;
+        setShowName(window.scrollY + 120 >= bottom);
+      }
+
       const sections = document.querySelectorAll("section[id]");
-      const scrollPosition = window.scrollY + 100; // Offset for navbar
+      const scrollPosition = window.scrollY + 100;
 
       sections.forEach((section) => {
         const sectionTop = (section as HTMLElement).offsetTop;
         const sectionHeight = (section as HTMLElement).offsetHeight;
         const sectionId = section.getAttribute("id") || "";
-
         if (
           scrollPosition >= sectionTop &&
           scrollPosition < sectionTop + sectionHeight
@@ -52,7 +61,19 @@ const Navbar = () => {
           : "bg-transparent py-7"
       }`}
     >
-      <nav className="max-w-6xl mx-auto flex justify-end items-center">
+      <nav className="max-w-6xl mx-auto flex justify-between items-center">
+        {/* Left part: show name after About section */}
+        <div
+          className={`transition-opacity duration-500 font-extrabold text-lg md:text-2xl text-white ${
+            showName ? "opacity-100" : "opacity-0"
+          }`}
+          style={{
+            minWidth: "160px",
+            pointerEvents: showName ? "auto" : "none",
+          }}
+        >
+          Sanyam Mehta
+        </div>
         <ul className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
             <li key={item.title}>

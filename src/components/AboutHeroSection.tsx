@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Linkedin, Github, Mail, Phone } from "lucide-react";
 
@@ -7,6 +8,7 @@ const github = "https://github.com/sanyamsmehta";
 const mail = "mailto:sanyam.mehta93@gmail.com";
 const phoneNumber = "#contact";
 
+const iconSize = Math.round(26 * 0.77); // ~20px for 77% of 26
 const iconContainer =
   "bg-[#191919] p-2 rounded-full shadow-md border-2 border-[#404040] hover:bg-[#282828] transition flex items-center justify-center";
 
@@ -17,7 +19,7 @@ const AboutHeroSection = () => (
   >
     <div className="max-w-6xl w-full mx-auto px-6 flex flex-col md:flex-row gap-14 items-center animate-fade-in">
       <div className="flex flex-col items-center w-full md:w-2/5">
-        <div className="rounded-full overflow-hidden border-4 border-white/10 shadow-lg mb-5 mt-5 w-80 h-80 bg-muted flex items-center justify-center mx-auto">
+        <div className="rounded-full overflow-hidden border-4 border-white/10 shadow-lg mb-5 mt-5 w-[23rem] h-[23rem] bg-muted flex items-center justify-center mx-auto">
           <img
             src={profilePhoto}
             alt="Sanyam Mehta"
@@ -35,7 +37,7 @@ const AboutHeroSection = () => (
             className="group hover:scale-110 transition-all duration-200"
           >
             <div className={iconContainer}>
-              <Phone size={26} color="#fff" />
+              <Phone size={iconSize} color="#fff" />
             </div>
           </a>
           <a
@@ -46,7 +48,7 @@ const AboutHeroSection = () => (
             className="group hover:scale-110 transition-all duration-200"
           >
             <div className={iconContainer}>
-              <Mail size={26} color="#fff" />
+              <Mail size={iconSize} color="#fff" />
             </div>
           </a>
           <a
@@ -57,7 +59,7 @@ const AboutHeroSection = () => (
             className="group hover:scale-110 transition-all duration-200"
           >
             <div className={iconContainer}>
-              <Linkedin size={26} color="#fff" />
+              <Linkedin size={iconSize} color="#fff" />
             </div>
           </a>
           <a
@@ -68,12 +70,11 @@ const AboutHeroSection = () => (
             className="group hover:scale-110 transition-all duration-200"
           >
             <div className={iconContainer}>
-              <Github size={26} color="#fff" />
+              <Github size={iconSize} color="#fff" />
             </div>
           </a>
         </div>
       </div>
-
       <div className="w-full md:w-3/5 flex flex-col justify-center px-2">
         <div className="text-[#ececec] text-[1.05rem] font-bold mb-4 font-sans">About Me</div>
         <div
