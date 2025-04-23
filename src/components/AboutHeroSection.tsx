@@ -17,7 +17,7 @@ const AboutHeroSection = () => (
       {/* Left: Photo, Name, Tag, Socials */}
       <div className="flex flex-col items-center w-full md:w-2/5">
         {/* Profile Picture */}
-        <div className="rounded-full overflow-hidden border-4 border-white/10 shadow-lg mb-5 mt-5 w-80 h-80 bg-muted flex items-center justify-center mx-auto">
+        <div className="rounded-full overflow-hidden border-4 border-white/10 shadow-lg mb-5 mt-5 w-96 h-96 bg-muted flex items-center justify-center mx-auto">
           <img
             src={profilePhoto}
             alt="Sanyam Mehta"
@@ -27,7 +27,7 @@ const AboutHeroSection = () => (
         {/* Name and Title */}
         <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-1 text-center">Sanyam Mehta</h1>
         <div className="text-md md:text-lg text-gray-400 mb-5 text-center">
-          Product Management <span className="mx-1 text-gray-500">|</span> Software Engineer
+          Product Management <span className="mx-1 text-gray-500">|</span> Software Engineering
         </div>
         {/* Social Icons & Phone */}
         <div className="flex gap-5 mb-2">
@@ -39,7 +39,7 @@ const AboutHeroSection = () => (
             className="group hover:scale-110 transition-all duration-200"
           >
             <div className="bg-white p-2 rounded-full shadow-md border-2 border-[#0077b5] group-hover:bg-[#0077b5] group-hover:text-white transition flex items-center justify-center">
-              <Linkedin size={22} color="#0077b5" className="group-hover:text-white" />
+              <Linkedin size={28} color="#0077b5" className="group-hover:text-white" />
             </div>
           </a>
           <a
@@ -50,7 +50,7 @@ const AboutHeroSection = () => (
             className="group hover:scale-110 transition-all duration-200"
           >
             <div className="bg-white p-2 rounded-full shadow-md border-2 border-[#161b22] group-hover:bg-[#161b22] group-hover:text-white transition flex items-center justify-center">
-              <Github size={22} color="#181717" className="group-hover:text-white" />
+              <Github size={28} color="#181717" className="group-hover:text-white" />
             </div>
           </a>
           <a
@@ -61,7 +61,7 @@ const AboutHeroSection = () => (
             className="group hover:scale-110 transition-all duration-200"
           >
             <div className="bg-white p-2 rounded-full shadow-md border-2 border-gray-400 group-hover:bg-black group-hover:text-white transition flex items-center justify-center">
-              <Mail size={22} color="#202124" className="group-hover:text-white" />
+              <Mail size={28} color="#202124" className="group-hover:text-white" />
             </div>
           </a>
           {/* Phone icon, scrolls to contact section */}
@@ -71,7 +71,7 @@ const AboutHeroSection = () => (
             className="group hover:scale-110 transition-all duration-200"
           >
             <div className="bg-white p-2 rounded-full shadow-md border-2 border-gray-400 group-hover:bg-[#0FA0CE] group-hover:text-white transition flex items-center justify-center">
-              <Phone size={22} color="#666" className="group-hover:text-white" />
+              <Phone size={28} color="#666" className="group-hover:text-white" />
             </div>
           </a>
         </div>

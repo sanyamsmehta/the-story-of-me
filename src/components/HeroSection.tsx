@@ -20,7 +20,7 @@ const HeroSection = () => {
         
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">Sanyam Mehta</h1>
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-          Product Manager & Software Engineer
+          Product Manager & Software Engineering
         </p>
         
         <div className="flex justify-center gap-8 mb-10">
@@ -33,7 +33,7 @@ const HeroSection = () => {
             <Linkedin size={32} />
           </a>
           <a
-            href="https://github.com/sanyammehta"
+            href="https://github.com/sanyamsmehta"
             className="hover:opacity-70 transition-colors"
             aria-label="GitHub"
             target="_blank" rel="noopener noreferrer"
