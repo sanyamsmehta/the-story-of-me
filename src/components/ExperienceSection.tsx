@@ -88,7 +88,7 @@ const experiences: Experience[] = [
       "Translated gathered requirements into wireframe prototypes, speeding feature understanding by over 50%.",
       "Developed responsive and reusable UI across cross-platform applications, facilitating over 30% code reuse.",
     ],
-    logoUrl: "/lovable-uploads/6b2f4bcb-0913-4451-bf4c-bbd9adf0c1ae.png",
+    logoUrl: "/lovable-uploads/38357757-47ab-4c2d-8c03-3b7d6f2e44d5.png",
   },
 ];
 
