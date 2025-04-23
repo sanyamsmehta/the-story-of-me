@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Linkedin, Github, Mail, Phone } from "lucide-react";
 
@@ -5,7 +6,7 @@ const profilePhoto = "/lovable-uploads/c3aee9cb-ac30-4fbb-b34c-58690975633a.png"
 const linkedIn = "https://www.linkedin.com/in/sanyammehta/";
 const github = "https://github.com/sanyamsmehta";
 const mail = "mailto:sanyam.mehta93@gmail.com";
-const phoneNumber = "#contact"; // Scrolls to contact section
+const phoneNumber = "#contact";
 
 const AboutHeroSection = () => (
   <section
@@ -14,7 +15,7 @@ const AboutHeroSection = () => (
   >
     <div className="max-w-6xl w-full mx-auto px-6 flex flex-col md:flex-row gap-14 items-center animate-fade-in">
       <div className="flex flex-col items-center w-full md:w-2/5">
-        <div className="rounded-full overflow-hidden border-4 border-white/10 shadow-lg mb-5 mt-5 w-48 h-48 bg-muted flex items-center justify-center mx-auto">
+        <div className="rounded-full overflow-hidden border-4 border-white/10 shadow-lg mb-5 mt-5 w-64 h-64 bg-muted flex items-center justify-center mx-auto">
           <img
             src={profilePhoto}
             alt="Sanyam Mehta"
@@ -31,8 +32,8 @@ const AboutHeroSection = () => (
             aria-label="Phone"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#333]/20 p-1.5 rounded-full shadow-md border-2 border-[#444]/30 group-hover:bg-[#444]/40 transition flex items-center justify-center">
-              <Phone size={22} color="#666" className="group-hover:text-white" />
+            <div className="bg-[#4a4a4a]/30 p-1.5 rounded-full shadow-md border-2 border-[#6a6a6a]/30 group-hover:bg-[#6a6a6a]/40 transition flex items-center justify-center">
+              <Phone size={22} color="#acacac" className="group-hover:text-white" />
             </div>
           </a>
           
@@ -55,8 +56,8 @@ const AboutHeroSection = () => (
             aria-label="LinkedIn"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#0A66C2]/60 p-1.5 rounded-full shadow-md border-2 border-[#0A66C2]/40 group-hover:bg-[#0A66C2]/70 transition flex items-center justify-center">
-              <Linkedin size={22} color="white" className="opacity-80" />
+            <div className="bg-[#0A66C2]/40 p-1.5 rounded-full shadow-md border-2 border-[#0A66C2]/30 group-hover:bg-[#0A66C2]/50 transition flex items-center justify-center">
+              <Linkedin size={22} color="white" className="opacity-60" />
             </div>
           </a>
           
