@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface Experience {
@@ -87,7 +88,7 @@ const experiences: Experience[] = [
       "Translated gathered requirements into wireframe prototypes, speeding feature understanding by over 50%.",
       "Developed responsive and reusable UI across cross-platform applications, facilitating over 30% code reuse.",
     ],
-    logoUrl: "/lovable-uploads/6cc716f1-f74f-4a06-b0c5-ef8a5472cec4.png",
+    logoUrl: "/lovable-uploads/6b2f4bcb-0913-4451-bf4c-bbd9adf0c1ae.png",
   },
 ];
 
