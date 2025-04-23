@@ -85,6 +85,7 @@ const experiences: Experience[] = [
     location: "Mumbai, India",
     period: "June 2019 – August 2019",
     description: [
+      "Learned frontend development from the ground up, building projects with HTML, CSS, JavaScript, Angular, and Ionic, while also gaining exposure to Human-Centered Interface Design (HCID) concepts to better understand user needs and interface usability.",
       "Translated gathered requirements into wireframe prototypes, speeding feature understanding by over 50%.",
       "Developed responsive and reusable UI across cross-platform applications, facilitating over 30% code reuse.",
     ],
