@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface Education {
@@ -16,6 +15,13 @@ const educations: Education[] = [
     period: "2004 - 2016",
     degree: "",
     logoUrl: "/lovable-uploads/76ef3769-536c-4027-92ab-5fe630269d8a.png",
+  },
+  {
+    school: "American University of Sharjah",
+    location: "Sharjah, UAE",
+    period: "2016 - 2018",
+    degree: "",
+    logoUrl: "/lovable-uploads/0205e76a-e7a6-49e5-9b89-54ef27d134c9.png",
   },
 ];
 
