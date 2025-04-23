@@ -65,7 +65,13 @@ export default {
           600: "#134e6f",
           700: "#17395C",
           900: "#10213E"
-        }
+        },
+        // Add portfolio-related colors
+        'portfolio-purple': "#134e6f", // Using the same color as action (blue)
+        'portfolio-darkPurple': "#17395C", // A darker blue
+        'portfolio-lightPurple': "#E3EEFC", // Light blue
+        'portfolio-dark': "#10213E", // Very dark blue
+        'portfolio-light': "#F6FAFC" // Very light blue
       },
       borderRadius: {
         lg: 'var(--radius)',

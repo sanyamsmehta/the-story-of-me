@@ -62,9 +62,9 @@ const Navbar = () => {
             <li key={item.title}>
               <a
                 href={item.href}
-                className={`text-base font-medium transition-colors hover:text-blue-700 ${
+                className={`text-base font-medium transition-colors hover:text-blue-600 ${
                   activeSection === item.href.substring(1)
-                    ? "text-blue-700 underline underline-offset-4"
+                    ? "text-blue-600 underline underline-offset-4"
                     : "text-blue-900"
                 }`}
               >
