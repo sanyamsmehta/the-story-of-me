@@ -37,7 +37,20 @@ const experiences: Experience[] = [
       "Developed a tool to automate article classification, decreasing tagging effort by 60%, rendering a 95% accuracy.",
       "A/B tested 14 displays to finalize a unified user interface for all 3 offerings, projecting a drop-off rate by 75%.",
     ],
-    logoUrl: "/lovable-uploads/052a86b8-3422-451c-a682-303185dc4fd9.png",
+    logoUrl: "/lovable-uploads/aada0bf7-9c95-4a4a-9545-060b8d7ea537.png",
+  },
+  {
+    title: "IT Intern",
+    company: "Black Box Ltd.",
+    location: "Dallas, Texas",
+    period: "June 2024 – September 2024",
+    description: [
+      "Owned concept-to-launch of a Compliance System Software to track legal, quality, and safety metrics of 4000+ hardware products, enabling entry into 30+ global markets and saving $250K annually.",
+      "Refactored 4 modules to follow Clean Architecture, pacing data retrieval by 100% and user engagement by 30%.",
+      "Automated document verification to reduce manual efforts by 90% and approval cycles from days to minutes.",
+      "Created a centralized view to access 36 K+ documentation, tests, and reports, reducing lookup time by 45%.",
+    ],
+    logoUrl: "/lovable-uploads/aada0bf7-9c95-4a4a-9545-060b8d7ea537.png",
   },
   {
     title: "Chief Technical Advisor",
@@ -77,13 +90,11 @@ const experiences: Experience[] = [
   },
 ];
 
-const highlightedLayout = (
-  exp: Experience,
-  extraClass?: string
-) => (
+// Highlighted layout for the top three entries
+const highlightedLayout = (exp: Experience, extraClass?: string) => (
   <div className={`flex flex-col md:flex-row md:items-start md:justify-between gap-4 ${extraClass ?? ""}`}>
-    {/* Left: Company, Location, Designation, Bullet points */}
-    <div className="flex-1">
+    {/* Left: Text content */}
+    <div className="flex-1 flex flex-col">
       <div className="flex flex-col gap-0.5">
         <span className="text-sm font-bold text-gray-900">{exp.company}</span>
         <span className="text-xs text-gray-500">{exp.location}</span>
@@ -103,7 +114,7 @@ const highlightedLayout = (
       </div>
     </div>
     {/* Right: Date at top right, logo directly below date */}
-    <div className="flex flex-col items-end min-w-[10rem] md:min-w-[12rem]">
+    <div className="flex flex-col items-end min-w-[9rem] md:min-w-[9rem]">
       <span className="text-xs bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold whitespace-nowrap mb-2 self-end">
         {exp.period}
       </span>
@@ -112,13 +123,13 @@ const highlightedLayout = (
           <img
             src={exp.logoUrl}
             alt={`${exp.company} Logo`}
-            className="w-32 h-32 md:w-40 md:h-40 object-contain rounded-[0.7rem] border border-gray-200 shadow bg-white mt-2"
+            className="w-32 h-20 md:w-40 md:h-24 object-contain rounded-[0.7rem] border border-gray-200 shadow bg-white mt-2"
             style={{
               background: "#fff",
               minWidth: "7rem",
-              minHeight: "7rem",
-              maxWidth: "10rem",
-              maxHeight: "10rem"
+              minHeight: "4rem",
+              maxWidth: "11rem",
+              maxHeight: "5.2rem"
             }}
           />
         </div>
@@ -150,8 +161,8 @@ const ExperienceSection = () => {
                 </div>
                 {/* Experience Card */}
                 <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 transition group-hover:shadow-lg">
-                  {/* Highlighted layout for first two experiences, regular layout for others */}
-                  {idx <= 1
+                  {/* Highlighted layout for first three experiences, regular layout for others */}
+                  {idx <= 2
                     ? highlightedLayout(exp)
                     : (
                       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
