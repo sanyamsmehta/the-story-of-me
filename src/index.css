@@ -88,11 +88,17 @@
   .glass-morphism {
     @apply backdrop-blur-lg bg-white/5 border border-white/10 shadow-md;
   }
-  
   .bg-pure-white {
-    background-color: #FFFFFF;
+    background-color: #FFFFFF !important;
   }
   .text-pure-black {
     color: #000000;
   }
+}
+
+/* Remove any filters or overlays from all sections by force (utility override if needed) */
+section {
+  background: #fff !important;
+  filter: none !important;
+  box-shadow: none;
 }

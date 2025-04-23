@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface Experience {
@@ -10,28 +9,29 @@ interface Experience {
 }
 
 const experiences: Experience[] = [
+  // Use placeholder content for now; user will provide details
   {
     title: "Product Manager",
     company: "Epic Games",
     location: "Seattle, WA",
     period: "Dec 2019 - Jul 2023",
     description: [
-      "Led the development of cloud services for Unreal Engine's Pixel Streaming, enabling diverse use cases from automotive design to architectural visualization",
-      "Grew Pixel Streaming adoption by 150% through UX improvements, documentation, and targeted feature development",
-      "Successfully pitched streaming SDK to leadership, securing resources for development from a 5M revenue opportunity",
-      "Managed a team of 5 engineers, led sprint planning, and collaborated with UX designers to create intuitive interfaces"
+      "Led the development of cloud services...",
+      "Grew Pixel Streaming adoption by 150%...",
+      "Successfully pitched streaming SDK...",
+      "Managed a team of 5 engineers..."
     ]
   },
   {
-    title: "Chief Technical Advisor (Information Management)",
+    title: "Chief Technical Advisor",
     company: "United Nations Population Fund",
     location: "New York, NY",
     period: "Oct 2018 - Dec 2019",
     description: [
-      "Led the development of global protocols for data collection in humanitarian emergencies across 155 countries",
-      "Worked with governments and technology partners to implement data-driven solutions for humanitarian response",
-      "Created internal APIs that enabled interoperability between various UN systems, improving field coordination",
-      "Advised senior management on technology strategies for the organization's $1B portfolio"
+      "Led the development of global protocols...",
+      "Worked with governments and partners...",
+      "Created internal APIs for interoperability...",
+      "Advised senior management..."
     ]
   },
   {
@@ -62,42 +62,49 @@ const experiences: Experience[] = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="section-padding bg-muted">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="section-title text-center">Work Experience</h2>
-        <p className="section-subtitle text-center">
-          My professional journey spanning product management and software engineering
-        </p>
-
-        <div className="mt-12 max-w-4xl mx-auto">
-          {experiences.map((exp, index) => (
-            <div key={index} className="timeline-item">
-              <div className="timeline-dot" />
-              <div className="bg-card p-6 rounded-lg shadow-sm mb-6 ml-4 card-hover">
-                <div className="flex justify-between items-start mb-4 flex-col md:flex-row gap-2">
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground">
-                      {exp.title}
-                    </h3>
-                    <p className="text-primary font-medium">
-                      {exp.company} · {exp.location}
-                    </p>
-                  </div>
-                  <span className="text-sm text-gray-500 bg-muted px-3 py-1 rounded-full whitespace-nowrap">
-                    {exp.period}
-                  </span>
+    <section
+      id="experience"
+      className="section-padding bg-white border-b border-gray-200"
+      style={{ backgroundColor: "#fff" }}
+    >
+      <div className="max-w-5xl mx-auto px-6 md:px-10">
+        <h2 className="text-3xl font-extrabold mb-10 text-center text-gray-900">
+          Work Experience
+        </h2>
+        <div className="relative">
+          {/* Timeline vertical line */}
+          <div className="absolute left-6 top-0 h-full w-0.5 bg-gray-200 hidden md:block" />
+          <ul className="space-y-12 relative">
+            {experiences.map((exp, idx) => (
+              <li key={idx} className="md:flex md:items-center group">
+                {/* Timeline dot */}
+                <div className="flex flex-col items-center mr-8 md:mr-0 md:w-12">
+                  <div className="hidden md:block w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white mb-2 z-10" />
+                  <span className="hidden md:block w-px bg-gray-200 flex-1" />
                 </div>
-                <ul className="space-y-2">
-                  {exp.description.map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-primary mr-2 text-lg">•</span>
-                      <span className="text-gray-700 dark:text-gray-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+                {/* Experience Card */}
+                <div className="flex-1 bg-white border border-gray-100 shadow-md rounded-2xl p-6 md:p-8 transition group-hover:shadow-lg">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-2">
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900">{exp.title}</h3>
+                      <div className="text-gray-600 text-base md:text-lg font-medium">
+                        {exp.company}
+                        {exp.location && <span className="text-gray-400 font-normal ml-2">· {exp.location}</span>}
+                      </div>
+                    </div>
+                    <span className="text-xs md:text-sm bg-blue-100 text-blue-600 rounded px-3 py-1 font-semibold">
+                      {exp.period}
+                    </span>
+                  </div>
+                  <ul className="list-disc ml-5 mt-2 space-y-2 text-gray-700 text-base leading-relaxed">
+                    {exp.description.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

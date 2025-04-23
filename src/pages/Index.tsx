@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Layout from "../components/Layout";
 import AboutHeroSection from "../components/AboutHeroSection";
@@ -7,7 +6,6 @@ import ExperienceSection from "../components/ExperienceSection";
 import SkillsSection from "../components/SkillsSection";
 import ProjectsSection from "../components/ProjectsSection";
 import ContactSection from "../components/ContactSection";
-import ResumeSection from "../components/ResumeSection";
 
 const LifeSection = () => (
   <section
@@ -25,9 +23,9 @@ const LifeSection = () => (
 );
 
 const LightThemeWrapper = ({ children }: { children: React.ReactNode }) => (
-  <div 
-    className="transition-colors duration-300" 
-    style={{ 
+  <div
+    className="transition-colors duration-300"
+    style={{
       backgroundColor: "#FFFFFF",
       color: "#000000"
     }}
@@ -57,7 +55,6 @@ const Index = () => {
     <Layout>
       <AboutHeroSection />
       <LightThemeWrapper>
-        {/* Removed ResumeSection here as requested */}
         <ExperienceSection />
         <SkillsSection />
         <AcademicSection />
