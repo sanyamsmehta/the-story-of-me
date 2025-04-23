@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,8 +97,8 @@
   }
 }
 
-/* Remove any filters or overlays from all sections by force (utility override if needed) */
-section {
+/* Only light sections should be forced white */
+.light-section {
   background: #fff !important;
   filter: none !important;
   box-shadow: none;
