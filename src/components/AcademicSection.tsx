@@ -52,12 +52,12 @@ const educations: Education[] = [
 
 const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
   <div className="flex flex-col items-center relative">
-    <div className="w-12 h-12 rounded-full bg-white border-2 border-blue-500 p-1 flex items-center justify-center z-10">
+    <div className="w-12 h-12 rounded-full bg-white border-2 border-blue-500 p-1 flex items-center justify-center z-10 overflow-hidden">
       {education.logoUrl && (
         <img
           src={education.logoUrl}
           alt={`${education.school} logo`}
-          className="w-8 h-8 object-contain rounded-full"
+          className="w-8 h-8 object-contain rounded-full transition-transform duration-300 hover:scale-125"
         />
       )}
     </div>
