@@ -1,20 +1,23 @@
 
 import { useState, useEffect } from "react";
+import { FileText } from "lucide-react";
 
-// Nav items in new order: Resume, Work, Academics, Skills, Projects, Life, Contact
+// Nav items in new order: Home, Work, Academics, Skills, Projects, Life, Contact, Resume
 interface NavItem {
   title: string;
   href: string;
+  icon?: JSX.Element;
 }
 
 const navItems: NavItem[] = [
-  { title: "Resume", href: "#resume" },
+  { title: "Home", href: "#about" },
   { title: "Work", href: "#experience" },
   { title: "Academics", href: "#academic" },
   { title: "Skills", href: "#skills" },
   { title: "Projects", href: "#projects" },
   { title: "Life", href: "#life" },
   { title: "Contact", href: "#contact" },
+  { title: "Resume", href: "#resume", icon: <FileText size={18} /> },
 ];
 
 const Navbar = () => {
@@ -87,6 +90,7 @@ const Navbar = () => {
                 style={{ textTransform: "none" }}
               >
                 {item.title}
+                {item.icon && <span className="ml-1">{item.icon}</span>}
                 <span className={`absolute left-0 -bottom-1 h-0.5 bg-white transition-all duration-300 ${activeSection === item.href.substring(1) ? "w-full" : "w-0 group-hover:w-full"}`}></span>
               </a>
             </li>

@@ -7,6 +7,7 @@ import ExperienceSection from "../components/ExperienceSection";
 import SkillsSection from "../components/SkillsSection";
 import ProjectsSection from "../components/ProjectsSection";
 import ContactSection from "../components/ContactSection";
+import ResumeSection from "../components/ResumeSection";
 
 const LifeSection = () => (
   <section
@@ -56,6 +57,7 @@ const Index = () => {
     <Layout>
       <AboutHeroSection />
       <LightThemeWrapper>
+        <ResumeSection />
         <ExperienceSection />
         <SkillsSection />
         <AcademicSection />
