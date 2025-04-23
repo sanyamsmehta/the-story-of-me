@@ -57,7 +57,7 @@ const Index = () => {
     <Layout>
       <AboutHeroSection />
       <LightThemeWrapper>
-        <ResumeSection />
+        {/* Removed ResumeSection here as requested */}
         <ExperienceSection />
         <SkillsSection />
         <AcademicSection />

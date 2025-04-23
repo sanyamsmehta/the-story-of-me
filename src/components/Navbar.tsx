@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { FileText } from "lucide-react";
 
-// Nav items in new order: Home, About, Work, Academics, Skills, Projects, Life, Contact, Resume
+// Nav items in new order: Home, About, Work, Academics, Skills, Projects, Life, Contact, Resume (icon on right)
 interface NavItem {
   title: string;
   href: string;
@@ -79,8 +79,8 @@ const Navbar = () => {
           Sanyam Mehta
         </div>
         <ul className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
-            <li key={item.title}>
+          {navItems.map((item, idx) => (
+            <li key={item.title} className={idx === navItems.length - 1 ? "ml-8" : ""}>
               <a
                 href={item.href}
                 className={`nav-link tracking-wide font-medium text-base transition relative
@@ -88,7 +88,7 @@ const Navbar = () => {
                     ? "text-white after:scale-x-100"
                     : "text-gray-400 hover:text-white"}`
                 }
-                style={{ textTransform: "none" }}
+                style={{ textTransform: "none", display: "inline-flex", alignItems: "center" }}
               >
                 {item.title}
                 {item.icon && <span className="ml-1">{item.icon}</span>}
