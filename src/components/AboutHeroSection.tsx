@@ -30,6 +30,7 @@ const AboutHeroSection = () => (
         </div>
         {/* Social Icons & Phone */}
         <div className="flex gap-4 mb-2">
+          {/* LinkedIn Icon */}
           <a
             href={linkedIn}
             target="_blank"
@@ -37,8 +38,8 @@ const AboutHeroSection = () => (
             aria-label="LinkedIn"
             className="group hover:scale-110 transition-all duration-200"
           >
-            <div className="bg-[#0A66C2] p-1.5 rounded-full shadow-md border-2 border-[#0A66C2] group-hover:bg-[#0A66C2]/90 transition flex items-center justify-center">
-              <Linkedin size={22} color="white" />
+            <div className="bg-[#0A66C2]/80 p-1.5 rounded-full shadow-md border-2 border-[#0A66C2]/60 group-hover:bg-[#0A66C2]/90 transition flex items-center justify-center">
+              <Linkedin size={22} color="white" className="opacity-90" />
             </div>
           </a>
           <a
