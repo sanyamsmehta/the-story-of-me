@@ -68,42 +68,6 @@ const experiences: Experience[] = [
     logoUrl: "/lovable-uploads/f2a6f229-03f2-4133-aaa0-7084fe732f66.png",
   },
   {
-    title: "Chief Technical Advisor",
-    company: "United Nations Population Fund",
-    location: "New York, NY",
-    period: "Oct 2018 - Dec 2019",
-    description: [
-      "Led the development of global protocols...",
-      "Worked with governments and partners...",
-      "Created internal APIs for interoperability...",
-      "Advised senior management...",
-    ],
-  },
-  {
-    title: "Technical Lead",
-    company: "United Nations Population Fund",
-    location: "Amman, Jordan",
-    period: "Feb 2017 - Oct 2018",
-    description: [
-      "Architected and implemented data systems for humanitarian operations in Syria and Yemen, supporting 3M+ beneficiaries",
-      "Developed real-time monitoring solutions using Node.js and MongoDB that improved service delivery response times by 40%",
-      "Created resilient data collection solutions for low-connectivity environments, enabling operations in remote areas",
-      "Trained 30+ humanitarian workers on digital data collection methodologies",
-    ],
-  },
-  {
-    title: "Software Engineer",
-    company: "United Nations Development Programme",
-    location: "Amman, Jordan",
-    period: "Jun 2015 - Jan 2017",
-    description: [
-      "Built and maintained full-stack applications for monitoring $500M+ in humanitarian assistance programs",
-      "Implemented projects using Node.js, MongoDB, and React, focusing on offline-first capabilities",
-      "Created ETL processes to integrate data from 10+ partner organizations' systems",
-      "Deployed cloud infrastructure on AWS, focusing on security and cost optimization",
-    ],
-  },
-  {
     title: "Alumni Mentor",
     company: "University of Mumbai",
     location: "Mumbai, India",
