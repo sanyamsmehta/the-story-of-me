@@ -6,14 +6,14 @@ const productSkills = [
   "Market & User Research (Qualitative + Quantitative)",
   "Current State & Gap Analysis",
   "Competitive Analysis & SWOT",
+  "KPIs, OKRs, and North Star Metrics",
   "MVP Definition & Scoping",
+  "PRD & Backlog Management",
   "Feature Prioritization",
   "Agile, Scrum, SDLC",
   "Product Development Lifecycle (PDLC)",
   "Buy vs Build Evaluation",
-  "KPIs, OKRs, and North Star Metrics",
-  "A/B Testing & Experimentation",
-  "PRD & Backlog Management",
+  "Product-Market-Fit Analysis",
   "Budgeting",
   "Go-To-Market (GTM) Planning",
   "Stakeholder Management"
@@ -121,10 +121,10 @@ const SkillsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Product Management Column */}
           <div className="space-y-8">
-            <div className="bg-white rounded-lg p-8 shadow-md border border-gray-100">
+            <div className="bg-white rounded-lg p-8 shadow-md border border-gray-100 h-full">
               <h3 className="text-2xl font-semibold mb-6 text-gray-900 text-center">Product Management</h3>
               <div className="space-y-6">
-                <div>
+                <div className="flex flex-col items-center">
                   <h4 className="text-lg font-medium mb-4 text-gray-800 text-center">Core Skills</h4>
                   <ul className="list-disc pl-5 space-y-1 text-gray-600">
                     {productSkills.map((skill, index) => (
@@ -133,7 +133,7 @@ const SkillsSection = () => {
                   </ul>
                 </div>
                 
-                <div>
+                <div className="flex flex-col items-center">
                   <h4 className="text-lg font-medium mb-4 text-gray-800 text-center">Technologies</h4>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {technologies.map((tech, index) => (
@@ -153,10 +153,10 @@ const SkillsSection = () => {
 
           {/* Software Engineering Column */}
           <div className="space-y-8">
-            <div className="bg-white rounded-lg p-8 shadow-md border border-gray-100">
+            <div className="bg-white rounded-lg p-8 shadow-md border border-gray-100 h-full">
               <h3 className="text-2xl font-semibold mb-6 text-gray-900 text-center">Software Engineering</h3>
               <div className="space-y-6">
-                <div>
+                <div className="flex flex-col items-center">
                   <h4 className="text-lg font-medium mb-4 text-gray-800 text-center">Core Skills</h4>
                   <ul className="list-disc pl-5 space-y-1 text-gray-600">
                     {softwareEngineeringSkills.map((skill, index) => (
@@ -165,7 +165,7 @@ const SkillsSection = () => {
                   </ul>
                 </div>
                 
-                <div>
+                <div className="flex flex-col items-center">
                   <h4 className="text-lg font-medium mb-4 text-gray-800 text-center">Technologies</h4>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {softwareTechnologies.map((tech, index) => (
