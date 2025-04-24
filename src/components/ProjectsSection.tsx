@@ -63,10 +63,10 @@ const projects: Project[] = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="section-padding light-section">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="section-title text-center">Projects</h2>
-
+    <section id="projects" className="section-padding bg-white border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Projects</h2>
+        
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div 
