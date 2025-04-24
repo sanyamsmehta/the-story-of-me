@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Badge } from "./ui/badge";
 
@@ -6,7 +7,7 @@ const productSkills = [
   "Market & User Research (Qualitative + Quantitative)",
   "Competitive Analysis & SWOT",
   "MVP Definition & Scoping",
-  "Feature Prioritization (RICE, MoSCoW, Kano)",
+  "Feature Prioritization",
   "Agile, Scrum, SDLC",
   "Product Development Lifecycle (PDLC)",
   "Go-To-Market (GTM) Planning",
