@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 
@@ -37,7 +38,7 @@ const projects: Project[] = [
   },
   {
     title: "heads-up",
-    description: "Real-time collaboration and project management tool for distributed teams.",
+    description: "Heads up is an IoT project that prevents drowsy drivers from running into accidents. It conducts real-time facial recognition to compute if the driver is about to fall asleep and on given conditions, triggers an immediate phone call on the users cell phone, and SOS texts driver's emergency contacts. It offers OS independence and Device Independence and renders over 96% accuracy.",
     technologies: ["Python", "OpenCV", "Cmake", "Dlib", "NumPy", "SciPy", "Twilio"],
     github: "https://github.com/sanyamsmehta/heads-up"
   },
