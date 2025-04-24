@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Car, Golf as GolfIcon, TeaCup } from "lucide-react";
 
 const LifeSection = () => (
   <section
@@ -10,11 +9,6 @@ const LifeSection = () => (
     <div className="max-w-6xl mx-auto px-6 py-6">
       <h2 className="text-2xl md:text-3xl font-extrabold mb-6 text-black">Life</h2>
       <div className="space-y-6 text-base md:text-lg text-gray-800">
-        <div className="flex items-center gap-4 mb-4">
-          <Car className="w-6 h-6 text-gray-600" />
-          <GolfIcon className="w-6 h-6 text-gray-600" />
-          <TeaCup className="w-6 h-6 text-gray-600" />
-        </div>
         <p>
           There are a few things that I live for- Driving, Golf, Chai, and the company of my close ones. 
           I also admire Messi for making me fall in Love with Football.
