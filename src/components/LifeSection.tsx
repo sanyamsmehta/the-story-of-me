@@ -1,20 +1,19 @@
-
 import React from "react";
-import { Car, Golf, TeaCup, Football, Language, Users, Book, TheOffice, Family, Church, Meditation } from "lucide-react";
+import { Car, Goal, Football, Languages, Users, Book, Home, Church, Landmark } from "lucide-react";
 
 const LifeSection = () => {
   const interests = [
     { icon: <Car />, text: "Driving" },
-    { icon: <Golf />, text: "Golf" },
-    { icon: <TeaCup />, text: "Chai" },
+    { icon: <Goal />, text: "Golf" },
+    { icon: <Home />, text: "Chai" },
     { icon: <Football />, text: "Football & Messi" },
-    { icon: <Language />, text: "5 Languages" },
+    { icon: <Languages />, text: "5 Languages" },
     { icon: <Users />, text: "Extrovert" },
-    { icon: <TheOffice />, text: "The Office" },
+    { icon: <Home />, text: "The Office" },
     { icon: <Book />, text: "Man's Search for Meaning" },
-    { icon: <Meditation />, text: "Stoicism" },
+    { icon: <Landmark />, text: "Stoicism" },
     { icon: <Church />, text: "Religious Pilgrimages" },
-    { icon: <Family />, text: "Family & Friends" }
+    { icon: <Users />, text: "Family & Friends" }
   ];
 
   return (
