@@ -83,6 +83,11 @@ const projects: Project[] = [
     title: "Host-IQ",
     description: "Host-IQ is an AI-powered analytics platform designed for Airbnb hosts to transform raw guest feedback and property data into actionable insights. By automating sentiment analysis, trend detection, and personalized recommendations, it addresses key host pain points—ranging from service inconsistency to reliance on costly third-party tools. The tool leverages Agile methodologies and NLP-driven intelligence to optimize guest satisfaction, reduce complaints by 20%, and boost bookings by 10%. With a projected annual value impact exceeding $2M in savings and revenue lift, Host-IQ positions Airbnb to lead in data-driven hospitality innovation.",
     deck: "https://docs.google.com/presentation/d/1XEpscyg0FRLPu-BkxSqvb3wcKv0PLWUZ/edit?usp=sharing&ouid=112722355947732076323&rtpof=true&sd=true"
+  },
+  {
+    title: "TieUps Project Charter",
+    description: "This is a comprehensive project charter for the TieUps feature for AirBnb. It includes a detailed and proofed Buy vs Build Analysis, Sizing (w.r.t Phases and Costs), Deriving Cost Estimates, Computing Risks, Specifying Assumptions, and defining key-milestones and roadmap to delivery.",
+    deck: "https://drive.google.com/file/d/1BotKx1m7hCL0pInk4L4Ah7Gf4qe9q_Rb/view?usp=sharing"
   }
 ];
 
