@@ -44,7 +44,10 @@ const technologies = [
   "Postman",
   "JMeter",
   "Google Analytics",
-  "MS Office"
+  "MS Office",
+  "Kaggle",
+  "Hugging Face",
+  "Prompt Engineering"
 ];
 
 const softwareEngineeringSkills = [
