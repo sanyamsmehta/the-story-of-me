@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 
@@ -13,8 +14,8 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Nostress.ai",
-    description: "AI-powered mental wellness platform that helps users manage stress and anxiety through personalized interventions.",
-    technologies: ["Python", "Machine Learning", "React", "Node.js"],
+    description: "A ground-up startup that automates performance testing through AI. Users can generate tests by simply providing a repo URL and test prompt, with results visualized in HTML reports. The platform enables real-time collaboration between testers, providing insights on performance, bottlenecks, and allows dynamic test modifications during execution.",
+    technologies: ["Java", "React", "Machine Learning", "Grafana", "JMeter", "Microservices", "Spring Boot", "Prometheus"],
     github: "https://github.com/sanyamsmehta/nostress.ai"
   },
   {
@@ -63,7 +64,7 @@ const projects: Project[] = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="section-padding bg-muted">
+    <section id="projects" className="section-padding light-section">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="section-title text-center">Projects</h2>
         <p className="section-subtitle text-center">
