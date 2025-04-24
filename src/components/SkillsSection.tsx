@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Badge } from "./ui/badge";
 
@@ -22,28 +21,31 @@ const productSkills = [
 ];
 
 const technologies = [
-  "SQL", 
-  "A/B Testing", 
-  "Advanced Excel", 
-  "Tableau", 
-  "Power BI", 
-  "AWS", 
-  "Azure", 
-  "Snowflake", 
-  "ETL", 
-  "Jira", 
-  "Confluence", 
-  "Miro", 
-  "Figma", 
-  "G-Suite", 
-  "Canva", 
-  "Notion", 
-  "Lucidchart / Draw.io", 
-  "Git", 
-  "Postman", 
-  "Slack", 
-  "MS Teams", 
-  "Zoom"
+  "Advanced Excel",
+  "SQL",
+  "Python",
+  "R",
+  "ETL",
+  "Snowflake",
+  "Azure",
+  "AWS",
+  "GCP",
+  "DBT",
+  "Spark",
+  "Tableau",
+  "PowerBI",
+  "Jira",
+  "Confluence",
+  "Miro",
+  "Figma",
+  "G-Suite",
+  "Canva",
+  "Git",
+  "A/B Testing",
+  "Postman",
+  "JMeter",
+  "Google Analytics",
+  "MS Office"
 ];
 
 const SkillsSection = () => {
