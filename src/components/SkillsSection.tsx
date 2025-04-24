@@ -1,7 +1,5 @@
 import React from "react";
 import { Badge } from "./ui/badge";
-import { Card } from "./ui/card";
-import { BriefcaseIcon, CodeIcon, DatabaseIcon, StarIcon } from "lucide-react";
 
 const productSkills = [
   "Product Strategy & Roadmapping",
@@ -119,105 +117,74 @@ const softwareTechnologies = [
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="section-padding bg-gradient-to-b from-white to-gray-50">
+    <section id="skills" className="section-padding bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Skills & Expertise</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            A comprehensive overview of my technical and managerial capabilities
-          </p>
-        </div>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Skills</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Product Management Column */}
-          <Card className="p-8 hover:shadow-lg transition-shadow duration-300 border-t-4 border-t-slate-400">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-lg bg-slate-100">
-                <BriefcaseIcon className="w-6 h-6 text-slate-700" />
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900">Product Management</h3>
-            </div>
-
-            <div className="space-y-8">
-              <div>
-                <h4 className="text-lg font-medium mb-4 text-gray-800 flex items-center gap-2">
-                  <StarIcon className="w-5 h-5 text-slate-600" />
-                  Core Skills
-                </h4>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-600">
-                  {productSkills.map((skill, index) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-                      <span className="text-sm">{skill}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="text-lg font-medium mb-4 text-gray-800 flex items-center gap-2">
-                  <DatabaseIcon className="w-5 h-5 text-slate-600" />
-                  Technologies
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {technologies.map((tech, index) => (
-                    <Badge 
-                      key={index}
-                      variant="outline" 
-                      className="bg-white hover:bg-slate-50 text-gray-700 border-slate-200"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
+          <div className="space-y-8">
+            <div className="bg-white rounded-lg p-8 shadow-md border border-gray-100 h-full">
+              <h3 className="text-2xl font-semibold mb-6 text-gray-900 text-center">Product Management</h3>
+              <div className="space-y-6">
+                <div className="flex flex-col items-center">
+                  <h4 className="text-lg font-medium mb-4 text-gray-800 text-center">Core Skills</h4>
+                  <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                    {productSkills.map((skill, index) => (
+                      <li key={index} className="text-sm">{skill}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="flex flex-col items-center">
+                  <h4 className="text-lg font-medium mb-4 text-gray-800 text-center">Technologies</h4>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {technologies.map((tech, index) => (
+                      <Badge 
+                        key={index}
+                        variant="outline" 
+                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 border-transparent"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </Card>
+          </div>
 
           {/* Software Engineering Column */}
-          <Card className="p-8 hover:shadow-lg transition-shadow duration-300 border-t-4 border-t-slate-400">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-lg bg-slate-100">
-                <CodeIcon className="w-6 h-6 text-slate-700" />
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900">Software Engineering</h3>
-            </div>
-
-            <div className="space-y-8">
-              <div>
-                <h4 className="text-lg font-medium mb-4 text-gray-800 flex items-center gap-2">
-                  <StarIcon className="w-5 h-5 text-slate-600" />
-                  Core Skills
-                </h4>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-600">
-                  {softwareEngineeringSkills.map((skill, index) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-                      <span className="text-sm">{skill}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="text-lg font-medium mb-4 text-gray-800 flex items-center gap-2">
-                  <DatabaseIcon className="w-5 h-5 text-slate-600" />
-                  Technologies
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {softwareTechnologies.map((tech, index) => (
-                    <Badge 
-                      key={index}
-                      variant="outline" 
-                      className="bg-white hover:bg-slate-50 text-gray-700 border-slate-200"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
+          <div className="space-y-8">
+            <div className="bg-white rounded-lg p-8 shadow-md border border-gray-100 h-full">
+              <h3 className="text-2xl font-semibold mb-6 text-gray-900 text-center">Software Engineering</h3>
+              <div className="space-y-6">
+                <div className="flex flex-col items-center">
+                  <h4 className="text-lg font-medium mb-4 text-gray-800 text-center">Core Skills</h4>
+                  <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                    {softwareEngineeringSkills.map((skill, index) => (
+                      <li key={index} className="text-sm">{skill}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="flex flex-col items-center">
+                  <h4 className="text-lg font-medium mb-4 text-gray-800 text-center">Technologies</h4>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {softwareTechnologies.map((tech, index) => (
+                      <Badge 
+                        key={index}
+                        variant="outline" 
+                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 border-transparent"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </Card>
+          </div>
         </div>
       </div>
     </section>
