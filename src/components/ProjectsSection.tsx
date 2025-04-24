@@ -30,16 +30,16 @@ const projects: Project[] = [
     github: "https://github.com/sanyamsmehta/sayitright-textnorm-ml"
   },
   {
-    title: "Path to Market",
+    title: "path-to-market",
     description: "Based on startup attributes like:\n\nStage (Idea, MVP, Revenue, etc.)\n- Funding level\n- Team size\n- Sector (Tech, Healthcare, etc.)\nThe model predicts which digital strategy (e.g., SEO, Paid Ads, Influencer Marketing) works best for that startup.",
     technologies: ["Python", "Pandas", "Scikit-learn", "Jupyter Notebook", "Decision Trees"],
     github: "https://github.com/sanyamsmehta/path-to-market-startup"
   },
   {
-    title: "HeadsUp",
+    title: "heads-up",
     description: "Real-time collaboration and project management tool for distributed teams.",
-    technologies: ["React", "Socket.io", "Express", "MongoDB"],
-    github: "https://github.com/sanyamsmehta/headsup"
+    technologies: ["Python", "OpenCV", "Cmake", "Dlib", "NumPy", "SciPy", "Twilio"],
+    github: "https://github.com/sanyamsmehta/heads-up"
   },
   {
     title: "Infrastructure as Product",
