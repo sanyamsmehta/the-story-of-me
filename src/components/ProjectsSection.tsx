@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 
@@ -43,21 +42,21 @@ const projects: Project[] = [
     github: "https://github.com/sanyamsmehta/heads-up"
   },
   {
-    title: "Infrastructure as Product",
-    description: "Framework for treating infrastructure development with product management principles.",
-    technologies: ["Terraform", "AWS", "Docker", "Kubernetes"],
-    github: "https://github.com/sanyamsmehta/infrastructure-as-product"
+    title: "infra-as-a-product",
+    description: "This project demonstrates a fully automated infrastructure setup on AWS using Pulumi (Python runtime). The goal was to create a scalable, production-grade deployment pipeline that provisions all necessary cloud resources dynamically—ideal for spinning up ephemeral environments, internal dev tooling, or lightweight production workloads.",
+    technologies: ["Python", "Pulumi", "AWS ECS", "Fargate", "JSON", "IAM", "VPC"],
+    github: "https://github.com/sanyamsmehta/infra-as-a-product"
   },
   {
-    title: "Plagiar-Eyes",
-    description: "AI-powered plagiarism detection system for academic institutions.",
-    technologies: ["Python", "NLP", "Machine Learning", "FastAPI"],
+    title: "plagiar-eyes",
+    description: "This project was designed to detect cross-document plagiarism during the COVID pandemic to help my college monitor online assignment submissions. The application parses every single text document present within a particular folder and highlights any plagiarized material within each document. It also renders statistics like the percentage of plagiarism detected and which documents contain similar plagiarized material.",
+    technologies: ["Python", "NLP", "nltk", "tkinter", "docx"],
     github: "https://github.com/sanyamsmehta/plagiar-eyes"
   },
   {
-    title: "RX Flow",
-    description: "Streamlined prescription management system for healthcare providers.",
-    technologies: ["React", "Node.js", "PostgreSQL", "Express"],
+    title: "rx-flow",
+    description: "This Pharmaceutical Desktop Application was built during the pandemic to help small stores simplify managing customer bases, billing, and inventory tracking.",
+    technologies: ["Java8", "netbeans", "RestAPIs", "SpringBoot", "MySQL", "Junit", "AngularJS"],
     github: "https://github.com/sanyamsmehta/rx-flow"
   }
 ];
