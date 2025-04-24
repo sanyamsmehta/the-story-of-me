@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 
@@ -13,8 +12,8 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Nostress.ai",
-    description: "A ground-up startup that automates performance testing through AI. Users can generate tests by simply providing a repo URL and test prompt, with results visualized in HTML reports. The platform enables real-time collaboration between testers, providing insights on performance, bottlenecks, and allows dynamic test modifications during execution.",
+    title: "no-stress.ai",
+    description: "A ground-up startup that automates performance testing through AI. Users can curate tests by simply providing a repo URL and test prompt. The tool extracts APIs, implements tests, and generate reports with visualizations on different metrics. The platform enables real-time collaboration between testers, providing insights on performance, bottlenecks, and allows dynamic test modifications dynamically during execution.",
     technologies: ["Java", "React", "Machine Learning", "Grafana", "JMeter", "Microservices", "Spring Boot", "Prometheus"],
     github: "https://github.com/sanyamsmehta/nostress.ai"
   },
@@ -67,9 +66,6 @@ const ProjectsSection = () => {
     <section id="projects" className="section-padding light-section">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="section-title text-center">Projects</h2>
-        <p className="section-subtitle text-center">
-          Highlights from my professional and personal projects
-        </p>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
