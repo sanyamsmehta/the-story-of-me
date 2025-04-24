@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 
@@ -19,8 +20,8 @@ const projects: Project[] = [
   },
   {
     title: "LookLoud.ai",
-    description: "AI-driven fashion recommendation system that helps users discover and style outfits based on their preferences.",
-    technologies: ["TensorFlow", "Computer Vision", "React", "AWS"],
+    description: "LookLoud.ai is voice-activated assistance technology, powered by GPT-4 Vision, and designed to make e-commerce accessible to everyone. Users can navigate, select, and buy products using simple voice commands.",
+    technologies: ["HTML", "CSS", "JS", "Chrome Extension APIs", "Web Speech API", "REST APIs", "Heroku", "Flask", "ImgBB", "Postman"],
     github: "https://github.com/sanyamsmehta/lookloud.ai"
   },
   {
