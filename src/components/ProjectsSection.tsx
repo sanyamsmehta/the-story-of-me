@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Github, ExternalLink, Award } from "lucide-react";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 interface Project {
   title: string;
@@ -86,13 +87,40 @@ const projects: Project[] = [
 ];
 
 const ProjectsSection = () => {
+  const [filter, setFilter] = useState<string>("all");
+
+  const filteredProjects = projects.filter((project) => {
+    switch (filter) {
+      case "product":
+        return project.deck !== undefined;
+      case "software":
+        return project.github !== undefined;
+      default:
+        return true;
+    }
+  });
+
   return (
     <section id="projects" className="section-padding bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Projects</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900">Projects</h2>
         
+        <div className="flex justify-center mb-8">
+          <ToggleGroup type="single" value={filter} onValueChange={(value) => setFilter(value || "all")}>
+            <ToggleGroupItem value="all" variant="outline">
+              All Projects
+            </ToggleGroupItem>
+            <ToggleGroupItem value="product" variant="outline">
+              Product Projects
+            </ToggleGroupItem>
+            <ToggleGroupItem value="software" variant="outline">
+              Software Projects
+            </ToggleGroupItem>
+          </ToggleGroup>
+        </div>
+
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <div 
               key={index} 
               className="bg-card rounded-lg overflow-hidden shadow-lg card-hover border border-border relative"
