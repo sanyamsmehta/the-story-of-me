@@ -4,20 +4,19 @@ import { Badge } from "./ui/badge";
 const productSkills = [
   "Product Strategy & Roadmapping",
   "Market & User Research (Qualitative + Quantitative)",
+  "Current State & Gap Analysis",
   "Competitive Analysis & SWOT",
   "MVP Definition & Scoping",
   "Feature Prioritization",
   "Agile, Scrum, SDLC",
   "Product Development Lifecycle (PDLC)",
-  "Go-To-Market (GTM) Planning",
-  "Current State & Gap Analysis",
   "Buy vs Build Evaluation",
   "KPIs, OKRs, and North Star Metrics",
   "A/B Testing & Experimentation",
-  "User Feedback & Voice of Customer (VoC)",
-  "PRD (Product Requirements Document) & Backlog Management",
+  "PRD & Backlog Management",
   "Budgeting",
-  "Stakeholder Management & Cross-Functional Collaboration"
+  "Go-To-Market (GTM) Planning",
+  "Stakeholder Management"
 ];
 
 const technologies = [
@@ -62,7 +61,8 @@ const softwareEngineeringSkills = [
   "Optimization",
   "DevOps",
   "Deployment",
-  "Scaling"
+  "Scaling",
+  "Vulnerability Fixes"
 ];
 
 const softwareTechnologies = [
@@ -122,10 +122,10 @@ const SkillsSection = () => {
           {/* Product Management Column */}
           <div className="space-y-8">
             <div className="bg-white rounded-lg p-8 shadow-md border border-gray-100">
-              <h3 className="text-2xl font-semibold mb-6 text-gray-900">Product Management</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-gray-900 text-center">Product Management</h3>
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-lg font-medium mb-4 text-gray-800">Core Skills</h4>
+                  <h4 className="text-lg font-medium mb-4 text-gray-800 text-center">Core Skills</h4>
                   <ul className="list-disc pl-5 space-y-1 text-gray-600">
                     {productSkills.map((skill, index) => (
                       <li key={index} className="text-sm">{skill}</li>
@@ -134,8 +134,8 @@ const SkillsSection = () => {
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-medium mb-4 text-gray-800">Technologies</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <h4 className="text-lg font-medium mb-4 text-gray-800 text-center">Technologies</h4>
+                  <div className="flex flex-wrap gap-2 justify-center">
                     {technologies.map((tech, index) => (
                       <Badge 
                         key={index}
@@ -154,10 +154,10 @@ const SkillsSection = () => {
           {/* Software Engineering Column */}
           <div className="space-y-8">
             <div className="bg-white rounded-lg p-8 shadow-md border border-gray-100">
-              <h3 className="text-2xl font-semibold mb-6 text-gray-900">Software Engineering</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-gray-900 text-center">Software Engineering</h3>
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-lg font-medium mb-4 text-gray-800">Core Skills</h4>
+                  <h4 className="text-lg font-medium mb-4 text-gray-800 text-center">Core Skills</h4>
                   <ul className="list-disc pl-5 space-y-1 text-gray-600">
                     {softwareEngineeringSkills.map((skill, index) => (
                       <li key={index} className="text-sm">{skill}</li>
@@ -166,8 +166,8 @@ const SkillsSection = () => {
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-medium mb-4 text-gray-800">Technologies</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <h4 className="text-lg font-medium mb-4 text-gray-800 text-center">Technologies</h4>
+                  <div className="flex flex-wrap gap-2 justify-center">
                     {softwareTechnologies.map((tech, index) => (
                       <Badge 
                         key={index}
