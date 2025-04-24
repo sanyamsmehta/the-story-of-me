@@ -1,12 +1,19 @@
 
 import { useState, useEffect } from "react";
 import { FileText } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-// Nav items in new order: Home, About, Work, Academics, Skills, Projects, Life, Contact, Resume (icon on right)
+// Nav items in new order: Home, About, Work, Academics, Skills, Projects, Life, Contact
 interface NavItem {
   title: string;
-  href: string;
+  href?: string;
   icon?: JSX.Element;
+  isDropdown?: boolean;
 }
 
 const navItems: NavItem[] = [
@@ -18,7 +25,18 @@ const navItems: NavItem[] = [
   { title: "Projects", href: "#projects" },
   { title: "Life", href: "#life" },
   { title: "Contact", href: "#contact" },
-  { title: "Resume", href: "#resume", icon: <FileText size={18} /> },
+  { title: "Resume", isDropdown: true, icon: <FileText size={18} /> },
+];
+
+const resumeOptions = [
+  {
+    label: "Software Engineer Resume",
+    url: "/SanyamMehta_SDE_Resume.pdf",
+  },
+  {
+    label: "Product Manager Resume",
+    url: "/SanyamMehta_PM_Resume.pdf",
+  },
 ];
 
 const Navbar = () => {
@@ -81,19 +99,44 @@ const Navbar = () => {
         <ul className="hidden md:flex items-center space-x-8">
           {navItems.map((item, idx) => (
             <li key={item.title} className={idx === navItems.length - 1 ? "ml-8" : ""}>
-              <a
-                href={item.href}
-                className={`nav-link tracking-wide font-medium text-base transition relative
-                  ${activeSection === item.href.substring(1)
-                    ? "text-white after:scale-x-100"
-                    : "text-gray-400 hover:text-white"}`
-                }
-                style={{ textTransform: "none", display: "inline-flex", alignItems: "center" }}
-              >
-                {item.title}
-                {item.icon && <span className="ml-1">{item.icon}</span>}
-                <span className={`absolute left-0 -bottom-1 h-0.5 bg-white transition-all duration-300 ${activeSection === item.href.substring(1) ? "w-full" : "w-0 group-hover:w-full"}`}></span>
-              </a>
+              {item.isDropdown ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger
+                    className={`nav-link tracking-wide font-medium text-base transition relative flex items-center
+                      ${activeSection === "resume"
+                        ? "text-white after:scale-x-100"
+                        : "text-gray-400 hover:text-white"}`}
+                  >
+                    {item.icon}
+                    <span className="ml-1">{item.title}</span>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-[#101010] border-muted">
+                    {resumeOptions.map((option) => (
+                      <DropdownMenuItem key={option.label}>
+                        <a
+                          href={option.url}
+                          download
+                          className="text-gray-300 hover:text-white w-full"
+                        >
+                          {option.label}
+                        </a>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <a
+                  href={item.href}
+                  className={`nav-link tracking-wide font-medium text-base transition relative
+                    ${activeSection === item.href?.substring(1)
+                      ? "text-white after:scale-x-100"
+                      : "text-gray-400 hover:text-white"}`}
+                  style={{ textTransform: "none" }}
+                >
+                  {item.title}
+                  <span className={`absolute left-0 -bottom-1 h-0.5 bg-white transition-all duration-300 ${activeSection === item.href?.substring(1) ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+                </a>
+              )}
             </li>
           ))}
         </ul>
