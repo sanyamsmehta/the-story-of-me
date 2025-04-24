@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 
@@ -67,7 +68,7 @@ const ProjectsSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Projects</h2>
         
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div 
               key={index} 
@@ -82,40 +83,39 @@ const ProjectsSection = () => {
                   />
                 </div>
               )}
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-foreground">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, i) => (
-                    <span key={i} className="px-3 py-1 bg-muted text-foreground text-xs font-medium rounded-full">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-4">
+              <div className="p-4">
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <h3 className="text-lg font-bold text-foreground">{project.title}</h3>
                   {project.github && (
                     <a 
                       href={project.github} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-foreground hover:text-gray-600 transition-colors"
+                      className="text-foreground hover:text-gray-600 transition-colors"
                     >
                       <Github size={18} />
-                      <span>Code</span>
-                    </a>
-                  )}
-                  {project.liveDemo && (
-                    <a 
-                      href={project.liveDemo} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-foreground hover:text-gray-600 transition-colors"
-                    >
-                      <ExternalLink size={18} />
-                      <span>Live Demo</span>
                     </a>
                   )}
                 </div>
+                <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech, i) => (
+                    <span key={i} className="px-2 py-1 bg-muted text-foreground text-xs font-medium rounded-full">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                {project.liveDemo && (
+                  <a 
+                    href={project.liveDemo} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-foreground hover:text-gray-600 transition-colors text-sm"
+                  >
+                    <ExternalLink size={16} />
+                    <span>Live Demo</span>
+                  </a>
+                )}
               </div>
             </div>
           ))}
