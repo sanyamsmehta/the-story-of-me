@@ -8,6 +8,14 @@ const LifeSection = () => (
   >
     <div className="max-w-6xl mx-auto px-6 py-6">
       <h2 className="text-2xl md:text-3xl font-extrabold mb-6 text-black">Life</h2>
+      
+      <div className="flex gap-4 overflow-x-auto mb-6 pb-2 scrollbar-hide">
+        <img src="/lovable-uploads/b7e44e92-1ee6-41c0-9806-9f96112e1230.png" alt="Messi" className="h-40 w-auto object-cover rounded-lg" />
+        <img src="/lovable-uploads/4af5dd36-2a8a-45b8-ae30-91f587674bc1.png" alt="Golf" className="h-40 w-auto object-cover rounded-lg" />
+        <img src="/lovable-uploads/81923b10-97c8-475c-ad12-fc2228879c2e.png" alt="Car" className="h-40 w-auto object-cover rounded-lg" />
+        <img src="/lovable-uploads/5f364fc0-1625-4eb1-915e-10b4a9292fe0.png" alt="Chai" className="h-40 w-auto object-cover rounded-lg" />
+      </div>
+
       <div className="space-y-6 text-base md:text-lg text-gray-800">
         <p>
           There are a few things that I live for- Driving, Golf, Chai, and the company of my close ones. 
