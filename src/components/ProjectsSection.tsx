@@ -14,7 +14,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "no-stress.ai",
-    description: "A ground-up startup that automates performance testing through AI. Users can curate tests by simply providing a repo URL and test prompt. The tool extracts APIs, implements tests, and generate reports with visualizations on different metrics. The platform enables real-time collaboration between testers, providing insights on performance, bottlenecks, and allows dynamic test modifications dynamically during execution.",
+    description: "Delay is the new Downtime. NoStress is an AI tool that automates performance testing. Users simply provide a repository URL and a curated test-case. The tool extracts APIs, develops user-simulations and implements the test cases. Testers can also communicate with the tool real time and dynamically modify test cases and gain performance insights. Post execution, the tool renders a HTML report displaying API and Microservice Performance based on several metrics.",
     technologies: ["Java", "React", "Machine Learning", "Grafana", "JMeter", "Microservices", "Spring Boot", "Prometheus"],
     github: "https://github.com/sanyamsmehta/nostress.ai"
   },
@@ -91,9 +91,10 @@ const ProjectsSection = () => {
                       href={project.github} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-foreground hover:text-gray-600 transition-colors"
+                      className="flex items-center gap-2 text-foreground hover:text-gray-600 transition-colors"
                     >
                       <Github size={18} />
+                      <span className="text-sm">View Code</span>
                     </a>
                   )}
                 </div>
