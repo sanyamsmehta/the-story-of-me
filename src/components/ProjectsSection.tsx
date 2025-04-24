@@ -1,13 +1,14 @@
 import React from "react";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Award } from "lucide-react";
 
 interface Project {
   title: string;
   description: string;
-  technologies: string[];
+  technologies?: string[];
   github?: string;
-  liveDemo?: string;
+  deck?: string;
   image?: string;
+  awards?: string;
 }
 
 const projects: Project[] = [
@@ -15,13 +16,15 @@ const projects: Project[] = [
     title: "no-stress.ai",
     description: "Delay is the new Downtime. NoStress is an AI tool that automates performance testing. Users simply provide a repository URL and a curated test-case. The tool extracts APIs, develops user-simulations and implements the test cases. Testers can also communicate with the tool real time and dynamically modify test cases and gain performance insights. Post execution, the tool renders a HTML report displaying API and Microservice Performance based on several metrics.",
     technologies: ["Java", "React", "Machine Learning", "Grafana", "JMeter", "Microservices", "Spring Boot", "Prometheus"],
-    github: "https://github.com/sanyamsmehta/nostress.ai"
+    github: "https://github.com/sanyamsmehta/nostress.ai",
+    deck: "https://docs.google.com/presentation/d/1_8rik_me0PfqLQHCg06xfT_Z7bmIZAhDn4p7McBuxrk/edit#slide=id.g31af66f6314_0_360"
   },
   {
     title: "look-loud.ai",
     description: "LookLoud.ai is voice-activated assistance technology, powered by GPT-4 Vision, and designed to make e-commerce accessible to everyone. Users can navigate, select, and buy products using simple voice commands.",
     technologies: ["HTML", "CSS", "JS", "Chrome Extension APIs", "Web Speech API", "REST APIs", "Heroku", "Flask", "ImgBB", "Postman"],
-    github: "https://github.com/sanyamsmehta/lookloud.ai"
+    github: "https://github.com/sanyamsmehta/lookloud.ai",
+    awards: "🏆 1st Place DubHacks, 2nd Place EduHacks"
   },
   {
     title: "sayitright-textnorm-ml",
@@ -58,6 +61,27 @@ const projects: Project[] = [
     description: "This Pharmaceutical Desktop Application was built during the pandemic to help small stores simplify managing customer bases, billing, and inventory tracking.",
     technologies: ["Java8", "netbeans", "RestAPIs", "SpringBoot", "MySQL", "Junit", "AngularJS"],
     github: "https://github.com/sanyamsmehta/rx-flow"
+  },
+  {
+    title: "The Grow Card",
+    description: "Solutioned a credit card for young adults ($62.5B SOM) addressing Credit Debt faced by 1.6M+ Americans yearly. Derived MVP features, wireframes, monetization, GTM strategies targeting onboarding 20K active users in a year.",
+    deck: "https://drive.google.com/file/d/1SGihjJFtgDeYURBDvC5tUdxcjVXALF_A/view",
+    awards: "🏆 3rd Place - Smartsheet Product Competition"
+  },
+  {
+    title: "Workday Transformation Strategy",
+    description: "Detailed a current state analysis to strategize 3 OKRs, prioritize 40+ features enabling a $430M 3-year roadmap. Studied company financials over the decade to derive nearly accurate cost estimates and phased budget ask.",
+    deck: "https://drive.google.com/drive/folders/1b_cGIuqWa2hRNHWvlufxRz4fNLiCm71J"
+  },
+  {
+    title: "Starbucks Product Strategy",
+    description: "Evaluated SWOT, KPIs, and competitors to devise a Northstar metric tracking company expansion and efficiency. Scoped a future state targeting features that translated to $75M savings on operations and 55K+ store footprints.",
+    deck: "https://drive.google.com/file/d/1rrw7GAWGDqoW-A61KBF74_4ZhNwNhe48/view"
+  },
+  {
+    title: "Host-IQ",
+    description: "Host-IQ is an AI-powered analytics platform designed for Airbnb hosts to transform raw guest feedback and property data into actionable insights. By automating sentiment analysis, trend detection, and personalized recommendations, it addresses key host pain points—ranging from service inconsistency to reliance on costly third-party tools. The tool leverages Agile methodologies and NLP-driven intelligence to optimize guest satisfaction, reduce complaints by 20%, and boost bookings by 10%. With a projected annual value impact exceeding $2M in savings and revenue lift, Host-IQ positions Airbnb to lead in data-driven hospitality innovation.",
+    deck: "https://docs.google.com/presentation/d/1XEpscyg0FRLPu-BkxSqvb3wcKv0PLWUZ/edit?usp=sharing&ouid=112722355947732076323&rtpof=true&sd=true"
   }
 ];
 
@@ -73,17 +97,30 @@ const ProjectsSection = () => {
               key={index} 
               className="bg-card rounded-lg overflow-hidden shadow-lg card-hover border border-border relative"
             >
-              {project.github && (
-                <a 
-                  href={project.github} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="absolute top-2 right-2 flex items-center gap-1 text-foreground hover:text-gray-600 transition-colors"
-                >
-                  <Github size={16} />
-                  <span className="text-xs">Code</span>
-                </a>
-              )}
+              <div className="flex justify-end gap-2 absolute top-2 right-2">
+                {project.github && (
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-foreground hover:text-gray-600 transition-colors"
+                  >
+                    <Github size={16} />
+                    <span className="text-xs">Code</span>
+                  </a>
+                )}
+                {project.deck && (
+                  <a 
+                    href={project.deck} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-foreground hover:text-gray-600 transition-colors"
+                  >
+                    <ExternalLink size={16} />
+                    <span className="text-xs">Deck</span>
+                  </a>
+                )}
+              </div>
               {project.image && (
                 <div className="h-48 bg-muted">
                   <img 
@@ -94,25 +131,21 @@ const ProjectsSection = () => {
                 </div>
               )}
               <div className="p-4">
-                <h3 className="text-lg font-bold text-foreground mb-2">{project.title}</h3>
+                <h3 className="text-lg font-bold text-foreground mb-2">
+                  {project.title}
+                  {project.awards && (
+                    <span className="ml-2 text-sm font-normal text-amber-600">{project.awards}</span>
+                  )}
+                </h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, i) => (
-                    <span key={i} className="px-2 py-1 bg-muted text-foreground text-xs font-medium rounded-full">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                {project.liveDemo && (
-                  <a 
-                    href={project.liveDemo} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-foreground hover:text-gray-600 transition-colors text-sm"
-                  >
-                    <ExternalLink size={16} />
-                    <span>Live Demo</span>
-                  </a>
+                {project.technologies && (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, i) => (
+                      <span key={i} className="px-2 py-1 bg-muted text-foreground text-xs font-medium rounded-full">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 )}
               </div>
             </div>
