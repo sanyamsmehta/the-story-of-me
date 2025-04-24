@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Badge } from "./ui/badge";
 
@@ -49,6 +48,70 @@ const technologies = [
   "MS Office"
 ];
 
+const softwareEngineeringSkills = [
+  "Object Oriented Programming",
+  "Data Structures and Algorithms",
+  "System Design and Architecture",
+  "REST API Design & Integration",
+  "Microservices",
+  "SDLC",
+  "Unit Testing",
+  "Automation Testing",
+  "Code Review and Version Control",
+  "Debugging",
+  "Optimization",
+  "DevOps",
+  "Deployment",
+  "Scaling"
+];
+
+const softwareTechnologies = [
+  "Java",
+  "Python",
+  "C++",
+  "C#",
+  "JavaScript",
+  "TypeScript",
+  "R",
+  "MATLAB",
+  "HTML",
+  "CSS",
+  "SQL",
+  "PL/SQL",
+  "T-SQL",
+  "Spring Boot",
+  "REST",
+  ".NET",
+  "Flask",
+  "Figma",
+  "React",
+  "ETL",
+  "DBT",
+  "JUnit",
+  "Selenium",
+  "SDLC",
+  "Scrum",
+  "Agile",
+  "MySQL",
+  "PostgreSQL",
+  "MongoDB",
+  "Snowflake",
+  "AWS",
+  "Azure",
+  "Tableau",
+  "PowerBI",
+  "Git",
+  "Excel",
+  "Jira",
+  "Docker",
+  "Kubernetes",
+  "Postman",
+  "JMeter",
+  "CI/CD",
+  "Jenkins",
+  "GitLab"
+];
+
 const SkillsSection = () => {
   return (
     <section id="skills" className="section-padding bg-white border-t border-gray-100">
@@ -88,11 +151,35 @@ const SkillsSection = () => {
             </div>
           </div>
 
-          {/* Software Engineering Column - Placeholder */}
+          {/* Software Engineering Column */}
           <div className="space-y-8">
             <div className="bg-white rounded-lg p-8 shadow-md border border-gray-100">
               <h3 className="text-2xl font-semibold mb-6 text-gray-900">Software Engineering</h3>
-              <p className="text-gray-500">Waiting for software engineering skills...</p>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-medium mb-4 text-gray-800">Core Skills</h4>
+                  <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                    {softwareEngineeringSkills.map((skill, index) => (
+                      <li key={index} className="text-sm">{skill}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-medium mb-4 text-gray-800">Technologies</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {softwareTechnologies.map((tech, index) => (
+                      <Badge 
+                        key={index}
+                        variant="outline" 
+                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 border-transparent"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
