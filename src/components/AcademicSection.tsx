@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -55,7 +56,7 @@ const educations: Education[] = [
 const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
   <div className="relative group">
     <div className="flex flex-col items-center">
-      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-slate-400 to-slate-600 p-1 shadow-xl transform group-hover:scale-110 transition-all duration-300">
+      <div className="w-16 h-16 rounded-full bg-black p-1 shadow-xl transform group-hover:scale-110 transition-all duration-300">
         <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
           {education.logoUrl ? (
             <img
