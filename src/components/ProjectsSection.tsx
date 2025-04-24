@@ -31,8 +31,8 @@ const projects: Project[] = [
   },
   {
     title: "Path to Market",
-    description: "Strategic toolkit for startups to validate market opportunities and develop go-to-market strategies.",
-    technologies: ["React", "Node.js", "MongoDB", "Analytics"],
+    description: "Based on startup attributes like:\n\nStage (Idea, MVP, Revenue, etc.)\n- Funding level\n- Team size\n- Sector (Tech, Healthcare, etc.)\nThe model predicts which digital strategy (e.g., SEO, Paid Ads, Influencer Marketing) works best for that startup.",
+    technologies: ["Python", "Pandas", "Scikit-learn", "Jupyter Notebook", "Decision Trees"],
     github: "https://github.com/sanyamsmehta/path-to-market-startup"
   },
   {
