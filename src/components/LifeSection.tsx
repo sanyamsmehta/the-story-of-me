@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const LifeSection = () => (
@@ -25,23 +24,17 @@ const LifeSection = () => (
 
       <div className="space-y-6 text-base md:text-lg text-gray-800">
         <p>
-          There are a few things that I live for- Driving, Golf, Chai, and the company of my close ones. 
-          I also admire Messi for making me fall in Love with Football.
+          There are a few things that I live for- Driving, Golf, Chai, and the company of my close ones.
+          I am really close to my friends and family back home and I love spending time with my 95 year old grandmother.
         </p>
         <p>
-          I have travelled to over 25 countries and I speak 5 languages fluently. I have lived in 3 different countries. 
-          I am extremely extroverted. The Office is one of my favorite TV shows and it has helped me through some tough times.
+          Having travelled to over 25 countries, attending a Christian school for 14 years, living in the middle-east for 3 years, and also now living in the states for 2 years has given me exposure to so many different cultures, religions, and perspectives, that I find it easy to relate to, understand, and connect with people. I speak 5 languages fluently and also completed studying The Delle Level A1,A2, and B1 in Spanish.
         </p>
         <p>
-          My favorite book is Man's search for Meaning and I strongly believe that work is what leads a person to happiness. 
-          I am a staunch believer of Stoicism. I am religious too and have been on several religious pilgrimages within my country and outside.
+          I love reading philosophical books. Man's Search for Meaning has been my favorite book so far. I am also a staunch believer of Stoicism and I strongly believe that the true path to Happiness lies in Working.
         </p>
         <p>
-          I studied in a Christian School for 14 years, lived in the middle east which was for 2 years and now live in the states 
-          where people from all around the world reside. This gave me exposure to so many cultures, religions, languages, and perspectives.
-        </p>
-        <p>
-          I love meeting new people and knowing their life story. My family and my close friends are who I go to when I need clarity.
+          The Office, is without a doubt my favorite TV show and has helped me pass some tough times through life laughing.
         </p>
         <p className="italic">
           While this section may seem all over the place, it makes me up.
@@ -52,4 +45,3 @@ const LifeSection = () => (
 );
 
 export default LifeSection;
-
