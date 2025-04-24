@@ -4,10 +4,12 @@ import React from "react";
 const LifeSection = () => (
   <section
     id="life"
-    className="section-padding border-b border-gray-300 light-section"
+    className="section-padding bg-white border-t border-gray-100"
   >
-    <div className="max-w-6xl mx-auto px-6 py-6">
-      <h2 className="text-2xl md:text-3xl font-extrabold mb-6 text-black">Life</h2>
+    <div className="max-w-6xl mx-auto px-4">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">
+        Life
+      </h2>
       
       <div className="flex gap-4 overflow-x-auto mb-6 pb-2 scrollbar-hide">
         <img src="/lovable-uploads/b7e44e92-1ee6-41c0-9806-9f96112e1230.png" alt="Messi" className="h-40 w-auto object-cover rounded-lg" />
