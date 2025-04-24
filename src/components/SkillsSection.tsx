@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Badge } from "./ui/badge";
 
@@ -62,11 +63,17 @@ const SkillsSection = () => {
               <div className="space-y-6">
                 <div>
                   <h4 className="text-lg font-medium mb-4 text-gray-800">Core Skills</h4>
-                  <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                  <div className="flex flex-wrap gap-2">
                     {productSkills.map((skill, index) => (
-                      <li key={index} className="text-sm">{skill}</li>
+                      <Badge 
+                        key={index}
+                        variant="outline" 
+                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 border-transparent"
+                      >
+                        {skill}
+                      </Badge>
                     ))}
-                  </ul>
+                  </div>
                 </div>
                 
                 <div>
