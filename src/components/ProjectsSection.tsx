@@ -24,9 +24,9 @@ const projects: Project[] = [
     github: "https://github.com/sanyamsmehta/lookloud.ai"
   },
   {
-    title: "SayItRight Text Normalization",
-    description: "Machine learning model for text normalization to improve speech synthesis quality and natural language processing.",
-    technologies: ["Python", "NLP", "Machine Learning", "TensorFlow"],
+    title: "sayitright-textnorm-ml",
+    description: "sayitright-textnorm-ml is a machine learning-powered text normalization engine designed to transform raw written expressions into fluent, human-readable spoken forms. Built for downstream applications in Text-to-Speech (TTS), Automatic Speech Recognition (ASR), and other NLP tasks, LangMorph tackles the complexities of converting tokens like 12:47 to \"twelve forty-seven\" or $3.16 to \"three dollars, sixteen cents\" with high accuracy and linguistic finesse.",
+    technologies: ["Python", "Pandas", "Scikit-learn", "Jupyter", "FastText", "T5 Transformer", "CRF", "AdaBoost", "kNN", "NLP", "Machine Learning"],
     github: "https://github.com/sanyamsmehta/sayitright-textnorm-ml"
   },
   {
