@@ -1,5 +1,8 @@
 
 import React from "react";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { GraduationCap } from "lucide-react";
 
 interface Education {
   school: string;
@@ -51,55 +54,75 @@ const educations: Education[] = [
 ];
 
 const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
-  <div className="flex flex-col items-center relative">
-    <div className="w-12 h-12 rounded-full bg-white border-2 border-blue-500 p-1 flex items-center justify-center z-10 overflow-hidden">
-      {education.logoUrl && (
-        <img
-          src={education.logoUrl}
-          alt={`${education.school} logo`}
-          className={`w-8 h-8 object-contain rounded-full transition-transform duration-300 
-            ${education.school === 'Bombay Scottish School' ? 'scale-150' : 'scale-125'}`}
-        />
-      )}
-    </div>
-    
-    <div className="mt-2 bg-white rounded-lg shadow-lg p-2 w-44 text-center min-h-[120px] flex flex-col">
-      <h3 className="text-[10px] font-bold text-gray-900 truncate">{education.school}</h3>
-      <div className="flex-grow">
-        {education.degree && (
-          <p className="text-[10px] text-blue-600 font-semibold mb-1">
-            {education.degree} {education.major}
-            {education.minor && <span className="block text-[8px] text-blue-500">Minor: {education.minor}</span>}
-            {education.specializations && (
-              <span className="block text-[8px] text-blue-500">
-                Specializations: {education.specializations.join(", ")}
-              </span>
-            )}
-          </p>
-        )}
-        {education.concentration && (
-          <p className="text-[10px] text-blue-600 font-semibold mb-1">
-            Concentration: {education.concentration}
-          </p>
-        )}
+  <div className="relative group">
+    <div className="flex flex-col items-center">
+      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 p-1 shadow-xl transform group-hover:scale-110 transition-all duration-300">
+        <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+          {education.logoUrl ? (
+            <img
+              src={education.logoUrl}
+              alt={`${education.school} logo`}
+              className="w-12 h-12 object-contain transform transition-transform duration-300 hover:scale-110"
+            />
+          ) : (
+            <GraduationCap className="w-8 h-8 text-blue-500" />
+          )}
+        </div>
       </div>
-      <div className="border-t border-gray-100 pt-1 mt-1">
-        <p className="text-[9px] text-gray-500">{education.location}</p>
-        <p className="text-[9px] font-medium text-gray-700">{education.period}</p>
-      </div>
+      
+      <Card className="mt-4 w-64 transform group-hover:-translate-y-1 transition-all duration-300 hover:shadow-xl bg-white/95 backdrop-blur-sm border border-gray-200">
+        <div className="p-4">
+          <h3 className="text-lg font-bold text-gray-900 mb-1">{education.school}</h3>
+          <p className="text-sm text-gray-600 mb-2">{education.location}</p>
+          <p className="text-xs font-medium text-blue-600 mb-2">{education.period}</p>
+          
+          {education.degree && (
+            <div className="space-y-2">
+              <Badge variant="secondary" className="mr-1">
+                {education.degree} {education.major}
+              </Badge>
+              
+              {education.minor && (
+                <div className="text-xs text-gray-600">
+                  Minor: {education.minor}
+                </div>
+              )}
+              
+              {education.specializations && (
+                <div className="flex flex-wrap gap-1 mt-2">
+                  {education.specializations.map((spec, i) => (
+                    <Badge key={i} variant="outline" className="text-[10px]">
+                      {spec}
+                    </Badge>
+                  ))}
+                </div>
+              )}
+              
+              {education.concentration && (
+                <div className="text-xs text-gray-600">
+                  Concentration: {education.concentration}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </Card>
     </div>
   </div>
 );
 
 const AcademicSection = () => (
-  <section id="academic" className="section-padding bg-gradient-to-b from-gray-50 to-white border-t border-gray-100">
+  <section id="academic" className="section-padding bg-gradient-to-b from-gray-50 to-white">
     <div className="max-w-6xl mx-auto px-4">
-      <h2 className="text-2xl font-bold text-center mb-6 text-gray-900">Academic Journey</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900">
+        Academic Journey
+      </h2>
       
       <div className="relative">
-        <div className="absolute top-6 left-0 right-0 h-0.5 bg-blue-500" />
+        {/* Timeline line */}
+        <div className="absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform -translate-y-1/2" />
         
-        <div className="flex justify-between gap-2 relative">
+        <div className="flex justify-between gap-4 relative">
           {educations.map((education, idx) => (
             <TimelineNode key={idx} education={education} />
           ))}
@@ -110,4 +133,3 @@ const AcademicSection = () => (
 );
 
 export default AcademicSection;
-
