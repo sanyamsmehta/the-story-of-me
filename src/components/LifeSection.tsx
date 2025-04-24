@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const LifeSection = () => (
@@ -11,10 +12,10 @@ const LifeSection = () => (
       </h2>
       
       <div className="flex gap-4 overflow-x-auto mb-6 pb-2 scrollbar-hide">
-        <img src="/lovable-uploads/b7e44e92-1ee6-41c0-9806-9f96112e1230.png" alt="Messi" className="h-32 w-auto object-cover rounded-lg" />
         <img src="/lovable-uploads/4af5dd36-2a8a-45b8-ae30-91f587674bc1.png" alt="Golf" className="h-32 w-auto object-cover rounded-lg" />
         <img src="/lovable-uploads/81923b10-97c8-475c-ad12-fc2228879c2e.png" alt="Car" className="h-32 w-auto object-cover rounded-lg" />
         <img src="/lovable-uploads/5f364fc0-1625-4eb1-915e-10b4a9292fe0.png" alt="Chai" className="h-32 w-auto object-cover rounded-lg" />
+        <img src="/lovable-uploads/b7e44e92-1ee6-41c0-9806-9f96112e1230.png" alt="Messi" className="h-32 w-auto object-cover rounded-lg" />
         <img src="/lovable-uploads/ddfb077f-229c-4a4a-b472-dfafdeace66a.png" alt="Spanish Levels" className="h-32 w-auto object-cover rounded-lg" />
         <img src="/lovable-uploads/69af06a8-e982-4f40-960f-14e05c4c6b03.png" alt="Book" className="h-32 w-auto object-cover rounded-lg" />
         <img src="/lovable-uploads/71b5d9b9-b1d3-43dc-82bb-e4a9761a3c77.png" alt="Religious Symbols" className="h-32 w-auto object-cover rounded-lg" />
@@ -45,3 +46,4 @@ const LifeSection = () => (
 );
 
 export default LifeSection;
+
