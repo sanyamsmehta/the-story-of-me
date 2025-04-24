@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -90,14 +89,7 @@ const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
               
               {education.specializations && (
                 <div className="text-xs text-gray-600">
-                  Specializations:
-                  <div className="flex flex-wrap gap-1 mt-1">
-                    {education.specializations.map((spec, i) => (
-                      <Badge key={i} variant="outline" className="text-[10px] border-slate-300 text-slate-600">
-                        {spec}
-                      </Badge>
-                    ))}
-                  </div>
+                  Specializations: {education.specializations.join(", ")}
                 </div>
               )}
               
