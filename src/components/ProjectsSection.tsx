@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 
@@ -13,28 +12,52 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Pixel Streaming Cloud Infrastructure",
-    description: "Led the development of cloud services for Unreal Engine's Pixel Streaming, enabling browser-based 3D experiences without downloads.",
-    technologies: ["AWS", "Docker", "WebRTC", "Node.js", "Redis"],
-    github: "https://github.com/EpicGames/PixelStreamingInfrastructure"
+    title: "Nostress.ai",
+    description: "AI-powered mental wellness platform that helps users manage stress and anxiety through personalized interventions.",
+    technologies: ["Python", "Machine Learning", "React", "Node.js"],
+    github: "https://github.com/sanyamsmehta/nostress.ai"
   },
   {
-    title: "Humanitarian Data Collection System",
-    description: "Built resilient data collection systems for humanitarian operations in conflict zones, supporting 3M+ beneficiaries.",
-    technologies: ["React", "Node.js", "MongoDB", "Progressive Web Apps"],
-    liveDemo: "https://datacollect.unfpa.org"
+    title: "LookLoud.ai",
+    description: "AI-driven fashion recommendation system that helps users discover and style outfits based on their preferences.",
+    technologies: ["TensorFlow", "Computer Vision", "React", "AWS"],
+    github: "https://github.com/sanyamsmehta/lookloud.ai"
   },
   {
-    title: "Real-time Monitoring Dashboard",
-    description: "Created analytical dashboards to monitor humanitarian assistance for stakeholders across 15+ organizations.",
-    technologies: ["React", "D3.js", "Express", "PostgreSQL", "Socket.io"],
-    github: "https://github.com/sanyamsmehta/monitoring-dashboard"
+    title: "SayItRight Text Normalization",
+    description: "Machine learning model for text normalization to improve speech synthesis quality and natural language processing.",
+    technologies: ["Python", "NLP", "Machine Learning", "TensorFlow"],
+    github: "https://github.com/sanyamsmehta/sayitright-textnorm-ml"
   },
   {
-    title: "School ERP System",
-    description: "Developed a comprehensive ERP system for schools that manages attendance, grades, and administrative tasks.",
-    technologies: ["PHP", "MySQL", "jQuery", "Bootstrap"],
-    github: "https://github.com/sanyamsmehta/school-erp"
+    title: "Path to Market",
+    description: "Strategic toolkit for startups to validate market opportunities and develop go-to-market strategies.",
+    technologies: ["React", "Node.js", "MongoDB", "Analytics"],
+    github: "https://github.com/sanyamsmehta/path-to-market-startup"
+  },
+  {
+    title: "HeadsUp",
+    description: "Real-time collaboration and project management tool for distributed teams.",
+    technologies: ["React", "Socket.io", "Express", "MongoDB"],
+    github: "https://github.com/sanyamsmehta/headsup"
+  },
+  {
+    title: "Infrastructure as Product",
+    description: "Framework for treating infrastructure development with product management principles.",
+    technologies: ["Terraform", "AWS", "Docker", "Kubernetes"],
+    github: "https://github.com/sanyamsmehta/infrastructure-as-product"
+  },
+  {
+    title: "Plagiar-Eyes",
+    description: "AI-powered plagiarism detection system for academic institutions.",
+    technologies: ["Python", "NLP", "Machine Learning", "FastAPI"],
+    github: "https://github.com/sanyamsmehta/plagiar-eyes"
+  },
+  {
+    title: "RX Flow",
+    description: "Streamlined prescription management system for healthcare providers.",
+    technologies: ["React", "Node.js", "PostgreSQL", "Express"],
+    github: "https://github.com/sanyamsmehta/rx-flow"
   }
 ];
 
