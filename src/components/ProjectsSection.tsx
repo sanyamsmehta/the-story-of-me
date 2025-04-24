@@ -71,8 +71,19 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="bg-card rounded-lg overflow-hidden shadow-lg card-hover border border-border"
+              className="bg-card rounded-lg overflow-hidden shadow-lg card-hover border border-border relative"
             >
+              {project.github && (
+                <a 
+                  href={project.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="absolute top-2 right-2 flex items-center gap-1 text-foreground hover:text-gray-600 transition-colors"
+                >
+                  <Github size={16} />
+                  <span className="text-xs">Code</span>
+                </a>
+              )}
               {project.image && (
                 <div className="h-48 bg-muted">
                   <img 
@@ -83,22 +94,7 @@ const ProjectsSection = () => {
                 </div>
               )}
               <div className="p-4">
-                <div className="flex items-center justify-between gap-2 mb-2">
-                  <div className="flex items-center gap-2">
-                    <h3 className="text-lg font-bold text-foreground">{project.title}</h3>
-                    {project.github && (
-                      <a 
-                        href={project.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-foreground hover:text-gray-600 transition-colors"
-                      >
-                        <Github size={16} />
-                        <span className="text-xs">Code</span>
-                      </a>
-                    )}
-                  </div>
-                </div>
+                <h3 className="text-lg font-bold text-foreground mb-2">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, i) => (
