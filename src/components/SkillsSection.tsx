@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Sql, AdvancedExcel, Tableau, PowerBi, Aws, Azure, Snowflake, Etl, Jira, Confluence, Miro, Figma, GSuite, Canva, Notion, Lucidchart, Git, Postman, Slack, MsTeams, Zoom } from "lucide-react";
+import { Badge } from "./ui/badge";
 
 const productSkills = [
   "Product Strategy & Roadmapping",
@@ -22,27 +22,28 @@ const productSkills = [
 ];
 
 const technologies = [
-  { name: "SQL", icon: Sql },
-  { name: "Advanced Excel", icon: AdvancedExcel },
-  { name: "Tableau", icon: Tableau },
-  { name: "Power BI", icon: PowerBi },
-  { name: "AWS", icon: Aws },
-  { name: "Azure", icon: Azure },
-  { name: "Snowflake", icon: Snowflake },
-  { name: "ETL", icon: Etl },
-  { name: "Jira", icon: Jira },
-  { name: "Confluence", icon: Confluence },
-  { name: "Miro", icon: Miro },
-  { name: "Figma", icon: Figma },
-  { name: "G-Suite", icon: GSuite },
-  { name: "Canva", icon: Canva },
-  { name: "Notion", icon: Notion },
-  { name: "Lucidchart", icon: Lucidchart },
-  { name: "Git", icon: Git },
-  { name: "Postman", icon: Postman },
-  { name: "Slack", icon: Slack },
-  { name: "MS Teams", icon: MsTeams },
-  { name: "Zoom", icon: Zoom }
+  "SQL", 
+  "A/B Testing", 
+  "Advanced Excel", 
+  "Tableau", 
+  "Power BI", 
+  "AWS", 
+  "Azure", 
+  "Snowflake", 
+  "ETL", 
+  "Jira", 
+  "Confluence", 
+  "Miro", 
+  "Figma", 
+  "G-Suite", 
+  "Canva", 
+  "Notion", 
+  "Lucidchart / Draw.io", 
+  "Git", 
+  "Postman", 
+  "Slack", 
+  "MS Teams", 
+  "Zoom"
 ];
 
 const SkillsSection = () => {
@@ -59,22 +60,24 @@ const SkillsSection = () => {
               <div className="space-y-6">
                 <div>
                   <h4 className="text-lg font-medium mb-4 text-gray-800">Core Skills</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {productSkills.join(", ")}
-                  </p>
+                  <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                    {productSkills.map((skill, index) => (
+                      <li key={index} className="text-sm">{skill}</li>
+                    ))}
+                  </ul>
                 </div>
                 
                 <div>
                   <h4 className="text-lg font-medium mb-4 text-gray-800">Technologies</h4>
                   <div className="flex flex-wrap gap-2">
-                    {technologies.map((tech) => (
-                      <div
-                        key={tech.name}
-                        className="flex items-center gap-1.5 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+                    {technologies.map((tech, index) => (
+                      <Badge 
+                        key={index}
+                        variant="outline" 
+                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 border-transparent"
                       >
-                        {tech.icon && <tech.icon size={14} />}
-                        {tech.name}
-                      </div>
+                        {tech}
+                      </Badge>
                     ))}
                   </div>
                 </div>
@@ -96,4 +99,3 @@ const SkillsSection = () => {
 };
 
 export default SkillsSection;
-
