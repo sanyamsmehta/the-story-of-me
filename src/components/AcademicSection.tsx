@@ -53,7 +53,7 @@ const educations: Education[] = [
 ];
 
 const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
-  <div className="relative group">
+  <div className="relative group flex-shrink-0">
     <div className="flex flex-col items-center">
       <div className="w-16 h-16 rounded-full bg-slate-300 p-1 shadow-xl transform group-hover:scale-110 transition-all duration-300">
         <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
@@ -116,10 +116,12 @@ const AcademicSection = () => (
       <div className="relative">
         <div className="absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-slate-300 to-slate-400 transform -translate-y-1/2" />
         
-        <div className="flex justify-between gap-4 relative">
-          {educations.map((education, idx) => (
-            <TimelineNode key={idx} education={education} />
-          ))}
+        <div className="overflow-x-auto">
+          <div className="flex justify-start md:justify-between gap-4 min-w-[700px] md:min-w-0">
+            {educations.map((education, idx) => (
+              <TimelineNode key={idx} education={education} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
