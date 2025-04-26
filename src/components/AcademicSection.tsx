@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -56,8 +55,7 @@ const educations: Education[] = [
 const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
   <div className="relative group flex-shrink-0 w-64 md:w-52 lg:w-64">
     <div className="flex flex-col items-center">
-      {/* Icon container with fixed positioning relative to the timeline */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-slate-300 p-1 shadow-xl group-hover:scale-110 transition-all duration-300">
+      <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-slate-300 p-1 shadow-xl group-hover:scale-110 transition-all duration-300">
         <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
           {education.logoUrl ? (
             <img
@@ -71,10 +69,7 @@ const TimelineNode: React.FC<{ education: Education }> = ({ education }) => (
         </div>
       </div>
       
-      {/* Add spacing to push card down below the icons */}
-      <div className="h-8 md:h-9 lg:h-10"></div>
-      
-      <Card className="mt-4 w-full transform group-hover:-translate-y-1 transition-all duration-300 hover:shadow-xl bg-white/95 backdrop-blur-sm border-slate-200">
+      <Card className="mt-8 w-full transform group-hover:-translate-y-1 transition-all duration-300 hover:shadow-xl bg-white/95 backdrop-blur-sm border-slate-200">
         <div className="p-3 md:p-4">
           <h3 className="text-sm md:text-base font-bold text-gray-900 mb-1">{education.school}</h3>
           <p className="text-xs text-gray-600 mb-1">{education.location}</p>
@@ -119,10 +114,9 @@ const AcademicSection = () => (
       </h2>
       
       <div className="relative">
-        {/* Timeline line - now positioned at the top of the icons */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-slate-300 to-slate-400" />
+        <div className="absolute top-6 left-0 right-0 h-1 bg-gradient-to-r from-slate-300 to-slate-400" />
         
-        <div className="flex justify-between items-start gap-2 md:gap-4 overflow-x-auto py-4 pt-6">
+        <div className="flex justify-between items-start gap-2 md:gap-4 overflow-x-auto py-4">
           {educations.map((education, idx) => (
             <TimelineNode key={idx} education={education} />
           ))}
