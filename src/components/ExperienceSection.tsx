@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface Experience {
@@ -115,10 +116,10 @@ const ExperienceSectionCard: React.FC<ExperienceSectionCardProps> = ({
 }) => {
   return (
     <div className="relative flex flex-col bg-white border border-gray-100 shadow-md rounded-2xl p-4 md:p-6 h-full min-h-[220px] md:min-h-[230px]">
-      {/* Date absolute top right */}
-      <span className="absolute right-4 top-3 text-xs px-3 py-1 rounded bg-blue-100 text-blue-600 font-semibold whitespace-nowrap z-10">
+      {/* Date moved to below company info on mobile */}
+      <div className="md:absolute md:right-4 md:top-3 text-xs px-3 py-1 rounded bg-blue-100 text-blue-600 font-semibold whitespace-nowrap z-10 mb-3 md:mb-0 w-fit">
         {exp.period}
-      </span>
+      </div>
 
       {/* Top row: logo + company name + location + (designation below company) */}
       <div className="flex items-center gap-2 md:gap-3 mb-2 w-full relative z-20">
