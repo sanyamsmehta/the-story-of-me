@@ -1,12 +1,14 @@
 
 import { useState, useEffect } from "react";
-import { FileText } from "lucide-react";
+import { FileText, Menu } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 // Nav items in new order: Home, About, Work, Academics, Skills, Projects, Life, Contact
 interface NavItem {
@@ -43,6 +45,8 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const [showName, setShowName] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,6 +79,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (href: string | undefined) => {
+    if (isMobile) {
+      setMobileMenuOpen(false);
+    }
+    if (!href) return;
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-300 ${
@@ -96,6 +107,70 @@ const Navbar = () => {
         >
           Sanyam Mehta
         </div>
+
+        {/* Mobile menu toggle button */}
+        {isMobile && (
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-white p-2 focus:outline-none"
+            aria-label="Toggle navigation menu"
+          >
+            <Menu size={24} />
+          </button>
+        )}
+
+        {/* Mobile menu */}
+        {isMobile && mobileMenuOpen && (
+          <div className="absolute top-full left-0 right-0 bg-[#101010]/95 border-b border-muted overflow-hidden md:hidden">
+            <ScrollArea className="max-h-[70vh]">
+              <div className="py-2">
+                {navItems.map((item, idx) => (
+                  <div key={item.title} className="px-4 py-2">
+                    {item.isDropdown ? (
+                      <DropdownMenu>
+                        <DropdownMenuTrigger
+                          className={`nav-link tracking-wide font-medium text-base transition relative flex items-center w-full
+                            ${activeSection === "resume"
+                              ? "text-white"
+                              : "text-gray-400 hover:text-white"}`}
+                        >
+                          {item.icon}
+                          <span className="ml-1">{item.title}</span>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="bg-[#101010] border-muted">
+                          {resumeOptions.map((option) => (
+                            <DropdownMenuItem key={option.label}>
+                              <a
+                                href={option.url}
+                                download
+                                className="text-gray-300 hover:text-white w-full"
+                              >
+                                {option.label}
+                              </a>
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    ) : (
+                      <a
+                        href={item.href}
+                        className={`block py-2 text-base
+                          ${activeSection === item.href?.substring(1)
+                            ? "text-white"
+                            : "text-gray-400 hover:text-white"}`}
+                        onClick={() => handleNavClick(item.href)}
+                      >
+                        {item.title}
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </ScrollArea>
+          </div>
+        )}
+
+        {/* Desktop navigation */}
         <ul className="hidden md:flex items-center space-x-8">
           {navItems.map((item, idx) => (
             <li key={item.title} className={idx === navItems.length - 1 ? "ml-8" : ""}>
